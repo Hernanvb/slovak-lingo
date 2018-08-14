@@ -14,7 +14,6 @@ var quizRouter            = require('./routes/quiz');
 var quizGeneratorRouter   = require('./routes/quizGenerator');
 var flashCardsRouter      = require('./routes/flashcards');
 
-var config                = require('./config');
 var setupController       = require('./controllers/setupController'); // Test API routes
 
 // requires the model with Passport-Local Mongoose plugged in
@@ -45,7 +44,8 @@ app.set('view engine', 'ejs');
 
 // Change from development environment to production and vice-versa
 var dev = false; // true to use local mongodb, false to use mLab db
-mongoose.connect(config.getDbConnectionString(dev)); // Connect to DB
+var url = process.env.DATABASEURL || 'mongodb://localhost:27017/slovak-app';
+mongoose.connect(url); // Connect to DB
 
 app.use(methodOverride('_method'));
 //app.use(logger('dev'));

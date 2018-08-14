@@ -1,9 +1,4 @@
-var mongoose    = require('mongoose');
 var Vocabulary  = require('../models/vocabModel');
-var config      = require('../config');
-var dev         = true; // Change from development environment to production and vice-versa
-
-mongoose.connect(config.getDbConnectionString(dev)); // Connect to DB
 
 /* This will be used to find how many documents (word pairs) are in each category
    In the future it should be improved so we won't have to rely on this array and make it more dynamic */
