@@ -1,0 +1,147 @@
+<% include ../partials/header %>
+
+  <body id="page-top" class="sidebar-toggled">
+    <link href="/stylesheets/flashcards.css" rel="stylesheet">
+    <% include ../partials/navbar %>
+
+    <div id="wrapper" class="bg-slovak">
+
+      <% include ../partials/sidebar %>
+
+      <div id="content-wrapper">
+
+        <div id="animation-container" class="container-fluid">
+
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/users/<%= currentUser.username %>/dashboard/">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="/flashcards/<%= currentUser.username %>">Flashcard Genetator</a>
+            </li>
+            <li class="breadcrumb-item active">Flashcards</li>
+          </ol>
+          
+          <!-- Page Content -->
+          <div id="animation-body" class="over-buttons display-none">
+            <div>
+              <div class="col-12 mb-4">
+                <img class="hero" src="/images/flag-round-250.png" alt="Hero image jumping" />
+              </div>
+            </div>
+          </div>
+          <p class="lead text-center mb-3 qgf-gradient-title">Created <%= data.length %> Flashcards Start Flipping!</p>
+          <div class="row justify-content-center">
+            <div class="col controls hide mobile-hidden vertical-center-buttons">
+                  <button class="previous btn btn-danger btn-card danger-gradient">Previous</button> 
+            </div>
+            <div class="col-md-6 text-center deck-col">
+              <div class="card-deck">
+                
+                <div class="flash-card in-use">
+                  <div class="flipper">
+                    <div class="front bg-primary">
+                      <h3 class="front-text"><%= data[0].english %></h3>
+                      <div class="flash-card-icon">
+                          <i class="fas fa-fw <%= categoryIcons[categoriesKeys.indexOf(data[0].category)] %>"></i>
+                      </div>
+                    </div>
+                    <div class="back bg-danger"><% data[0].slovak.forEach(function(svkWord) { %>
+                                                  <h3 class="back-text"><%= svkWord %></h3>
+                                              <% }) %>
+                    </div>
+                  </div>
+                </div>
+                <% for (var i = 1; i < data.length; i++) {%>
+                  <div class="flash-card">
+                    <div class="flipper">
+                      <div class="front bg-primary">
+                        <h3 class="front-text"><%= data[i].english %></h3>
+                        <div class="flash-card-icon">
+                          <i class="fas fa-fw <%= categoryIcons[categoriesKeys.indexOf(data[i].category)] %>"></i>
+                        </div>
+                      </div>
+                      <div class="back bg-danger">
+                        <% data[i].slovak.forEach(function(svkWord) { %>
+                                                    <h3 class="back-text"><%= svkWord %></h3>
+                                                  <% }) %>
+                      </div>
+                    </div>
+                  </div>  
+                <% } %>
+              </div>
+            </div>
+            <div class="col controls hide mobile-hidden vertical-center-buttons">
+                  <button class="next btn btn-primary btn-card primary-gradient">Next</button> 
+            </div>
+          </div>    
+          <div class="row justify-content-center controllers">
+            <div class="previous col controls hide desktop-hidden">
+                  <button class="btn btn-danger btn-card danger-gradient">Previous</button> 
+            </div>    
+            <div class="next col controls hide desktop-hidden">
+                  <button class="btn btn-primary btn-card primary-gradient">Next</button>
+            </div>
+          </div>
+          
+        </div>
+        <div class="container-fluid buttons mt-4 over-buttons display-none">
+          <div class="row buttons">
+            <div class="col-md-6 col-sm-12">
+              <!--<button class="btn btn-lg btn-info">Button</button>-->
+              <a href="/flashcards/<%= currentUser.username %>/quiz" class="btn btn-danger btn-card danger-gradient">Test your knowledge!</a>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <!--<button class="btn btn-lg btn-danger">Button</button>-->
+              <button id="retry"  class="btn btn-primary btn-card primary-gradient">Get new flashcards</button> 
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Slovak Lingo 2018</span>
+            </div>
+          </div>
+        </footer>
+    
+      </div>
+      <!-- /.content-wrapper -->
+      
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <% include ../partials/logout-modal %>
+    
+    <!-- Start Test Modal-->
+    <% include ../partials/start-modal %>
+    
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/javascripts/sb-admin.js"></script>
+    <!--<script src="/javascripts/sb-admin.min.js"></script>-->
+    
+    <script type="text/javascript" src="/javascripts/flashcards.js"></script>
+  </body>
+
+</html>

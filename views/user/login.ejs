@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+    <body>
+        <link rel="stylesheet" href="/stylesheets/registration.css">
+        <% include ../partials/navbar %>
+        <!-- Page Content -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="registration container">
+                    <div id="logbox">
+                      <form id="signup" autocomplete="off" method="POST" action="/users/login" name="loginForm">
+                        <h1>Please sign in</h1>
+                        <input class="input pass" id="inputUser" name="username" type="text" placeholder="Username" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required"/>
+                        <input class="input pass" id="inputPassword" name="password" type="password" placeholder="Password" required="required"/>
+                        <input class="inputButton" type="submit" value="Sign in"/>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="/javascripts/tzcookie.js"></script>
+<% include ../partials/footer %>

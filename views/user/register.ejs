@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+    <body>
+        <link rel='stylesheet' href="/stylesheets/registration.css">
+        <% include ../partials/navbar %>
+        <!-- Page Content -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="registration container">
+                    <div id="logbox">
+                      <form id="signup" autocomplete="off" method="POST" action="/users/register" name="registrationForm">
+                        <h1>Create an account</h1>
+                        <input class="input pass" id="username" name="username" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required="required"/>
+                        <input class="input pass" id="password" name="password" type="password" placeholder="Choose a password" required="required"/>
+                        <input class="input pass" id="confirm_password" type="password" placeholder="Confirm password" required="required"/>
+                        <input class="input pass" id="email" name="email" type="email" placeholder="Email address (optional)"/>
+                        <input class="inputButton" type="submit" value="Sign me up!"/>
+                        </h2><a class="login-link" href="/users/login">Already have an account? Sign in.</a>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="/javascripts/client.js"></script>
+<% include ../partials/footer %>

@@ -1,0 +1,59 @@
+<% include ../partials/header %>
+  <body>
+    <% if (currentUser) { %>
+      <!-- Custom fonts for this template-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <link href="/stylesheets/loggedin-navbar.css" rel="stylesheet">
+      <% include ../partials/loggedin-navbar %>
+    <% } else { %>
+      <% include ../partials/navbar %>
+    <% } %>
+    <!-- Page Content -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container text-center">
+        <div class="row justify-content-end">
+          <div class="col-lg-6 col-xs-12">
+            <h1 class="display-2 word-break question-h1"><%= title %></h1>
+          </div>
+          <div class="col-lg-3 col-xs-12">
+            <h2 class="display-3 score-h2"><span class="numerator"><%= counter %></span><span class="slash">/</span><span class="denominator"><%= originalNumOfQuestions %></span></h2>
+          </div>
+        </div>
+        <hr class="my-4">
+        <form autocomplete="off" method="POST" action="/quiz" name="quiz">
+          <div class="row">
+            <div class="col-12">
+              <div class="input-group mb-3 mt-3">
+                <input type="text" name="answer" id="tbInput" autofocus="autofocus" class="form-control" placeholder="Translate &quot;<%= title %>&quot;" required>
+                <div class="input-group-append">
+                  <button class="btn btn-dark" type="submit">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if (specialChars) { %>
+            <br />
+            <div id="VirtualKey">
+              <table>
+                <tr>
+                  <% for (var i = 0; i < specialChars.length; i++) { %>
+                    <input class="btn btn-outline-dark" id="btn<%=i%>" type="button" onclick="input(this);" value="<%= specialChars[i] %>" />
+                    <% if ((i+1) % 5 === 0) { %>
+                      <br />
+                    <% } %>
+                  <% } %>
+                </tr>
+                <tr>
+                  <input class="btn btn-outline-dark" id="uppercaseKey" type="button" value="Aa">
+                </tr>
+              </table>
+            </div>
+          <% } %>
+          <!--<button type="submit" class="qgf btn btn-info btn-lg btn-block">Submit</button>-->
+        </form>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/javascripts/client.js"></script>
+<% include ../partials/footer %>

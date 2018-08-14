@@ -1,0 +1,47 @@
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-slovak fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Slovak Lingo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <% if (!currentUser) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/register">Sign Up!</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/login">Login</a>
+                </li>
+            <% } else { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/<%= currentUser.username %>/dashboard">Signed in as <span class="username"><%= currentUser.username %></span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/logout">Logout</a>
+                </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <% if (flashSuccess && flashSuccess.length > 0) { %>
+      <div id="successMessage" class="container">
+        <div class="alert alert-success" role="alert">
+          <%= flashSuccess %>
+        </div>
+      </div>
+    <% } %>
+    <% if (flashError && flashError.length > 0) { %>
+      <div id="errorMessage" class="container">
+        <div class="alert alert-danger" role="alert">
+          <%= flashError %>
+        </div>
+      </div>
+    <% } %>

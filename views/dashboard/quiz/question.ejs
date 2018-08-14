@@ -1,0 +1,109 @@
+<% include ../partials/header %>
+
+  <body id="page-top" class="sidebar-toggled">
+
+    <% include ../partials/navbar %>
+
+    <div id="wrapper" class="bg-slovak">
+
+      <% include ../partials/sidebar %>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/users/<%= currentUser.username %>/dashboard/">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Question</li>
+          </ol>
+
+          <!-- Page Content -->
+          <div class="text-center mb-4">
+            <div class="row justify-content-end">
+              <div class="col-lg-6 col-xs-12">
+                <h1 class="display-2 word-break question-h1"><%= title %></h1>
+              </div>
+              <div class="col-lg-3 col-xs-12">
+                <h2 class="display-3 score-h2"><span class="numerator"><%= counter %></span><span class="slash">/</span><span class="denominator"><%= originalNumOfQuestions %></span></h2>
+              </div>
+            </div>
+            <hr class="my-4">
+            <form autocomplete="off" method="POST" action="/quiz/<%= currentUser.username %>" name="quiz">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-sm-12">
+                  <div class="input-group mb-3 mt-3">
+                    <input type="text" name="answer" id="tbInput" autofocus="autofocus" class="form-control" placeholder="Translate &quot;<%= title %>&quot;" required>
+                    <div class="input-group-append">
+                      <button class="btn btn-info" type="submit">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% if (specialChars) { %>
+                <br />
+                <div id="VirtualKey">
+                  <table>
+                    <tr>
+                      <% for (var i = 0; i < specialChars.length; i++) { %>
+                        <input class="btn btn-outline-info" id="btn<%=i%>" type="button" onclick="input(this);" value="<%= specialChars[i] %>" />
+                        <% if ((i+1) % 5 === 0) { %>
+                          <br />
+                        <% } %>
+                      <% } %>
+                    </tr>
+                    <tr>
+                      <input class="btn btn-outline-info" id="uppercaseKey" type="button" value="Aa">
+                    </tr>
+                  </table>
+                </div>
+              <% } %>
+              <!--<button type="submit" class="qgf btn btn-info btn-lg btn-block">Submit</button>-->
+            </form>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Slovak Lingo 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <% include ../partials/logout-modal %>
+    
+    <!-- Start Test Modal-->
+    <% include ../partials/start-modal %>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/javascripts/sb-admin.js"></script>
+    <script src="/javascripts/client.js"></script>
+
+  </body>
+
+</html>

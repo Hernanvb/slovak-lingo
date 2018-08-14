@@ -1,0 +1,39 @@
+<% include ./partials/header %>
+  <body>
+    <% include ./partials/navbar %>
+    <!-- Page Content -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+      <h1 class="display-4 main-title">Welcome to <%= title %></h1>
+      <hr class="my-4">
+      <p class="lead qgf-gradient mt-3 mb-3">A simple web app that will help you grow your Slovak vocabulary</p>
+      <hr class="my-4">
+      
+        <% if (!currentUser) { %>
+          <p class="lead white lead-main">Register now to save all your quizzes!</p>
+          <div class="row btn-home-row">
+            <div class="col-sm-6 col-xs-12 no-padding">
+              <a class="btn btn-danger btn-lg btn-home danger-gradient" href="/users/register" role="button">Sign Up!</a>
+            </div>
+            <div class="col-sm-6 col-xs-12 no-padding">
+              <a class="btn btn-primary btn-lg btn-home primary-gradient" href="/generate-quiz" role="button">Test your skills</a>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="row btn-home-row">
+            <div class="col-sm-6 col-xs-12 no-padding">
+              <a class="btn btn-danger btn-lg btn-home danger-gradient" href="/users/<%= currentUser.username %>/dashboard" role="button">Go to Dashboard</a>
+            </div>
+            <div class="col-sm-6 col-xs-12 no-padding">
+              <a class="btn btn-primary btn-lg btn-home primary-gradient" href="/generate-quiz/<%= currentUser.username %>" role="button">Test your skills</a>
+            </div>
+          </div>
+        <% } %>
+        
+        
+    </div>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/javascripts/client.js"></script>
+<% include ./partials/footer %>

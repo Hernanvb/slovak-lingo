@@ -1,0 +1,220 @@
+<% include ../partials/header %>
+  <body>
+    <% if (currentUser) { %>
+      <!-- Custom fonts for this template-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <link href="/stylesheets/loggedin-navbar.css" rel="stylesheet">
+      <% include ../partials/loggedin-navbar %>
+    <% } else { %>
+      <% include ../partials/navbar %>
+    <% } %>
+    <!-- Page Content -->
+    <div class="container qgf-container text-center">
+      <h1 class="display-4 qgf-gradient"><%= title %></h1>
+      <p class="lead white">Select the topics and number of questions you would like to practice</p>
+      <hr class="my-4">
+      <form autocomplete="off" method="POST" action="/generate-quiz" name="quizGenerator">
+        <fieldset>
+          <div class="form-group">
+            <label for="numOfQuestions" class="lead white" >How many questions would you like?</label>
+            <input type="number" class="form-control qgf-number-input" name="numOfQuestions" autofocus="autofocus"  id="numOfQuestions" min="1" max="<%=categoriesLength.total%>" required>
+          </div>
+          <hr class="my-4">
+          <div>
+            <p class="lead white">Select the topics you want:</p>
+          </div>
+          <div class="qgf container">
+             <div class="inputs">
+                <div class="area">
+                    <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+                          <label for="checkbox-1">Basic Phrases</label>
+                            <input class="topic-checkbox" type="checkbox" name="categories[basicPhrases]" id="checkbox-1" onclick="checkboxHandler()" value="<%=categoriesLength.basicPhrases%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-2">Periods of Time</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[periods]" id="checkbox-2" onclick="checkboxHandler()" value="<%=categoriesLength.periods%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-3">Food</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[food]" id="checkbox-3" onclick="checkboxHandler()" value="<%=categoriesLength.food%>"></input>
+          						  </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-4">Colors</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[colors]" id="checkbox-4" onclick="checkboxHandler()" value="<%=categoriesLength.colors%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+                          <label for="checkbox-5">Restaurant</label>
+                            <input class="topic-checkbox" type="checkbox" name="categories[restaurant]" id="checkbox-5" onclick="checkboxHandler()" value="<%=categoriesLength.restaurant%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-6">Weather</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[weather]" id="checkbox-6" onclick="checkboxHandler()" value="<%=categoriesLength.weather%>"></input>
+          						  </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-7">Family</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[family]" id="checkbox-7" onclick="checkboxHandler()" value="<%=categoriesLength.family%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-8">Numbers</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[numbers]" id="checkbox-8" onclick="checkboxHandler()" value="<%=categoriesLength.numbers%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+                          <label for="checkbox-9">Animals</label>
+                            <input class="topic-checkbox" type="checkbox" name="categories[animals]" id="checkbox-9" onclick="checkboxHandler()" value="<%=categoriesLength.animals%>"></input>
+          						  </span>
+                      </div>
+                   </div>
+                   <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-10">Clothes</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[clothes]" id="checkbox-10" onclick="checkboxHandler()" value="<%=categoriesLength.clothes%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-11">Languages</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[languages]" id="checkbox-11" onclick="checkboxHandler()" value="<%=categoriesLength.languages%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-12">Travel</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[travel]" id="checkbox-12" onclick="checkboxHandler()" value="<%=categoriesLength.travel%>"></input>
+          						  </span>
+                      </div>
+                   </div>
+                   <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+                          <label for="checkbox-13">Places</label>
+                            <input class="topic-checkbox" type="checkbox" name="categories[places]" id="checkbox-13" onclick="checkboxHandler()" value="<%=categoriesLength.places%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-14">Body Parts</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[bodyParts]" id="checkbox-14" onclick="checkboxHandler()" value="<%=categoriesLength.bodyParts%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-15">Emergency</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[emergency]" id="checkbox-15" onclick="checkboxHandler()" value="<%=categoriesLength.emergency%>"></input>
+          						  </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-16">Characteristics</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[characteristics]" id="checkbox-16" onclick="checkboxHandler()" value="<%=categoriesLength.characteristics%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-17">Pronouns</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[pronouns]" id="checkbox-17" onclick="checkboxHandler()" value="<%=categoriesLength.pronouns%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-18">Greetings</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[greetings]" id="checkbox-18" onclick="checkboxHandler()" value="<%=categoriesLength.greetings%>"></input>
+          						  </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-19">Adjectives</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[adjectives]" id="checkbox-19" onclick="checkboxHandler()" value="<%=categoriesLength.adjectives%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-20">Time Expressions</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[timeExpressions]" id="checkbox-20" onclick="checkboxHandler()" value="<%=categoriesLength.timeExpressions%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-21">Directions</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[directions]" id="checkbox-21" onclick="checkboxHandler()" value="<%=categoriesLength.directions%>"></input>
+          						  </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-22">Accomodation</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[accomodation]" id="checkbox-22" onclick="checkboxHandler()" value="<%=categoriesLength.accomodation%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-23">Shopping</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[shopping]" id="checkbox-23" onclick="checkboxHandler()" value="<%=categoriesLength.shopping%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-24">Car Rental</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[carRental]" id="checkbox-24" onclick="checkboxHandler()" value="<%=categoriesLength.carRental%>"></input>
+          						  </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-25">At the Doctor</label>
+          							  <input class="topic-checkbox" type="checkbox" name="categories[doctor]" id="checkbox-25" onclick="checkboxHandler()" value="<%=categoriesLength.doctor%>"></input>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                        <span class="input">
+          							  <label for="checkbox-26">All</label>
+          							  <input class="all-checkbox" type="checkbox" name="categories[all]" id="checkbox-26" onclick="checkboxHandler()" value="<%=categoriesLength.total%>" checked></input>
+                          <span class="click-efect x-521 y-889" style="margin-left: 248px; margin-top: 19px; width: 500px; height: 500px; top: -250px; left: -250px;"></span>
+          						  </span>
+                      </div>
+                      <div class="col-sm">
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </fieldset>
+        <div class="qgf container">
+          <button type="submit" class="qgf btn btn-info btn-lg btn-block danger-gradient" id="qgf-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/javascripts/quizGenForm.js"></script>
+    <script src="/javascripts/client.js"></script>
+<% include ../partials/footer %>

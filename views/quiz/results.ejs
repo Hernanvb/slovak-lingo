@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+  <body>
+    <% if (currentUser) { %>
+      <!-- Custom fonts for this template-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <link href="/stylesheets/loggedin-navbar.css" rel="stylesheet">
+      <% include ../partials/loggedin-navbar %>
+    <% } else { %>
+      <% include ../partials/navbar %>
+    <% } %>
+    <!-- Page Content -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container text-center">
+        <h1 class="display-3 word-break-nohypen qgf-gradient result-h1"><%= title %></h1>
+        <hr class="my-4">
+        <h2 class="display-4 word-break-nohypen results-gradient answer-h2">You answered correctly <%= correctCounter %> out of <%= correctCounter + wrongCounter %></h2>
+        <hr class="my-4">
+        <% if (currentUser) { %>
+          <a href='/users/<%= currentUser.username %>/dashboard' class="btn btn-lg btn-outline-success mt-3 btn-result">Go to dashboard</a>
+        <% } %>
+        <a href='/generate-quiz' class="btn btn-lg btn-outline-warning mt-3 btn-result">Generate new a quiz!</a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+<% include ../partials/footer %>
