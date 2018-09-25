@@ -1,0 +1,5 @@
+/node_modules
+/mongoData
+/public/javascripts/demo
+commonWords2000.js
+mongod
