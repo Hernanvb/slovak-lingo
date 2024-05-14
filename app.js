@@ -45,7 +45,16 @@ app.set('view engine', 'ejs');
 // Change from development environment to production and vice-versa
 var dev = false; // true to use local mongodb, false to use mLab db
 var url = process.env.DATABASEURL || 'mongodb://localhost:27017/slovak-app';
-mongoose.connect(url); // Connect to DB
+
+// Connect to DB
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log("Connected to Atlas MongoDB");
+}).catch((err) => {
+  console.error("Error connecting to Atlas MongoDB:", err);
+});
 
 app.use(methodOverride('_method'));
 //app.use(logger('dev'));
