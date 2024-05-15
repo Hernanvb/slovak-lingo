@@ -1,0 +1,11 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  DATABASEURL = "your-mongodb-connection-string"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/renderHome"
+  status = 200
