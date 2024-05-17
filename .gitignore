@@ -3,3 +3,6 @@
 /public/javascripts/demo
 commonWords2000.js
 mongod
+
+# Local Netlify folder
+.netlify
