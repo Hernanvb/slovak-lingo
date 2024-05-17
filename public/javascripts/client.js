@@ -25,8 +25,8 @@ $('input.all-checkbox').on('change', function() {
 
 // uncheck the "all" checkbox when another box is checked
 $('input.topic-checkbox').on('change', function() {
-   $('input.all-checkbox').prop('checked', false);
-   checkboxHandler();
+    $('input.all-checkbox').prop('checked', false);
+    checkboxHandler();
 });
 
 // Calculate the maximum number of questions
@@ -40,9 +40,9 @@ function checkboxHandler() {
         return;
     }
     for (var i = 0; i < inputElements.length; i++) {
-          if (inputElements[i].checked){
-               maxValue += Number(inputElements[i].value);
-          }
+        if (inputElements[i].checked) {
+            maxValue += Number(inputElements[i].value);
+        }
     }
     $('#numOfQuestions').attr("max", maxValue);
 }
@@ -64,11 +64,11 @@ var password         = document.getElementById("password");
 var confirm_password = document.getElementById("confirm_password");
 
 function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
+    if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+        confirm_password.setCustomValidity('');
+    }
 }
 
 if (password && confirm_password) {
