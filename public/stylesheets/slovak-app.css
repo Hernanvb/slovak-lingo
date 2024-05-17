@@ -350,6 +350,17 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
     cursor: pointer;
 }
 
+.voice-button {
+  border-radius: 100%;
+  font-size: 12px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.voice-button:hover {
+  background-color: #0099F7;
+}
+
 @media (min-width: 576px) {
   .card-columns {
     -webkit-column-count: 1;

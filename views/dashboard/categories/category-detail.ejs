@@ -69,7 +69,7 @@
                         <td><%= category[i].english %></td>
                         <td>
                           <% category[i].slovak.forEach(function (word) { %>
-                              <%= word %><br>
+                              <%= word %> <button onclick="responsiveVoice.speak('<%= word %>', 'Slovak Female')" class="icon-button voice-button"><i class="fas fa-volume-up"></i></button><br>
                           <% }); %>  
                         </td>
                       </tr>
@@ -80,7 +80,7 @@
             </div>
             <!--<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>-->
           </div>
-
+          <div class="text-left my-auto"><a href="https://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></a></div>
         </div>
         <!-- /.container-fluid -->
 
@@ -123,9 +123,10 @@
 
     <!-- Custom scripts for all pages-->
     <script src="/javascripts/sb-admin.js"></script>
-    
-    <!-- Demo scripts for this page-->
-    <script src="/javascripts/demo/datatables-demo.js"></script>
+
+    <!-- Pronunciation script-->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=<%= voiceKey %>"></script>
+
   </body>
 
 </html>

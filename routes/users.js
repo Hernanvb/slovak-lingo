@@ -364,6 +364,7 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, function(
         // console.log(category);
         if (category) {
             var categoryName = '';
+            var voiceKey = process.env.VOICEKEY
             if (req.params.categoryKey === 'all') {
                 categoryName = 'All';
             } else {
@@ -374,7 +375,8 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, function(
                                                     title: req.params.uname + " Dashboard",
                                                     username: req.params.uname,
                                                     categoryName: categoryName,
-                                                    category: category
+                                                    category: category,
+                                                    voiceKey: voiceKey
                       });
         }
         else {
