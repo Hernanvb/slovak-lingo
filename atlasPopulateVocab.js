@@ -15,6 +15,7 @@ var url = process.env.DATABASEURL || 'mongodb://localhost:27017/slovak-app';
 mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false
 });
 
 // Sample vocabulary data
@@ -259,9 +260,9 @@ var categories = {
         "Small" : ["Malý"],
         "Little" : ["Malý"],
         "Big" : ["Veľký"],
-        "Hot" : ["Horúci"],
-        "Cold" : ["Studený", "Chladný"],
-        "Good" : ["Dobrý"],
+        "Hot (Adjective)" : ["Horúci"],
+        "Cold (Adjective)" : ["Studený", "Chladný"],
+        "Good (Adjective)" : ["Dobrý"],
         "Bad" : ["Zlý"],
         "Right" : ["Správny"],
         "Wrong" : ["Nesprávny"],
@@ -312,7 +313,7 @@ var categories = {
         "Február" : ["Február"],
         "March" : ["Marec"],
         "April" : ["Apríl"],
-        "May" : ["Máj"],
+        "May (Month)" : ["Máj"],
         "June" : ["Jún"],
         "July" : ["Júl"],
         "August" : ["August"],
@@ -568,8 +569,8 @@ var categories = {
         "Windy": ["veterno"],
         "Rainy": ["prší"],
         "Snowy": ["sneženie"],
-        "Cold": ["zima"],
-        "Hot": ["horúco"],
+        "Cold (Weather)": ["zima"],
+        "Hot (Weather)": ["horúco"],
     },
     family: {
         "Boy": ["chlapec"],
@@ -628,7 +629,9 @@ var categories = {
         "Shoes": ["topánky"],
         "Trousers": ["nohavice"],
         "Shirt": ["košeľa"],
-        "Sweater": ["mikina"],
+        "Sweatshirt": ["mikina"],
+        "Hoodie": ["mikina"],
+        "Sweater": ["sveter"],
         "Coat": ["kabát"]
     },
     languages: {

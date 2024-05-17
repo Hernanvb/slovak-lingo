@@ -84,7 +84,7 @@ var randomGen = {
                                 res.total = 0;
                                 categoriesInDb.forEach(function (category) {
                                     // Async call to the DB, will render the page after it's done
-                                    Vocabulary.find({"category": category}).count().exec(function(err, result) {
+                                    Vocabulary.countDocuments({"category": category}).exec(function(err, result) {
                                         if (err) throw err;
                                         res[category] = result;
                                         res.total += res[category];
