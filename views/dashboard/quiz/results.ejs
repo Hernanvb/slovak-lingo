@@ -29,7 +29,7 @@
             <% if (currentUser) { %>
               <a href='/users/<%= currentUser.username %>/dashboard' class="btn btn-lg btn-outline-info mt-3 btn-result">Go to dashboard</a>
             <% } %>
-            <a href='/generate-quiz' class="btn btn-lg btn-outline-danger mt-3 btn-result">Generate new a quiz!</a>
+            <a href='/generate-quiz/<%= currentUser.username %>' class="btn btn-lg btn-outline-danger mt-3 btn-result">Generate a new quiz!</a>
           </div>
 
         </div>

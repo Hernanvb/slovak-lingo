@@ -13,8 +13,9 @@ var helper          = require('../helper');
 router.get('/:uname', mw.isLoggedIn, function(req, res, next) {
   randomWordGen.categoryLength(function (categoriesLength) {
         res.render('dashboard/flashcards/generate-flashcards', {
-                                                                header: "SLovak Lingo - Flashcard Generator",
-                                                                 title: 'Flashcard Generator', categoriesLength: categoriesLength});
+            header: "Slovak Lingo - Flashcard Generator",
+            title: 'Flashcard Generator', categoriesLength: categoriesLength
+        });
     });
 });
 
@@ -26,10 +27,10 @@ router.post('/:uname', mw.isLoggedIn, function(req, res, next) {
         req.session.numOfFlashcards = req.session.formData.numOfQuestions;
         //console.log("Quiz Gen POST: " + req.session.vocabulary);
         res.redirect('/flashcards/' + req.params.uname + '/start');
-    }); 
-}); 
+    });
+});
 
-router.get('/:uname/start', function(req, res, next) { 
+router.get('/:uname/start', function(req, res, next) {
 //   console.log("Start Route");
   if (Array.isArray(req.session.flashcardData) && req.session.flashcardData.length > 0) {
     // console.log("In Start: " + JSON.stringify(req.session.flashcardData));
@@ -43,11 +44,11 @@ router.get('/:uname/start', function(req, res, next) {
     for (var i = 0; i < req.session.numOfFlashcards; i++) {
       var wordPair = {};
       var randomWord = randomWordGen.word(req.session.flashcardData);
-      
+
       if (!randomWord)
         break;
-      
-      
+
+
       // save the quiz on this step before going to /:uname/quiz route
       req.session.currentQuiz.push(randomWord);
       if (categoryOrganizer[randomWord.category]) {
@@ -56,28 +57,29 @@ router.get('/:uname/start', function(req, res, next) {
         categoryOrganizer[randomWord.category] = [];
         categoryOrganizer[randomWord.category].push(randomWord);
       }
-      
+
       wordPair.english = randomWord.english;
       wordPair.slovak = randomWord.slovak;
       wordPair.category = randomWord.category;
       data.push(wordPair);
     }
-    
+
     // Save the categories
     req.session.flashcardsCategories = Object.keys(categoryOrganizer);
-    
+
     // Push the vocabulary array
     Object.values(categoryOrganizer).forEach(function (categoryArray) {
-      req.session.selectedVocabulary.push(categoryArray);  
+      req.session.selectedVocabulary.push(categoryArray);
     });
-      
+
     // console.log("Data: " + JSON.stringify(data));
-    res.render('dashboard/flashcards/flashcards', { 
-                                                    header: "Slovak Lingo - Flashcards",
-                                                      data: data });
+    res.render('dashboard/flashcards/flashcards', {
+        header: "Slovak Lingo - Flashcards",
+        data: data
+    });
   }
   else {
-    res.redirect('/flashcards/' + req.params.uname);  
+    res.redirect('/flashcards/' + req.params.uname);
   }
 });
 
@@ -103,7 +105,7 @@ router.get('/:uname/quiz', function (req, res, next) {
    delete req.session.qid;  // qid is only used when resuming a quiz, not for a newly created one
 
    // console.log("Flashcard vocabulary: " + JSON.stringify(req.session.currentQuiz));
-   
+
    res.redirect('/quiz/' + req.params.uname);
 });
 

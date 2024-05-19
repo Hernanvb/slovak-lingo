@@ -21,7 +21,7 @@ module.exports = {
                 if (err) throw  err;
                 if (foundUser) {
                     // console.log(foundUser);
-                    // if we are coming from resuming a quiz
+                    // If we are coming from resuming a quiz
                     if (req.session.qid) {
                         // console.log("Update quiz categories: " + JSON.stringify(req.session.formData.categories));
                         var data = {
@@ -42,7 +42,7 @@ module.exports = {
                             // console.log("Updated Quiz: " + updatedQuiz);
                         });
                     }
-                    // if we are creating a new quiz
+                    // If we are creating a new quiz
                     else {
                         var categories = [];
                         if (Array.isArray(req.session.formData.categories))
@@ -63,11 +63,11 @@ module.exports = {
                             flashcard: req.session.flashcard
                         }, function (err, quiz) {
                             if (err) throw err;
-                        //   console.log("Created Quiz: " + quiz);
+                            // console.log("Created Quiz: " + quiz);
                             foundUser.quizzes.push(quiz);
                             foundUser.save(function(err, data) {
                                 if (err) throw err;
-                            //   console.log(data);
+                                // console.log(data);
                             });
                         });
                     }
@@ -76,7 +76,7 @@ module.exports = {
         }
         next();
     },
-    // middleware to check if user is logged in
+    // Middleware to check if user is logged in
     isLoggedIn: function (req, res, next) {
         if (req.isAuthenticated()) {
             if (req.params.uname == req.user.username) {
