@@ -24,6 +24,16 @@ body {
 }
 
 /* Override */
+a {
+  color: #13879a;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #13879a;
+  text-shadow: 0px 1px 1px #333;
+}
+
 .breadcrumb {
     background-color: transparent;
     box-shadow: 1px 1px 8px #333;
@@ -33,7 +43,7 @@ body {
 }
 .breadcrumb-item a:hover {
   text-decoration: none;
-  text-shadow: 0px 1px 2px #333;
+  text-shadow: 0px 1px 1px #333;
 }
 .breadcrumb-item.active {
   color: #fff !important;
@@ -205,6 +215,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .sidebar .nav-item .nav-link:active, .sidebar .nav-item .nav-link:focus, .sidebar .nav-item .nav-link:hover {
   color: rgba(255, 255, 255, 0.75);
+  text-shadow: none;
 }
 
 .sidebar.toggled {
@@ -917,15 +928,22 @@ input#tbInput {
 .modal-dialog {
   margin: 7rem auto;
 }
+
 .btn-modal {
   width: 50%;
 }
+
 .modal-content {
     background: #E0EAFC !important;
     background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC) !important;
     background: linear-gradient(to right, #CFDEF3, #E0EAFC) !important;
 }
 
+.chart-icon-gradient {
+  background: linear-gradient(45deg, #F11712, #0099F7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 #uppercaseKey {
     min-width: 280px !important;
 }
@@ -933,4 +951,16 @@ input#tbInput {
 /* Virtual Keyboard */ 
 div#VirtualKey input[type="button"] {
     border-width: 1.5px;
+}
+
+.card-header.category-header {
+  font-size: 1.8rem;
+}
+
+.progress-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }

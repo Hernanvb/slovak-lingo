@@ -41,9 +41,26 @@
           
           <!-- Vocabulary Table -->
           <div class="card mb-3 bg-info">
-            <div class="card-header">
+            <div class="card-header category-header">
               <i class="fas fa-table"></i>
               <%= categoryName %>
+              <div class="progress" style="height: 25px;">
+                <div class="progress-bar bg-success position-relative" role="progressbar" style="width: <%= (categoryStats.completed / (categoryStats.completed + categoryStats.inProgress + categoryStats.notCompleted) * 100).toFixed(2) %>%" aria-valuenow="<%= categoryStats.completed %>" aria-valuemin="0" aria-valuemax="100">
+                  <% if (categoryStats.completed > 0) { %>
+                    <span class="progress-text"><%= categoryStats.completed %></span>
+                  <% } %>
+                </div>
+                <div class="progress-bar bg-warning position-relative" role="progressbar" style="width: <%= (categoryStats.inProgress / (categoryStats.completed + categoryStats.inProgress + categoryStats.notCompleted) * 100).toFixed(2) %>%" aria-valuenow="<%= categoryStats.inProgress %>" aria-valuemin="0" aria-valuemax="100">
+                  <% if (categoryStats.inProgress > 0) { %>
+                    <span class="progress-text"><%= categoryStats.inProgress %></span>
+                  <% } %>
+                </div>
+                <div class="progress-bar bg-danger position-relative" role="progressbar" style="width: <%= (categoryStats.notCompleted / (categoryStats.completed + categoryStats.inProgress + categoryStats.notCompleted) * 100).toFixed(2) %>%" aria-valuenow="<%= categoryStats.notCompleted %>" aria-valuemin="0" aria-valuemax="100">
+                  <% if (categoryStats.notCompleted > 0) { %>
+                    <span class="progress-text"><%= categoryStats.notCompleted %></span>
+                  <% } %>
+                </div>
+              </div>
             </div>
             <div class="card-body">
               <div class="table-responsive">

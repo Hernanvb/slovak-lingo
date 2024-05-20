@@ -270,53 +270,72 @@ router.get('/:uname', mw.isLoggedIn, function(req, res, next) {
 /* Logic to check the answer of the logged in user */
 router.post('/:uname', mw.isLoggedIn, function(req, res, next) {
     var answer = req.body.answer;
+    var userId = req.user._id;
+    var vocabId = req.session.currentQuiz[req.session.questionIndex]._id; // Get current vocabulary word ID
 
     req.session.wasItAnswered = true;
     req.session.formData.numOfQuestions--;
     req.session.questionIndex++; // move to next question
     req.session.correctCounter = req.session.correctCounter || 0;
-    req.session.wrongCounter   = req.session.wrongCounter   || 0;
+    req.session.wrongCounter = req.session.wrongCounter || 0;
 
-    if (req.session.svkToEng) {
-        // TODO: This needs to be fixed to use the Array of slovak words if the
-        // capability to switch from translating slovak to english is added
-        res.render('dashboard/quiz/question', {
-            header: "Slovak Lingo - Question",
-            title: req.session.svkWordArray[0]
-        });
+    var re = /\.| |\,|\?|\!|\(|\)/gi;
+    var trimmedAns = answer.replace(re, '');
+    var correct = false;
+    var index = 0;
+
+    for (index; index < req.session.svkWordArray.length; index++) {
+        var trimmedSvkWord = req.session.svkWordArray[index].replace(re, '');
+        if (trimmedAns.toUpperCase() === trimmedSvkWord.toUpperCase()) {
+            correct = true;
+            break;
+        }
     }
-    // Translate english word to slovak
-    else {
-        var re = /\.| |\,|\?|\!|\(|\)/gi;
-        var trimmedAns = answer.replace(re, '');
-        var correct = false;
-        var index = 0;
 
-        for (index; index < req.session.svkWordArray.length; index++) {
-            var trimmedSvkWord = req.session.svkWordArray[index].replace(re, '');
-            if (trimmedAns.toUpperCase() === trimmedSvkWord.toUpperCase()) {
-                correct = true;
-                break;
+    // Save result boolean to array to send to DB
+    req.session.currentResults.push(correct);
+    // Save to answer array to send to DB
+    req.session.userAnswers.push(req.body.answer);
+    if (correct)
+        req.session.correctCounter++;
+    else
+        req.session.wrongCounter++;
+
+    // Update vocabAttempts
+    User.findById(userId, function(err, user) {
+        if (err) {
+            console.error(err);
+            return next(err);
+        }
+        console.log("Found user:", user)
+        // Find the vocabAttempt entry for the current vocabId
+        var vocabAttempt = user.vocabAttempts.find(attempt => attempt.vocab.toString() === vocabId.toString());
+
+        if (vocabAttempt) {
+            // Add the new attempt result
+            if (vocabAttempt.attempts.length >= 3) {
+                vocabAttempt.attempts.shift(); // Remove the oldest attempt if there are already 3 attempts
             }
+            vocabAttempt.attempts.push(correct);
+        } else {
+            // If no entry exists, create a new one
+            user.vocabAttempts.push({
+                vocab: vocabId,
+                attempts: [correct]
+            });
         }
 
-        // Save result boolean to array to send to DB
-        req.session.currentResults.push(correct);
-        // Save to answer array to send to DB
-        req.session.userAnswers.push(req.body.answer);
-        if (correct)
-            req.session.correctCounter++;
-        else
-            req.session.wrongCounter++;
-
-        res.redirect('/quiz/' + req.user.username
-                + '/answer?'
-                + qs.stringify({
-                    correct: correct,
-                    index: index
-                })
-        );
-    }
+        user.save(function(err) {
+            if (err) {
+                console.error(err);
+                return next(err);
+            }
+            res.redirect('/quiz/' + req.user.username + '/answer?' + qs.stringify({
+                correct: correct,
+                index: index
+            }));
+        });
+    });
 });
 
 // Show answer to question route

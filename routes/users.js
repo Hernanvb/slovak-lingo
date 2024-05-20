@@ -350,46 +350,115 @@ router.get('/:uname/dashboard/categories', mw.isLoggedIn, function(req, res, nex
 });
 
 /* SHOW Category Details */
-router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, function(req, res, next) {
-    // check of the qid is a valid id value for mongoose
-    var query = {};
-    if (req.params.categoryKey !== 'all') {
-        query = {category: req.params.categoryKey};
-    }
-
-    Vocabulary.find(query, function(err, category) {
-        if (err) throw err;
-        // console.log(category);
-        if (category) {
-            var categoryName = '';
-            var voiceKey = process.env.VOICEKEY
-            if (req.params.categoryKey === 'all') {
-                categoryName = 'All';
-            } else {
-                categoryName = helper.categoryKeyToName(req.params.categoryKey);
-            }
-            res.render('dashboard/categories/category-detail', {
-                header: "Slovak Lingo - " + categoryName,
-                title: req.params.uname + " Dashboard",
-                username: req.params.uname,
-                categoryName: categoryName,
-                category: category,
-                voiceKey: voiceKey
-            });
+router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async function(req, res, next) {
+    try {
+        let query = {};
+        if (req.params.categoryKey !== 'all') {
+            query = { category: req.params.categoryKey };
         }
-        else {
+
+        const category = await Vocabulary.find(query);
+        if (!category) {
             req.flash("error", "Category not found");
-            res.redirect('/users/' + req.params.uname + '/dashboard/categories');
+            return res.redirect('/users/' + req.params.uname + '/dashboard/categories');
         }
 
-    });
+        const vocabIds = category.map(vocab => vocab._id);
+        const user = await User.findOne({ username: req.params.uname }).populate('vocabAttempts.vocab');
+
+        const categoryStats = category.reduce((stats, vocab) => {
+            const attempt = user.vocabAttempts.find(a => a.vocab._id.toString() === vocab._id.toString());
+            if (attempt) {
+                const trueCount = attempt.attempts.filter(result => result).length;
+                if (trueCount >= 3) {
+                    stats.completed++;
+                } else if (trueCount === 2) {
+                    stats.inProgress++;
+                } else {
+                    stats.notCompleted++;
+                }
+            } else {
+                stats.notCompleted++;
+            }
+            return stats;
+        }, { completed: 0, inProgress: 0, notCompleted: 0 });
+
+        const categoryName = req.params.categoryKey === 'all' ? 'All' : helper.categoryKeyToName(req.params.categoryKey);
+
+        res.render('dashboard/categories/category-detail', {
+            header: "Slovak Lingo - " + categoryName,
+            title: req.params.uname + " Dashboard",
+            username: req.params.uname,
+            categoryName: categoryName,
+            category: category,
+            categoryStats: categoryStats,
+            voiceKey: process.env.VOICEKEY
+        });
+
+    } catch (err) {
+        next(err);
+    }
 });
 
-router.get('/:uname/dashboard/charts', function(req, res, next) {
-    res.render('dashboard/charts', {
-        header: "Slovak Lingo - Charts",
-        title: req.params.uname + " Charts"
-    });
+
+router.get('/:uname/dashboard/charts', mw.isLoggedIn, async function(req, res, next) {
+    try {
+        // Fetch user and their vocab attempts
+        const user = await User.findOne({ username: req.params.uname }).populate('vocabAttempts.vocab').exec();
+        const vocabAttempts = user.vocabAttempts;
+        // console.log("Attempts: ", vocabAttempts);
+
+        // Fetch all vocabulary
+        const vocabularies = await Vocabulary.find().exec();
+
+        // Organize vocabulary by category
+        const categories = {};
+        vocabularies.forEach(vocab => {
+            if (!categories[vocab.category]) {
+                categories[vocab.category] = [];
+            }
+            categories[vocab.category].push(vocab);
+        });
+
+        // Calculate stats for each category
+        const categoryStats = {};
+        for (const category in categories) {
+            const vocabList = categories[category];
+            categoryStats[category] = {
+                name: helper.categoryKeyToName(category),
+                completed: 0,
+                inProgress: 0,
+                notCompleted: 0
+            };
+
+            vocabList.forEach(vocab => {
+                const attempt = vocabAttempts.find(a => a.vocab._id.toString() === vocab._id.toString());
+                // console.log("Vocab: ", vocab)
+                if (attempt) {
+                    // console.log("Found attempt: ", attempt)
+                    const trueCount = attempt.attempts.filter(a => a === true).length;
+
+                    if (trueCount === 3) {
+                        categoryStats[category].completed++;
+                    } else if (trueCount === 2) {
+                        categoryStats[category].inProgress++;
+                    } else {
+                        categoryStats[category].notCompleted++;
+                    }
+                } else {
+                    categoryStats[category].notCompleted++;
+                }
+            });
+        }
+        // console.log(categoryStats)
+        res.render('dashboard/charts', {
+            header: "Slovak Lingo - Charts",
+            categoryStats: categoryStats
+        });
+    } catch (err) {
+        console.error(err);
+        next(err);
+    }
 });
 
 // Last route as a catch all
