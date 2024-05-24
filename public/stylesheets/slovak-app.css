@@ -46,7 +46,8 @@ a:hover{
   text-shadow: 0px 1px 1px #333;
 }
 .breadcrumb-item.active {
-  color: #fff !important;
+  color: #13879a;
+  font-weight: bold;
 }
 .breadcrumb-item+.breadcrumb-item::before {
   color: #b8bfc5;  

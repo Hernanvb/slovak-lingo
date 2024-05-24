@@ -70,6 +70,7 @@
                       <th>#</th>
                       <th>English</th>
                       <th>Slovak</th>
+                      <th>Attempts</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -77,6 +78,7 @@
                       <th>#</th>
                       <th>English</th>
                       <th>Slovak</th>
+                      <th>Attempts</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -89,6 +91,7 @@
                               <%= word %> <button onclick="responsiveVoice.speak('<%= word %>', 'Slovak Female')" class="icon-button voice-button"><i class="fas fa-volume-up"></i></button><br>
                           <% }); %>  
                         </td>
+                        <td><%= categoryStats.vocabDetails[i].attempts %></td>
                       </tr>
                     <% } %>
                   </tbody>

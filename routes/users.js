@@ -363,16 +363,19 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async fun
             return res.redirect('/users/' + req.params.uname + '/dashboard/categories');
         }
 
-        const vocabIds = category.map(vocab => vocab._id);
         const user = await User.findOne({ username: req.params.uname }).populate('vocabAttempts.vocab');
 
         const categoryStats = category.reduce((stats, vocab) => {
             const attempt = user.vocabAttempts.find(a => a.vocab._id.toString() === vocab._id.toString());
+            let trueCount = 0;
+            let totalCount = 0;
+
             if (attempt) {
-                const trueCount = attempt.attempts.filter(result => result).length;
-                if (trueCount >= 3) {
+                trueCount = attempt.attempts.filter(result => result).length;
+                totalCount = attempt.attempts.length;
+                if (trueCount >= 2) {
                     stats.completed++;
-                } else if (trueCount === 2) {
+                } else if (trueCount === 1) {
                     stats.inProgress++;
                 } else {
                     stats.notCompleted++;
@@ -380,8 +383,15 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async fun
             } else {
                 stats.notCompleted++;
             }
+
+            stats.vocabDetails.push({
+                english: vocab.english,
+                slovak: vocab.slovak,
+                attempts: `${trueCount}/${totalCount}`
+            });
+
             return stats;
-        }, { completed: 0, inProgress: 0, notCompleted: 0 });
+        }, { completed: 0, inProgress: 0, notCompleted: 0, vocabDetails: [] });
 
         const categoryName = req.params.categoryKey === 'all' ? 'All' : helper.categoryKeyToName(req.params.categoryKey);
 
@@ -400,7 +410,7 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async fun
     }
 });
 
-
+/* SHOW Progress Charts */
 router.get('/:uname/dashboard/charts', mw.isLoggedIn, async function(req, res, next) {
     try {
         // Fetch user and their vocab attempts
@@ -438,9 +448,9 @@ router.get('/:uname/dashboard/charts', mw.isLoggedIn, async function(req, res, n
                     // console.log("Found attempt: ", attempt)
                     const trueCount = attempt.attempts.filter(a => a === true).length;
 
-                    if (trueCount === 3) {
+                    if (trueCount >= 2) {
                         categoryStats[category].completed++;
-                    } else if (trueCount === 2) {
+                    } else if (trueCount === 1) {
                         categoryStats[category].inProgress++;
                     } else {
                         categoryStats[category].notCompleted++;
