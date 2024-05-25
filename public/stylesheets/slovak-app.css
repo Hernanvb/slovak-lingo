@@ -571,6 +571,7 @@ i.fas.fa-times-circle.results-fa {
     background: #E0EAFC !important;
     background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC) !important;
     background: linear-gradient(to right, #CFDEF3, #E0EAFC) !important;
+    color: #000000
 }
 
 .modal.loading .modal-content:before {
@@ -964,4 +965,13 @@ div#VirtualKey input[type="button"] {
   text-align: center;
   color: white;
   font-weight: bold;
+}
+
+.progress-wrapper {
+  padding: .75rem 1.25rem 0
+}
+
+.btn-quiz {
+  background-color: #0499f6;
+  background: linear-gradient(-45deg, #F11712, #0099F7);
 }

@@ -358,6 +358,7 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async fun
         }
 
         const category = await Vocabulary.find(query);
+
         if (!category) {
             req.flash("error", "Category not found");
             return res.redirect('/users/' + req.params.uname + '/dashboard/categories');
@@ -399,6 +400,7 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async fun
             header: "Slovak Lingo - " + categoryName,
             title: req.params.uname + " Dashboard",
             username: req.params.uname,
+            categoryKey: req.params.categoryKey,
             categoryName: categoryName,
             category: category,
             categoryStats: categoryStats,
