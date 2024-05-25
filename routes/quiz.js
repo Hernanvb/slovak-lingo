@@ -307,7 +307,7 @@ router.post('/:uname', mw.isLoggedIn, function(req, res, next) {
             console.error(err);
             return next(err);
         }
-        console.log("Found user:", user)
+        // console.log("Found user:", user)
         // Find the vocabAttempt entry for the current vocabId
         var vocabAttempt = user.vocabAttempts.find(attempt => attempt.vocab.toString() === vocabId.toString());
 
