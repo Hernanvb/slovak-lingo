@@ -100,8 +100,8 @@ var categories = {
     },
     directions: {
         "Straight" : ["Rovno"],
-        "Right" : ["Vpravo"],
-        "Left" : ["Vľavo"],
+        "Right (Directions)" : ["Vpravo"],
+        "Left (Directions)" : ["Vľavo"],
         "Corner" : ["Roh"],
         "Square" : ["Námestie"],
         "Crossroads" : ["križovatka"],
@@ -258,27 +258,27 @@ var categories = {
         "Cold (Adjective)" : ["Studený", "Chladný"],
         "Good (Adjective)" : ["Dobrý"],
         "Bad" : ["Zlý"],
-        "Right" : ["Správny"],
+        "Right (Correct)" : ["Správny"],
         "Wrong" : ["Nesprávny"],
         "Open" : ["Otvorený"],
         "Closed" : ["Zatvorený"],
         "Cheap" : ["Lacný"],
         "Expensive" : ["Drahý"],
-        "Old" : ["starý"],
-        "Young" : ["mladý"],
-        "New" : ["nový"],
-        "Nice" : ["milý"],
-        "Pretty" : ["pekný"],
+        "Old" : ["Starý"],
+        "Young" : ["Mladý"],
+        "New" : ["Nový"],
+        "Nice" : ["Milý"],
+        "Pretty" : ["Pekný"],
         "Ugly" : ["škaredý"],
-        "Thick" : ["hrubý"],
-        "Thin" : ["tenký"],
-        "Fat" : ["tlstý"],
+        "Thick" : ["Hrubý"],
+        "Thin" : ["Chudý", "Tenký"],
+        "Fat" : ["Tučný", "Tlstý"],
         "Slim" : ["štíhly"],
-        "Tall" : ["vysoký"],
-        "Short" : ["krátky"],
-        "Long" : ["dlhý"],
+        "Tall" : ["Vysoký"],
+        "Short" : ["Krátky"],
+        "Long" : ["Dlhý"],
         "Heavy" : ["ťažký"],
-        "Light" : ["ľahký"]
+        "Light (Adjective)" : ["ľahký"]
     },
     colors: {
         "White" : ["biely"],
@@ -320,7 +320,7 @@ var categories = {
         "Summer" : ["Leto"],
         "Autumn" : ["Jeseň"],
         "Winter" : ["Zima"],
-        "Day" : ["deň"],
+        "Day" : ["Deň"],
         "Week" : ["týždeň"],
         "Month" : ["mesiac"],
         "Year" : ["rok"],
@@ -340,7 +340,7 @@ var categories = {
         "Quarter to 6" : ["Trištvrte na 6", "Trištvrte na šesť"],
         "6:10" : ["6 hodín a 10 minút", "Šesť hodín a desať minút", "Šesť hodín a 10 minút", "Šesť hodín a 10 minút"],
         "As soon as possible" : ["Čo najskôr", "Čím skôr"],
-        "Early" : ["Zavčasu"],
+        "Early" : ["Skoro", "Zavčasu"],
         "Late" : ["Neskoro"],
         "In the morning" : ["Ráno"],
         "In the afternoon" : ["Popoludní"],
@@ -694,26 +694,69 @@ var categories = {
 };
 
 async function populateVocab() {
-  try {
-    // Clear existing data
-    await Vocabulary.deleteMany({});
-    vocabData = []
-    Object.keys(categories).forEach(function (category) {
-        Object.keys(categories[category]).forEach(function (key) {
-            var vocabElement = {};
-            vocabElement.english = key;
-            vocabElement.slovak  = categories[category][key];
-            vocabElement.category = category;
-            vocabData.push(vocabElement)
+    try {
+        // Fetch existing data
+        const existingVocab = await Vocabulary.find({});
+
+        // Prepare new data
+        const vocabData = [];
+        Object.keys(categories).forEach(function (category) {
+            Object.keys(categories[category]).forEach(function (key) {
+                var vocabElement = {};
+                vocabElement.english = key;
+                vocabElement.slovak  = categories[category][key];
+                vocabElement.category = category;
+                vocabData.push(vocabElement);
+            });
         });
+
+        // Get changes
+        const changes = getChangedEntries(existingVocab, vocabData);
+
+        // Apply changes
+        if (changes.length > 0) {
+            await Vocabulary.bulkWrite(changes);
+            console.log('Vocabulary data updated successfully');
+        } else {
+            console.log('No changes detected');
+        }
+    } catch (error) {
+        console.error('Error updating vocabulary data', error);
+    } finally {
+        mongoose.disconnect();
+    }
+}
+
+function getChangedEntries(existingVocab, newVocabData) {
+    const changes = [];
+
+    newVocabData.forEach(newEntry => {
+        const existingEntry = existingVocab.find(
+                entry => entry.english === newEntry.english && entry.category === newEntry.category
+        );
+
+        if (existingEntry) {
+            // Check if slovak words are different
+            const isDifferent = existingEntry.slovak.length !== newEntry.slovak.length ||
+                                existingEntry.slovak.some((word, index) => word !== newEntry.slovak[index]);
+
+            if (isDifferent) {
+                changes.push({
+                    updateOne: {
+                        filter: { _id: existingEntry._id },
+                        update: { $set: { slovak: newEntry.slovak } }
+                    }
+                });
+            }
+        } else {
+            // New entry that doesn't exist in the current database
+            changes.push({
+                insertOne: { document: newEntry }
+            });
+        }
     });
-    await Vocabulary.insertMany(vocabData);
-    console.log('Vocabulary data inserted successfully');
-  } catch (error) {
-    console.error('Error inserting vocabulary data', error);
-  } finally {
-    mongoose.disconnect();
-  }
+
+    return changes;
 }
 
 populateVocab()
