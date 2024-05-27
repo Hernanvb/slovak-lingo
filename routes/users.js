@@ -80,7 +80,6 @@ router.get('/logout', function(req, res, next) {
 
 /* GET page for user history */
 router.get('/:uname/dashboard', mw.isLoggedIn, function(req, res, next) {
-    // console.log(JSON.stringify(req.user));
     User.findOne({username: req.params.uname})
         .populate({
             path: 'quizzes',
@@ -89,29 +88,32 @@ router.get('/:uname/dashboard', mw.isLoggedIn, function(req, res, next) {
         })
         .exec(function(err, result) {
             if (err) throw err;
-            var lastQuizIndex = - 1;
 
-            var completedQuizzes = 0;
-            var inProgressQuizzes = 0;
-            var flashcardQuizzesCompleted = 0;
-            var flashcardQuizzesInProgress = 0;
+            let completedQuizzes = 0;
+            let inProgressQuizzes = 0;
+            let flashcardQuizzesCompleted = 0;
+            let flashcardQuizzesInProgress = 0;
+            let latestCompletedQuiz = null;
 
             if (!(result.quizzes === undefined || result.quizzes.length == 0)) {
-                lastQuizIndex = result.quizzes.length - 1;
-                result.quizzes.sort(function(a,b) {
-                    // sort desceding by date
-                    return a.date - b.date;
-                });
+                result.quizzes.sort((a, b) => b.date - a.date); // sort descending by date
 
-                // console.log(JSON.stringify(result.quizzes, null, 2));
                 result.quizzes.forEach(function(quiz) {
-                    // console.log(JSON.stringify(quiz, null, 2));
                     if (quiz.flashcard) {
-                        flashcardQuizzesCompleted = quiz.completed ? ++flashcardQuizzesCompleted : flashcardQuizzesCompleted;
-                        flashcardQuizzesInProgress = quiz.completed ? flashcardQuizzesInProgress : ++flashcardQuizzesInProgress;
+                        if (quiz.completed) {
+                            flashcardQuizzesCompleted++;
+                        } else {
+                            flashcardQuizzesInProgress++;
+                        }
                     } else {
-                        completedQuizzes = quiz.completed ? ++completedQuizzes : completedQuizzes;
-                        inProgressQuizzes = quiz.completed ? inProgressQuizzes : ++inProgressQuizzes;
+                        if (quiz.completed) {
+                            completedQuizzes++;
+                            if (!latestCompletedQuiz) {
+                                latestCompletedQuiz = quiz;
+                            }
+                        } else {
+                            inProgressQuizzes++;
+                        }
                     }
                 });
             }
@@ -124,7 +126,7 @@ router.get('/:uname/dashboard', mw.isLoggedIn, function(req, res, next) {
                 inProgressQuizzes: inProgressQuizzes,
                 flashcardQuizzesCompleted: flashcardQuizzesCompleted,
                 flashcardQuizzesInProgress: flashcardQuizzesInProgress,
-                latestQuiz: lastQuizIndex === -1 ? false : result.quizzes[lastQuizIndex],
+                latestQuiz: latestCompletedQuiz,
                 offset: req.cookies.tzoffset,
                 calcTime: helper.calcTime
             });
