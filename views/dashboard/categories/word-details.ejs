@@ -1,0 +1,110 @@
+<% include ../partials/header %>
+
+<body id="page-top" class="sidebar-toggled">
+
+  <% include ../partials/navbar %>
+
+  <div id="wrapper" class="bg-slovak">
+
+    <% include ../partials/sidebar %>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/users/<%= username %>/dashboard/">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item">
+              <a href="/users/<%= username %>/dashboard/categories">Categories</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="/users/<%= username %>/dashboard/categories/<%= categoryKey %>"><%= categoryName %></a>
+          </li>
+          <li class="breadcrumb-item active"><%= word.english %></li>
+        </ol>
+
+        <!-- Flash Messages -->
+        <% if (flashSuccess && flashSuccess.length > 0) { %>
+          <div id="successMessage">
+            <div class="alert alert-success" role="alert">
+              <%= flashSuccess %>
+            </div>
+          </div>
+        <% } %>
+        <% if (flashError && flashError.length > 0) { %>
+          <div id="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              <%= flashError %>
+            </div>
+          </div>
+        <% } %>
+
+        <!-- Word Details -->
+        <div class="card mb-3 bg-info">
+          <div class="card-header category-header">
+            <i class="fas fa-table"></i>
+            <%= word.english %>
+          </div>
+          <div class="card-body word-detail">
+            <h5>Slovak Translation:</h5>
+            <ul>
+              <% word.slovak.forEach(function (translation) { %>
+                <li><%= translation %> <button onclick="responsiveVoice.speak('<%= translation %>', 'Slovak Female')" class="icon-button voice-button"><i class="fas fa-volume-up"></i></button></li>
+              <% }); %>
+            </ul>
+            <h5>English Definition:</h5>
+            <p><%= word.engDefinition %></p>
+            <h5>Slovak Definition:</h5>
+            <p><%= word.svkDefinition %></p>
+            <h5>Example Sentence in English:</h5>
+            <p><%= word.engSentence %></p>
+            <h5>Example Sentence in Slovak:</h5>
+            <p><%= word.svkSentence %></p>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Slovak Lingo 2018</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <% include ../partials/logout-modal %>
+  
+  <!-- Bootstrap core JavaScript-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/javascripts/sb-admin.js"></script>
+
+  <!-- Pronunciation script-->
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=<%= voiceKey %>"></script>
+
+</body>
+
+</html>

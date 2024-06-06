@@ -414,6 +414,39 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async fun
     }
 });
 
+/* SHOW Word Details */
+router.get('/:uname/dashboard/categories/:categoryKey/word/:wid', mw.isLoggedIn, async function(req, res, next) {
+    try {
+        const query = { category: req.params.categoryKey, english: req.params.word };
+        const word = await Vocabulary.findById(req.params.wid);
+
+        if (!word) {
+            req.flash("error", "Word not found");
+            return res.redirect(`/users/${req.params.uname}/dashboard/categories/${req.params.categoryKey}`);
+        }
+
+        res.render('dashboard/categories/word-details', {
+            header: "Slovak Lingo - " + word.english,
+            title: req.params.uname + " Dashboard",
+            username: req.params.uname,
+            categoryKey: req.params.categoryKey,
+            categoryName: helper.categoryKeyToName(req.params.categoryKey),
+            word: {
+                english: word.english,
+                slovak: word.slovak,
+                engDefinition: word.engDefinition,
+                svkDefinition: word.svkDefinition,
+                engSentence: word.engSentence,
+                svkSentence: word.svkSentence
+            },
+            voiceKey: process.env.VOICEKEY
+        });
+
+    } catch (err) {
+        next(err);
+    }
+});
+
 /* SHOW Progress Charts */
 router.get('/:uname/dashboard/charts', mw.isLoggedIn, async function(req, res, next) {
     try {

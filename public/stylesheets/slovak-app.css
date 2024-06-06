@@ -362,7 +362,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
     cursor: pointer;
 }
 
-.voice-button {
+/* .voice-button {
   border-radius: 100%;
   font-size: 12px;
   cursor: pointer;
@@ -371,6 +371,42 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .voice-button:hover {
   background-color: #0099F7;
+} */
+
+.voice-button {
+  background: none;
+  font-size: 1rem;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.voice-button:hover {
+  color: #0056b3;
+}
+
+.word-link {
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  color: #06468b;
+  cursor: pointer;
+}
+
+.word-link:hover {
+  color: #0056b3;
+}
+
+.word-detail {
+  font-size: 1.2rem !important;
+}
+
+.word-detail h5 {
+  font-weight: bold !important;
+}
+
+.word-detail p {
+  margin-left: 20px !important;
 }
 
 @media (min-width: 576px) {

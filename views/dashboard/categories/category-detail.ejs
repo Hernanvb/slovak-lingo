@@ -119,7 +119,11 @@
                     <% for (var i = 0; i < category.length; i++) { %>
                       <tr>
                         <td><%= i+1 %></td>
-                        <td><%= category[i].english %></td>
+                        <% if (category[i].engDefinition && category[i].engDefinition.trim() !== "") { %>
+                          <td><a class="word-link" href="/users/<%= username %>/dashboard/categories/<%= category[i].category %>/word/<%= category[i]._id %>"><%= category[i].english %></a></td>
+                        <% } else { %>
+                          <td><%= category[i].english %></td>
+                        <% } %>
                         <td>
                           <% category[i].slovak.forEach(function (word) { %>
                               <%= word %> <button onclick="responsiveVoice.speak('<%= word %>', 'Slovak Female')" class="icon-button voice-button"><i class="fas fa-volume-up"></i></button><br>
