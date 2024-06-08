@@ -542,19 +542,97 @@ var categories = {
         }
     },
     colors: {
-        "Red": ["Červená", "Červený"],
-        "Blue": ["Modrá", "Modrý"],
-        "Green": ["Zelená", "Zelený"],
-        "Yellow": ["Žltá", "Žltý"],
-        "Black": ["Čierna", "Čierny"],
-        "White": ["Biela", "Biely"],
-        "Orange": ["Oranžová", "Oranžový"],
-        "Pink": ["Ružová", "Ružový"],
-        "Purple": ["Fialová","Fialový"],
-        "Brown": ["Hnedá", "Hnedý"],
-        "Gray": ["Sivá", "Sivý", "Šedý"],
-        "Light (color)": ["Svetlý"],
-        "Dark (color)": ["Tmavý"]
+        "Red": {
+            slovak: ["Červená", "Červený"],
+            engDefinition: "A color at the end of the spectrum next to orange.",
+            svkDefinition: "Farba na konci spektra vedľa oranžovej.",
+            engSentence: "She wore a red dress.",
+            svkSentence: "Mala na sebe červené šaty."
+        },
+        "Blue": {
+            slovak: ["Modrá", "Modrý"],
+            engDefinition: "A color like that of a clear sky.",
+            svkDefinition: "Farba ako jasná obloha.",
+            engSentence: "The sky is blue.",
+            svkSentence: "Obloha je modrá."
+        },
+        "Green": {
+            slovak: ["Zelená", "Zelený"],
+            engDefinition: "The color of grass.",
+            svkDefinition: "Farba trávy.",
+            engSentence: "The leaves are green.",
+            svkSentence: "Listy sú zelené."
+        },
+        "Yellow": {
+            slovak: ["Žltá", "Žltý"],
+            engDefinition: "The color of the sun.",
+            svkDefinition: "Farba slnka.",
+            engSentence: "She likes yellow flowers.",
+            svkSentence: "Má rada žlté kvety."
+        },
+        "Black": {
+            slovak: ["Čierna", "Čierny"],
+            engDefinition: "The color of coal.",
+            svkDefinition: "Farba uhlia.",
+            engSentence: "He has a black cat.",
+            svkSentence: "Má čiernu mačku."
+        },
+        "White": {
+            slovak: ["Biela", "Biely"],
+            engDefinition: "The color of snow.",
+            svkDefinition: "Farba snehu.",
+            engSentence: "She wore a white dress.",
+            svkSentence: "Mala na sebe biele šaty."
+        },
+        "Orange": {
+            slovak: ["Oranžová", "Oranžový"],
+            engDefinition: "A color between red and yellow.",
+            svkDefinition: "Farba medzi červenou a žltou.",
+            engSentence: "He likes orange juice.",
+            svkSentence: "Má rád pomarančový džús."
+        },
+        "Pink": {
+            slovak: ["Ružová", "Ružový"],
+            engDefinition: "A pale red color.",
+            svkDefinition: "Bledá červená farba.",
+            engSentence: "She has a pink dress.",
+            svkSentence: "Má ružové šaty."
+        },
+        "Purple": {
+            slovak: ["Fialová", "Fialový"],
+            engDefinition: "A color between red and blue.",
+            svkDefinition: "Farba medzi červenou a modrou.",
+            engSentence: "He bought a purple shirt.",
+            svkSentence: "Kúpil si fialovú košeľu."
+        },
+        "Brown": {
+            slovak: ["Hnedá", "Hnedý"],
+            engDefinition: "The color of chocolate.",
+            svkDefinition: "Farba čokolády.",
+            engSentence: "The table is brown.",
+            svkSentence: "Stôl je hnedý."
+        },
+        "Gray": {
+            slovak: ["Sivá", "Sivý", "Šedý"],
+            engDefinition: "A color between black and white.",
+            svkDefinition: "Farba medzi čiernou a bielou.",
+            engSentence: "The sky is gray today.",
+            svkSentence: "Dnes je obloha sivá."
+        },
+        "Light (color)": {
+            slovak: ["Svetlý"],
+            engDefinition: "A pale or less intense color.",
+            svkDefinition: "Bledá alebo menej intenzívna farba.",
+            engSentence: "She prefers light colors.",
+            svkSentence: "Uprednostňuje svetlé farby."
+        },
+        "Dark (color)": {
+            slovak: ["Tmavý"],
+            engDefinition: "A color that is closer to black.",
+            svkDefinition: "Farba, ktorá je bližšie k čiernej.",
+            engSentence: "He likes dark blue.",
+            svkSentence: "Má rád tmavomodrú."
+        }
     },
     periods: {
         "Days of the week": {
@@ -840,20 +918,80 @@ var categories = {
         "This month": ["Tento mesiac"]
     },
     carRental: {
+        "Drivers license": {
+            slovak: ["Vodičský preukaz"],
+            engDefinition: "A permit to drive a car.",
+            svkDefinition: "Povolenie na šoférovanie auta.",
+            engSentence: "You need a driver's license to rent a car.",
+            svkSentence: "Na prenájom auta potrebujete vodičský preukaz."
+        },
+        "To reserve/To book": {
+            slovak: ["Rezervovať"],
+            engDefinition: "To arrange in advance.",
+            svkDefinition: "Dohodnúť vopred.",
+            engSentence: "I want to reserve a car.",
+            svkSentence: "Chcem rezervovať auto."
+        },
+        "Door": {
+            slovak: ["Dvere"],
+            engDefinition: "A movable barrier for entering or leaving a car.",
+            svkDefinition: "Pohyblivá bariéra pre vstup alebo výstup z auta.",
+            engSentence: "Open the car door.",
+            svkSentence: "Otvorte dvere auta."
+        },
+        "Keys": {
+            slovak: ["Kľúče"],
+            engDefinition: "Metal objects used to open or start a car.",
+            svkDefinition: "Kovové predmety používané na otvorenie alebo naštartovanie auta.",
+            engSentence: "Where are the car keys?",
+            svkSentence: "Kde sú kľúče od auta?"
+        },
+        "Breakdown": {
+            slovak: ["Porucha"],
+            engDefinition: "Failure of a car to function.",
+            svkDefinition: "Zlyhanie auta.",
+            engSentence: "The car had a breakdown.",
+            svkSentence: "Auto malo poruchu."
+        },
+        "Petrol": {
+            slovak: ["Benzín"],
+            engDefinition: "A liquid fuel for cars.",
+            svkDefinition: "Kvapalné palivo pre autá.",
+            engSentence: "We need to fill up with petrol.",
+            svkSentence: "Musíme natankovať benzín."
+        },
+        "Diesel": {
+            slovak: ["Nafta"],
+            engDefinition: "A type of fuel for cars.",
+            svkDefinition: "Typ paliva pre autá.",
+            engSentence: "This car uses diesel.",
+            svkSentence: "Toto auto používa naftu."
+        },
+        "Car insurance": {
+            slovak: ["Poistenie automobilu", "Poistka automobilu"],
+            engDefinition: "Financial protection for a car.",
+            svkDefinition: "Finančná ochrana pre auto.",
+            engSentence: "Do you have car insurance?",
+            svkSentence: "Máte poistenie automobilu?"
+        },
+        "Pick up date": {
+            slovak: ["Dátum vyzdvihnutia"],
+            engDefinition: "The date to collect a rental car.",
+            svkDefinition: "Dátum na vyzdvihnutie prenajatého auta.",
+            engSentence: "What is the pick up date?",
+            svkSentence: "Aký je dátum vyzdvihnutia?"
+        },
+        "Return date": {
+            slovak: ["Dátum odovzdania"],
+            engDefinition: "The date to return a rental car.",
+            svkDefinition: "Dátum na odovzdanie prenajatého auta.",
+            engSentence: "What is the return date?",
+            svkSentence: "Aký je dátum odovzdania?"
+        },
         "I would like to rent a car please": ["Rád by som si požičal auto"],
         "How long would you like it?": ["Na ako dlho?"],
         "How much it cost per day?": ["Koľko to stojí na deň?"],
-        "Rent a car": ["Požičať auto"],
-        "Driving licence": ["Vodičský preukaz"],
-        "To reserve/To book": ["Rezervovať"],
-        "Door": ["Dvere"],
-        "Keys": ["Kľúče"],
-        "Breakdown": ["Porucha"],
-        "Petrol": ["Benzín"],
-        "Diesel": ["Nafta"],
-        "Car insurance": ["Poistenie automobilu", "Poistka automobilu"],
-        "Pick up date": ["Dátum vyzdvihnutia"],
-        "Return date": ["Dátum odovzdania"]
+        "Rent a car": ["Požičať auto"]
     },
     restaurant: {
         "Restaurant": {
@@ -1388,21 +1526,111 @@ var categories = {
         }
     },
     shopping: {
-        "Shop": ["Obchod"],
-        "Supermarket": ["supermarket"],
-        "Butcher": ["Mäso"],
-        "Sale": ["výpredaj"],
-        "Cotton": ["bavlna"],
-        "Wool": ["Vlna"],
-        "Shoe Shop": ["Obuv"],
-        "Toys": ["hračky"],
-        "Clothes": ["obelčenie"],
-        "Bag": ["taška"],
-        "Open": ["Otvorené"],
-        "Closed": ["Zatvorené"],
-        "Opening hours": ["Otváracie hodiny"],
-        "Push": ["Tlačiť", "Tam"],
-        "Pull": ["Ťahať", "Sem"],
+        "Shop": {
+            slovak: ["Obchod"],
+            engDefinition: "A place where goods are sold.",
+            svkDefinition: "Miesto, kde sa predávajú tovary.",
+            engSentence: "I went to the shop to buy milk.",
+            svkSentence: "Išiel som do obchodu kúpiť mlieko."
+        },
+        "Supermarket": {
+            slovak: ["Supermarket"],
+            engDefinition: "A large store selling food and other goods.",
+            svkDefinition: "Veľký obchod, kde sa predáva jedlo a iné tovary.",
+            engSentence: "We buy groceries at the supermarket.",
+            svkSentence: "Nakupujeme potraviny v supermarkete."
+        },
+        "Butcher": {
+            slovak: ["Mäso"],
+            engDefinition: "A shop where meat is sold.",
+            svkDefinition: "Obchod, kde sa predáva mäso.",
+            engSentence: "I bought some beef at the butcher.",
+            svkSentence: "Kúpil som hovädzie mäso u mäsiara."
+        },
+        "Sale": {
+            slovak: ["Výpredaj"],
+            engDefinition: "A period when goods are sold at lower prices.",
+            svkDefinition: "Obdobie, keď sa tovar predáva za nižšie ceny.",
+            engSentence: "I got this dress on sale.",
+            svkSentence: "Túto šaty som kúpil vo výpredaji."
+        },
+        "Cotton": {
+            slovak: ["Bavlna"],
+            engDefinition: "A soft white material used for making clothes.",
+            svkDefinition: "Mäkký biely materiál používaný na výrobu oblečenia.",
+            engSentence: "This shirt is made of cotton.",
+            svkSentence: "Táto košeľa je vyrobená z bavlny."
+        },
+        "Wool": {
+            slovak: ["Vlna"],
+            engDefinition: "A soft material from sheep used for making clothes.",
+            svkDefinition: "Mäkký materiál z oviec používaný na výrobu oblečenia.",
+            engSentence: "She wore a wool sweater.",
+            svkSentence: "Mala na sebe vlnený sveter."
+        },
+        "Shoe Shop": {
+            slovak: ["Obuv"],
+            engDefinition: "A shop where shoes are sold.",
+            svkDefinition: "Obchod, kde sa predávajú topánky.",
+            engSentence: "I need to go to the shoe shop for new sneakers.",
+            svkSentence: "Musím ísť do obuvi pre nové tenisky."
+        },
+        "Toys": {
+            slovak: ["Hračky"],
+            engDefinition: "Objects for children to play with.",
+            svkDefinition: "Predmety na hranie pre deti.",
+            engSentence: "The store has a big section for toys.",
+            svkSentence: "Obchod má veľkú sekciu s hračkami."
+        },
+        "Clothes": {
+            slovak: ["Obelčenie"],
+            engDefinition: "Items worn to cover the body.",
+            svkDefinition: "Predmety nosené na zakrytie tela.",
+            engSentence: "She bought new clothes for the party.",
+            svkSentence: "Kúpila si nové oblečenie na párty."
+        },
+        "Bag": {
+            slovak: ["Taška"],
+            engDefinition: "A container used for carrying things.",
+            svkDefinition: "Kontajner používaný na prenášanie vecí.",
+            engSentence: "She put the books in her bag.",
+            svkSentence: "Knihy dala do tašky."
+        },
+        "Open": {
+            slovak: ["Otvorené"],
+            engDefinition: "Not closed, available for business.",
+            svkDefinition: "Nezatvorené, dostupné na podnikanie.",
+            engSentence: "The shop is open from 9 AM.",
+            svkSentence: "Obchod je otvorený od 9 ráno."
+        },
+        "Closed": {
+            slovak: ["Zatvorené"],
+            engDefinition: "Not open, not available for business.",
+            svkDefinition: "Zatvorené, nedostupné na podnikanie.",
+            engSentence: "The store is closed on Sundays.",
+            svkSentence: "Obchod je v nedeľu zatvorený."
+        },
+        "Opening hours": {
+            slovak: ["Otváracie hodiny"],
+            engDefinition: "The hours when a shop is open.",
+            svkDefinition: "Hodiny, keď je obchod otvorený.",
+            engSentence: "Check the opening hours before you go.",
+            svkSentence: "Pred odchodom si skontrolujte otváracie hodiny."
+        },
+        "Push": {
+            slovak: ["Tlačiť", "Tam"],
+            engDefinition: "To press against something to move it away.",
+            svkDefinition: "Stlačiť niečo, aby sa to posunulo preč.",
+            engSentence: "Push the door to open it.",
+            svkSentence: "Potlačte dvere, aby ste ich otvorili."
+        },
+        "Pull": {
+            slovak: ["Ťahať", "Sem"],
+            engDefinition: "To draw or haul towards oneself.",
+            svkDefinition: "Ťahať alebo ťahať k sebe.",
+            engSentence: "Pull the door to close it.",
+            svkSentence: "Potiahnite dvere, aby ste ich zatvorili."
+        },
         "Out for Lunch": ["Obedná prestávka"],
         "I would like to pay (male)": ["Chcel by som zaplatiť"],
         "I would like to pay (fem)": ["Chcela by som zaplatiť"],
@@ -1413,52 +1641,280 @@ var categories = {
         "Changing room": ["Skúšobná kabínka"],
         "How much is it?": ["Koľko to stojí?"]
     },
-    accomodation: {
-        "Room": ["Izba"],
-        "Bed": ["Posteľ"],
-        "Single room": ["jednopostelová izba"],
-        "Double room": ["Dvojpostelová izba"],
-        "Hotel": ["Hotel"],
-        "Reception": ["Recepcia"],
-        "Breakfast": ["raňajky"],
-        "Lunch": ["obed"],
-        "Dinner": ["večera"],
-        "Full board": ["plná peniza"],
-        "Half board": ["polpenzia"],
-        "To book": ["rezervovať"]
+    accommodation: {
+        "Room": {
+            slovak: ["Izba"],
+            engDefinition: "A space in a building for living or working.",
+            svkDefinition: "Priestor v budove na bývanie alebo prácu.",
+            engSentence: "The hotel room is very clean.",
+            svkSentence: "Hotelová izba je veľmi čistá."
+        },
+        "Bed": {
+            slovak: ["Posteľ"],
+            engDefinition: "A piece of furniture for sleeping on.",
+            svkDefinition: "Kus nábytku na spanie.",
+            engSentence: "The bed is very comfortable.",
+            svkSentence: "Posteľ je veľmi pohodlná."
+        },
+        "Single room": {
+            slovak: ["Jednopostelová izba"],
+            engDefinition: "A room with one bed for one person.",
+            svkDefinition: "Izba s jednou posteľou pre jednu osobu.",
+            engSentence: "I booked a single room for my stay.",
+            svkSentence: "Rezervoval som si jednopostelovú izbu na môj pobyt."
+        },
+        "Double room": {
+            slovak: ["Dvojpostelová izba"],
+            engDefinition: "A room with a bed for two people.",
+            svkDefinition: "Izba s posteľou pre dve osoby.",
+            engSentence: "They stayed in a double room.",
+            svkSentence: "Oni zostali v dvojpostelovej izbe."
+        },
+        "Hotel": {
+            slovak: ["Hotel"],
+            engDefinition: "A building providing lodging and meals for travelers.",
+            svkDefinition: "Budova poskytujúca ubytovanie a stravu pre cestujúcich.",
+            engSentence: "We checked into the hotel.",
+            svkSentence: "Ubytovali sme sa v hoteli."
+        },
+        "Reception": {
+            slovak: ["Recepcia"],
+            engDefinition: "The area in a hotel where guests check in.",
+            svkDefinition: "Priestor v hoteli, kde sa hostia registrujú.",
+            engSentence: "She asked for help at the reception.",
+            svkSentence: "Požiadala o pomoc na recepcii."
+        },
+        "Breakfast": {
+            slovak: ["Raňajky"],
+            engDefinition: "The first meal of the day.",
+            svkDefinition: "Prvé jedlo dňa.",
+            engSentence: "Breakfast is served from 7 AM.",
+            svkSentence: "Raňajky sa podávajú od 7 ráno."
+        },
+        "Lunch": {
+            slovak: ["Obed"],
+            engDefinition: "The meal eaten in the middle of the day.",
+            svkDefinition: "Jedlo konzumované uprostred dňa.",
+            engSentence: "We had lunch at a nearby restaurant.",
+            svkSentence: "Obedovali sme v neďalekej reštaurácii."
+        },
+        "Dinner": {
+            slovak: ["Večera"],
+            engDefinition: "The main meal of the evening.",
+            svkDefinition: "Hlavné jedlo večera.",
+            engSentence: "They are having dinner together.",
+            svkSentence: "Večerajú spolu."
+        },
+        "Full board": {
+            slovak: ["Plná peniza"],
+            engDefinition: "Accommodation including all meals.",
+            svkDefinition: "Ubytovanie vrátane všetkých jedál.",
+            engSentence: "The hotel offers full board options.",
+            svkSentence: "Hotel ponúka možnosti plnej penzie."
+        },
+        "Half board": {
+            slovak: ["Polpenzia"],
+            engDefinition: "Accommodation including breakfast and one main meal.",
+            svkDefinition: "Ubytovanie vrátane raňajok a jedného hlavného jedla.",
+            engSentence: "We chose the half board package.",
+            svkSentence: "Vybrali sme si balíček s polpenziou."
+        },
+        "To book": {
+            slovak: ["Rezervovať"],
+            engDefinition: "To arrange in advance.",
+            svkDefinition: "Dohodnúť vopred.",
+            engSentence: "I need to book a room for tonight.",
+            svkSentence: "Potrebujem rezervovať izbu na dnešnú noc."
+        }
     },
     doctor: {
-        "Doctor": ["Lekár"],
-        "Ambulance": ["Sanitka"],
-        "Emergency": ["Pohotovosť"],
-        "Hospital": ["Nemocnica"],
-        "Pharmacy": ["Lekáreň"],
-        "Dentist": ["Zubár"],
-        "Pain": ["Bolesť"],
-        "Headache": ["Bolesť hlavy"],
-        "Stomachache": ["Bolesť brucha"],
-        "Toothache": ["blesť zubov"],
-        "Flu": ["Chrípka"],
-        "Call the doctor": ["Zavolajte lekára"],
-        "Call the ambulance": ["Zavolajte sanitku"],
-        "Fracture": ["zlomenina"],
+        "Doctor": {
+            slovak: ["Lekár"],
+            engDefinition: "A person trained to treat sick people.",
+            svkDefinition: "Osoba vyškolená na liečbu chorých ľudí.",
+            engSentence: "The doctor examined the patient.",
+            svkSentence: "Lekár vyšetril pacienta."
+        },
+        "Ambulance": {
+            slovak: ["Sanitka"],
+            engDefinition: "A vehicle for taking sick or injured people to the hospital.",
+            svkDefinition: "Vozidlo na prepravu chorých alebo zranených ľudí do nemocnice.",
+            engSentence: "The ambulance arrived quickly.",
+            svkSentence: "Sanitka prišla rýchlo."
+        },
+        "Emergency": {
+            slovak: ["Pohotovosť"],
+            engDefinition: "A serious, unexpected situation requiring immediate action.",
+            svkDefinition: "Vážna, neočakávaná situácia vyžadujúca okamžité opatrenie.",
+            engSentence: "They went to the emergency room.",
+            svkSentence: "Išli na pohotovosť."
+        },
+        "Hospital": {
+            slovak: ["Nemocnica"],
+            engDefinition: "A place where sick or injured people are given medical treatment.",
+            svkDefinition: "Miesto, kde sa chorým alebo zraneným ľuďom poskytuje lekárska starostlivosť.",
+            engSentence: "She was admitted to the hospital.",
+            svkSentence: "Bola prijatá do nemocnice."
+        },
+        "Pharmacy": {
+            slovak: ["Lekáreň"],
+            engDefinition: "A store where medicinal drugs are dispensed and sold.",
+            svkDefinition: "Obchod, kde sa vydávajú a predávajú liečivé lieky.",
+            engSentence: "I need to go to the pharmacy.",
+            svkSentence: "Potrebujem ísť do lekárne."
+        },
+        "Dentist": {
+            slovak: ["Zubár"],
+            engDefinition: "A doctor who treats teeth.",
+            svkDefinition: "Lekár, ktorý lieči zuby.",
+            engSentence: "I have an appointment with the dentist.",
+            svkSentence: "Mám stretnutie so zubárom."
+        },
+        "Pain": {
+            slovak: ["Bolesť"],
+            engDefinition: "An unpleasant feeling in the body.",
+            svkDefinition: "Nepríjemný pocit v tele.",
+            engSentence: "He is experiencing a lot of pain.",
+            svkSentence: "Zažíva veľkú bolesť."
+        },
+        "Headache": {
+            slovak: ["Bolesť hlavy"],
+            engDefinition: "Pain in the head.",
+            svkDefinition: "Bolesť v hlave.",
+            engSentence: "She has a bad headache.",
+            svkSentence: "Má silnú bolesť hlavy."
+        },
+        "Stomachache": {
+            slovak: ["Bolesť brucha"],
+            engDefinition: "Pain in the stomach.",
+            svkDefinition: "Bolesť v bruchu.",
+            engSentence: "He complained of a stomachache.",
+            svkSentence: "Sťažoval sa na bolesť brucha."
+        },
+        "Toothache": {
+            slovak: ["Bolesť zubov"],
+            engDefinition: "Pain in a tooth.",
+            svkDefinition: "Bolesť v zube.",
+            engSentence: "She went to the dentist for her toothache.",
+            svkSentence: "Išla k zubárovi kvôli bolesti zubov."
+        },
+        "Flu": {
+            slovak: ["Chrípka"],
+            engDefinition: "A common viral infection.",
+            svkDefinition: "Bežná vírusová infekcia.",
+            engSentence: "He is recovering from the flu.",
+            svkSentence: "Zotavuje sa z chrípky."
+        },
+        "Fracture": {
+            slovak: ["Zlomenina"],
+            engDefinition: "A break in a bone.",
+            svkDefinition: "Zlomenina kosti.",
+            engSentence: "She has a fracture in her arm.",
+            svkSentence: "Má zlomeninu v ruke."
+        },
+        "Injection": {
+            slovak: ["Injekcia"],
+            engDefinition: "A shot of medicine.",
+            svkDefinition: "Dávka lieku.",
+            engSentence: "He received an injection for pain relief.",
+            svkSentence: "Dostal injekciu na zmiernenie bolesti."
+        },
+        "Thermometer": {
+            slovak: ["Teplomer"],
+            engDefinition: "An instrument for measuring temperature.",
+            svkDefinition: "Nástroj na meranie teploty.",
+            engSentence: "The nurse used a thermometer to check his temperature.",
+            svkSentence: "Sestra použila teplomer na kontrolu jeho teploty."
+        },
         "I have a toothache": ["Bolí ma zub"],
-        "Injection": ["injekcia"],
-        "Thermometer": ["teplomer"]
+        "Call the doctor": ["Zavolajte lekára"],
+        "Call the ambulance": ["Zavolajte sanitku"]
     },
     travel: {
-        "Airport": ["Letisko"],
-        "Aircraft": ["Lietadlo"],
-        "Bus station": ["Autobusová stanica"],
-        "Railway station": ["Železničná stanica"],
-        "Bus": ["Autobus"],
-        "Car": ["Auto"],
-        "Train": ["Vlak"],
-        "Tram": ["Električka"],
-        "Motorbike": ["Motorka"],
-        "Bicycle": ["Bicykel"],
-        "Taxi": ["Taxík", "Taxi"],
-        "Public Transport": ["Verejná doprava"]
+        "Airport": {
+            slovak: ["Letisko"],
+            engDefinition: "A place where airplanes take off and land.",
+            svkDefinition: "Miesto, kde lietadlá vzlietajú a pristávajú.",
+            engSentence: "We arrived at the airport early.",
+            svkSentence: "Prišli sme na letisko skoro."
+        },
+        "Aircraft": {
+            slovak: ["Lietadlo"],
+            engDefinition: "A vehicle designed for air travel.",
+            svkDefinition: "Vozidlo určené na cestovanie vzduchom.",
+            engSentence: "The aircraft is ready for boarding.",
+            svkSentence: "Lietadlo je pripravené na nastupovanie."
+        },
+        "Bus station": {
+            slovak: ["Autobusová stanica"],
+            engDefinition: "A place where buses pick up and drop off passengers.",
+            svkDefinition: "Miesto, kde autobusy naberajú a vykladajú cestujúcich.",
+            engSentence: "The bus station was crowded.",
+            svkSentence: "Autobusová stanica bola preplnená."
+        },
+        "Railway station": {
+            slovak: ["Železničná stanica"],
+            engDefinition: "A place where trains pick up and drop off passengers.",
+            svkDefinition: "Miesto, kde vlaky naberajú a vykladajú cestujúcich.",
+            engSentence: "We waited for the train at the railway station.",
+            svkSentence: "Čakali sme na vlak na železničnej stanici."
+        },
+        "Bus": {
+            slovak: ["Autobus"],
+            engDefinition: "A large vehicle that carries passengers by road.",
+            svkDefinition: "Veľké vozidlo, ktoré prepravuje cestujúcich po ceste.",
+            engSentence: "The bus was full of people.",
+            svkSentence: "Autobus bol plný ľudí."
+        },
+        "Car": {
+            slovak: ["Auto"],
+            engDefinition: "A road vehicle, typically with four wheels, powered by an engine.",
+            svkDefinition: "Cestné vozidlo, zvyčajne so štyrmi kolesami, poháňané motorom.",
+            engSentence: "We rented a car for the trip.",
+            svkSentence: "Na výlet sme si prenajali auto."
+        },
+        "Train": {
+            slovak: ["Vlak"],
+            engDefinition: "A series of connected vehicles that run on tracks and transport people or goods.",
+            svkDefinition: "Séria prepojených vozidiel, ktoré jazdia po koľajniciach a prepravujú ľudí alebo tovar.",
+            engSentence: "The train was on time.",
+            svkSentence: "Vlak bol načas."
+        },
+        "Tram": {
+            slovak: ["Električka"],
+            engDefinition: "A rail vehicle that runs on tracks in the city streets.",
+            svkDefinition: "Koľajové vozidlo, ktoré jazdí po koľajniciach v mestských uliciach.",
+            engSentence: "We took the tram to the city center.",
+            svkSentence: "Do centra mesta sme išli električkou."
+        },
+        "Motorbike": {
+            slovak: ["Motorka"],
+            engDefinition: "A two-wheeled vehicle powered by an engine.",
+            svkDefinition: "Dvojkolesové vozidlo poháňané motorom.",
+            engSentence: "He rides his motorbike to work.",
+            svkSentence: "Do práce jazdí na motorke."
+        },
+        "Bicycle": {
+            slovak: ["Bicykel"],
+            engDefinition: "A two-wheeled vehicle that you pedal to move.",
+            svkDefinition: "Dvojkolesové vozidlo, ktoré sa pohybuje šliapaním do pedálov.",
+            engSentence: "She rides her bicycle every morning.",
+            svkSentence: "Každé ráno jazdí na bicykli."
+        },
+        "Taxi": {
+            slovak: ["Taxík", "Taxi"],
+            engDefinition: "A car that you pay to take you somewhere.",
+            svkDefinition: "Auto, za ktoré platíte, aby vás odviezlo niekam.",
+            engSentence: "We took a taxi to the hotel.",
+            svkSentence: "Vzali sme si taxík do hotela."
+        },
+        "Public Transport": {
+            slovak: ["Verejná doprava"],
+            engDefinition: "A system of buses, trains, etc., that is available for use by the public.",
+            svkDefinition: "Systém autobusov, vlakov atď., ktorý je k dispozícii na použitie verejnosťou.",
+            engSentence: "Public transport is very convenient here.",
+            svkSentence: "Verejná doprava je tu veľmi pohodlná."
+        }
     },
     places: {
         "School": {
@@ -2542,18 +2998,90 @@ var categories = {
         }
     },
     languages: {
-        "English (lang)": ["Angličtina"],
-        "French (lang)": ["Francúzština"],
-        "German (lang)": ["Nemčina"],
-        "Spanish (lang)": ["Španielčina"],
-        "Italian (lang)": ["Taliančina"],
-        "Portuguese (lang)": ["Portugalčina"],
-        "Greek (lang)": ["Gréčtina"],
-        "Russian (lang)": ["Ruština"],
-        "Arabic (lang)": ["Arabčina"],
-        "Hindi (lang)": ["Hindčina"],
-        "Chinese (lang)": ["Čínština"],
-        "Japanese (lang)": ["Japončina"]
+        "English (lang)": {
+            slovak: ["Angličtina"],
+            engDefinition: "The language spoken in England and many other countries.",
+            svkDefinition: "Jazyk hovorený v Anglicku a mnohých ďalších krajinách.",
+            engSentence: "She speaks English fluently.",
+            svkSentence: "Hovorí plynule anglicky."
+        },
+        "French (lang)": {
+            slovak: ["Francúzština"],
+            engDefinition: "The language spoken in France and parts of Belgium, Switzerland, and Canada.",
+            svkDefinition: "Jazyk hovorený vo Francúzsku a častiach Belgicka, Švajčiarska a Kanady.",
+            engSentence: "He is learning French.",
+            svkSentence: "Učí sa francúzštinu."
+        },
+        "German (lang)": {
+            slovak: ["Nemčina"],
+            engDefinition: "The language spoken in Germany, Austria, and parts of Switzerland.",
+            svkDefinition: "Jazyk hovorený v Nemecku, Rakúsku a častiach Švajčiarska.",
+            engSentence: "German is a difficult language.",
+            svkSentence: "Nemčina je ťažký jazyk."
+        },
+        "Spanish (lang)": {
+            slovak: ["Španielčina"],
+            engDefinition: "The language spoken in Spain and many countries in Latin America.",
+            svkDefinition: "Jazyk hovorený v Španielsku a mnohých krajinách Latinskej Ameriky.",
+            engSentence: "She loves Spanish music.",
+            svkSentence: "Miluje španielsku hudbu."
+        },
+        "Italian (lang)": {
+            slovak: ["Taliančina"],
+            engDefinition: "The language spoken in Italy.",
+            svkDefinition: "Jazyk hovorený v Taliansku.",
+            engSentence: "He studied Italian in college.",
+            svkSentence: "Študoval taliančinu na vysokej škole."
+        },
+        "Portuguese (lang)": {
+            slovak: ["Portugalčina"],
+            engDefinition: "The language spoken in Portugal and Brazil.",
+            svkDefinition: "Jazyk hovorený v Portugalsku a Brazílii.",
+            engSentence: "Portuguese is spoken in Brazil.",
+            svkSentence: "Portugalčina sa hovorí v Brazílii."
+        },
+        "Greek (lang)": {
+            slovak: ["Gréčtina"],
+            engDefinition: "The language spoken in Greece.",
+            svkDefinition: "Jazyk hovorený v Grécku.",
+            engSentence: "They are learning Greek.",
+            svkSentence: "Učia sa gréčtinu."
+        },
+        "Russian (lang)": {
+            slovak: ["Ruština"],
+            engDefinition: "The language spoken in Russia and many other countries of the former Soviet Union.",
+            svkDefinition: "Jazyk hovorený v Rusku a mnohých ďalších krajinách bývalého Sovietskeho zväzu.",
+            engSentence: "Russian is written in the Cyrillic script.",
+            svkSentence: "Ruština je písaná cyrilikou."
+        },
+        "Arabic (lang)": {
+            slovak: ["Arabčina"],
+            engDefinition: "The language spoken in many countries in the Middle East and North Africa.",
+            svkDefinition: "Jazyk hovorený v mnohých krajinách na Blízkom východe a v severnej Afrike.",
+            engSentence: "Arabic is a Semitic language.",
+            svkSentence: "Arabčina je semitský jazyk."
+        },
+        "Hindi (lang)": {
+            slovak: ["Hindčina"],
+            engDefinition: "The language spoken in parts of India and the official language of India.",
+            svkDefinition: "Jazyk hovorený v častiach Indie a úradný jazyk Indie.",
+            engSentence: "She watches Hindi movies.",
+            svkSentence: "Sleduje hindské filmy."
+        },
+        "Chinese (lang)": {
+            slovak: ["Čínština"],
+            engDefinition: "The language spoken in China and many other Asian countries.",
+            svkDefinition: "Jazyk hovorený v Číne a mnohých ďalších ázijských krajinách.",
+            engSentence: "Chinese characters are very complex.",
+            svkSentence: "Čínske znaky sú veľmi zložité."
+        },
+        "Japanese (lang)": {
+            slovak: ["Japončina"],
+            engDefinition: "The language spoken in Japan.",
+            svkDefinition: "Jazyk hovorený v Japonsku.",
+            engSentence: "He is interested in Japanese culture.",
+            svkSentence: "Zaujíma sa o japonskú kultúru."
+        }
     },
     bodyParts: {
         "Head (Body)": {
@@ -2986,11 +3514,18 @@ var categories = {
             svkSentence: "Je príliš arogantný na to, aby priznal svoje chyby."
         },
         "Happy": {
-            slovak: ["Veselý"],
+            slovak: ["Šťastní", "Veselý"],
             engDefinition: "Feeling or showing pleasure or contentment.",
             svkDefinition: "Pociťujúci alebo preukazujúci potešenie alebo spokojnosť.",
             engSentence: "They are happy together.",
             svkSentence: "Sú spolu šťastní."
+        },
+        "Cheerful": {
+            slovak: ["Veselý"],
+            engDefinition: "Feeling or showing happiness.",
+            svkDefinition: "Cítiť alebo prejavovať šťastie.",
+            engSentence: "She is always cheerful in the morning.",
+            svkSentence: "Ráno je vždy veselá."
         },
         "Lucky": {
             slovak: ["Šťastný"],
