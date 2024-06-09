@@ -1,9 +1,9 @@
-var categories =  [ {basicPhrases: "Basic Phrases"}, {greetings: "Greetings"}, {directions: "Directions"}, 
+var categories =  [ {basicPhrases: "Basic Phrases"}, {verbs: "Verbs"}, {greetings: "Greetings"}, 
                     {characteristics: "Characteristics"}, {numbers: "Numbers"}, {adjectives: "Adjectives"}, {colors: "Colors"},
                     {periods: "Periods"}, {timeExpressions: "Time Expressions"}, {carRental: "Car Rental"}, {restaurant: "Restaurant"},
                     {food: "Food"}, {shopping: "Shopping"}, {accomodation: "Accomodation"}, {doctor: "Doctor"}, {travel: "Travel"},
                     {places: "Places"}, {weather: "Weather"}, {family: "Family"}, {animals: "Animals"}, {clothes: "Clothes"}, 
-                    {languages: "Languages"}, {bodyParts: "Body Parts"}, {emergency: "Emergency"}, {pronouns: "Pronouns"}
+                    {languages: "Languages"}, {bodyParts: "Body Parts"}, {emergency: "Emergency"}, {pronouns: "Pronouns"}, {directions: "Directions"}
                   ];
                   
 module.exports = {
@@ -30,11 +30,11 @@ module.exports = {
                                     return null;
                             },
                     categoryIcons:  [
-                                      "fas fa-bullhorn", "fas fa-handshake", "fas fa-map", "fas fa-grin-wink", "fas fa-sort-numeric-up", 
+                                      "fas fa-bullhorn", "fas fa-school", "fas fa-handshake", "fas fa-grin-wink", "fas fa-sort-numeric-up", 
                                       "fas fa-atlas", "fas fa-palette", "fas fa-calendar-alt", "fas fa-clock", "fas fa-car", 
                                       "fas fa-utensils", "fas fa-lemon", "fas fa-shopping-cart", "fas fa-hotel", "fas fa-user-md", 
                                       "fas fa-plane-departure", "fas fa-location-arrow", "fas fa-sun", "fas fa-users", "fas fa-dove", 
-                                      "fas fa-tshirt", "fas fa-language", "fas fa-male", "fas fa-car-crash", "fas fa-tasks"
+                                      "fas fa-tshirt", "fas fa-language", "fas fa-male", "fas fa-car-crash", "fas fa-tasks", "fas fa-map"
                                     ],
                         bgColors: [
                                     "bg-primary", 

@@ -3541,6 +3541,652 @@ var categories = {
             engSentence: "She felt sad after hearing the news.",
             svkSentence: "Cítila sa smutná po vypočutí správy."
         }
+    },
+    verbs: {
+        "To be": {
+            slovak: ["Byť"],
+            engDefinition: "To exist.",
+            svkDefinition: "Existovať.",
+            engSentence: "I want to be a teacher.",
+            svkSentence: "Chcem byť učiteľom."
+        },
+        "To have": {
+            slovak: ["Mať"],
+            engDefinition: "To possess.",
+            svkDefinition: "Vlastniť.",
+            engSentence: "I have a car.",
+            svkSentence: "Mám auto."
+        },
+        "To do": {
+            slovak: ["Robiť"],
+            engDefinition: "To perform an action.",
+            svkDefinition: "Vykonávať činnosť.",
+            engSentence: "I do my homework every day.",
+            svkSentence: "Robím si úlohy každý deň."
+        },
+        "To say": {
+            slovak: ["Povedať"],
+            engDefinition: "To speak words.",
+            svkDefinition: "Vysloviť slová.",
+            engSentence: "She says hello.",
+            svkSentence: "Povedala ahoj."
+        },
+        "To go": {
+            slovak: ["Ísť"],
+            engDefinition: "To move from one place to another.",
+            svkDefinition: "Presúvať sa z miesta na miesto.",
+            engSentence: "I go to school by bus.",
+            svkSentence: "Chodím do školy autobusom."
+        },
+        "To get": {
+            slovak: ["Dostať"],
+            engDefinition: "To receive or obtain.",
+            svkDefinition: "Prijať alebo získať.",
+            engSentence: "I got a gift.",
+            svkSentence: "Dostal som darček."
+        },
+        "To make": {
+            slovak: ["Urobiť"],
+            engDefinition: "To create or construct.",
+            svkDefinition: "Vytvoriť alebo postaviť.",
+            engSentence: "She makes a cake.",
+            svkSentence: "Ona pečie koláč."
+        },
+        "To know": {
+            slovak: ["Vedel"],
+            engDefinition: "To have knowledge.",
+            svkDefinition: "Mať vedomosti.",
+            engSentence: "I know the answer.",
+            svkSentence: "Viem odpoveď."
+        },
+        "To think": {
+            slovak: ["Myslieť"],
+            engDefinition: "To have thoughts.",
+            svkDefinition: "Mať myšlienky.",
+            engSentence: "I think it's a good idea.",
+            svkSentence: "Myslím, že je to dobrý nápad."
+        },
+        "To take": {
+            slovak: ["Vziať"],
+            engDefinition: "To acquire possession.",
+            svkDefinition: "Získať do vlastníctva.",
+            engSentence: "Take an umbrella.",
+            svkSentence: "Vezmi si dáždnik."
+        },
+        "To see": {
+            slovak: ["Vidieť"],
+            engDefinition: "To perceive with eyes.",
+            svkDefinition: "Vnímať očami.",
+            engSentence: "I see the sun.",
+            svkSentence: "Vidím slnko."
+        },
+        "To come": {
+            slovak: ["Prísť"],
+            engDefinition: "To arrive at a place.",
+            svkDefinition: "Dostať sa na miesto.",
+            engSentence: "Come to my house.",
+            svkSentence: "Príď ku mne."
+        },
+        "To want": {
+            slovak: ["Chcieť"],
+            engDefinition: "To desire.",
+            svkDefinition: "Túžiť.",
+            engSentence: "I want ice cream.",
+            svkSentence: "Chcem zmrzlinu."
+        },
+        "To use": {
+            slovak: ["Použiť"],
+            engDefinition: "To employ for a purpose.",
+            svkDefinition: "Použiť na účel.",
+            engSentence: "Use a pencil.",
+            svkSentence: "Použi ceruzku."
+        },
+        "To find": {
+            slovak: ["Nájsť"],
+            engDefinition: "To locate.",
+            svkDefinition: "Nájsť.",
+            engSentence: "I can't find my keys.",
+            svkSentence: "Nemôžem nájsť svoje kľúče."
+        },
+        "To give": {
+            slovak: ["Dať"],
+            engDefinition: "To transfer possession.",
+            svkDefinition: "Previesť vlastníctvo.",
+            engSentence: "Give me the book.",
+            svkSentence: "Daj mi knihu."
+        },
+        "To tell": {
+            slovak: ["Povedať"],
+            engDefinition: "To inform.",
+            svkDefinition: "Informovať.",
+            engSentence: "Tell me your name.",
+            svkSentence: "Povedz mi svoje meno."
+        },
+        "To work": {
+            slovak: ["Pracovať"],
+            engDefinition: "To engage in activity.",
+            svkDefinition: "Zapájať sa do činnosti.",
+            engSentence: "I work from home.",
+            svkSentence: "Pracujem z domu."
+        },
+        "To try": {
+            slovak: ["Skúsiť"],
+            engDefinition: "To attempt.",
+            svkDefinition: "Skúsiť.",
+            engSentence: "Try again.",
+            svkSentence: "Skús to znova."
+        },
+        "To ask": {
+            slovak: ["Opýtať sa"],
+            engDefinition: "To inquire.",
+            svkDefinition: "Spýtať sa.",
+            engSentence: "Ask a question.",
+            svkSentence: "Polož otázku."
+        },
+        "To need": {
+            slovak: ["Potrebovať"],
+            engDefinition: "To require.",
+            svkDefinition: "Požadovať.",
+            engSentence: "I need help.",
+            svkSentence: "Potrebujem pomoc."
+        },
+        "To feel": {
+            slovak: ["Cítiť"],
+            engDefinition: "To perceive emotions.",
+            svkDefinition: "Vnímať emócie.",
+            engSentence: "I feel happy.",
+            svkSentence: "Cítim sa šťastný."
+        },
+        "To become": {
+            slovak: ["Stať sa"],
+            engDefinition: "To begin to be.",
+            svkDefinition: "Začať byť.",
+            engSentence: "She became a doctor.",
+            svkSentence: "Stala sa lekárkou."
+        },
+        "To leave": {
+            slovak: ["Odísť"],
+            engDefinition: "To go away from.",
+            svkDefinition: "Odísť od.",
+            engSentence: "Leave the room.",
+            svkSentence: "Opustite miestnosť."
+        },
+        "To put": {
+            slovak: ["Dať"],
+            engDefinition: "To place.",
+            svkDefinition: "Umiestniť.",
+            engSentence: "Put it on the table.",
+            svkSentence: "Položte to na stôl."
+        },
+        "To mean": {
+            slovak: ["Znamená"],
+            engDefinition: "To signify.",
+            svkDefinition: "Znamená.",
+            engSentence: "What does this mean?",
+            svkSentence: "Čo to znamená?"
+        },
+        "To keep": {
+            slovak: ["Držať"],
+            engDefinition: "To retain.",
+            svkDefinition: "Udržiavať.",
+            engSentence: "Keep it safe.",
+            svkSentence: "Udržujte to v bezpečí."
+        },
+        "To let": {
+            slovak: ["Nechať"],
+            engDefinition: "To allow.",
+            svkDefinition: "Dovoliť.",
+            engSentence: "Let him go.",
+            svkSentence: "Nechaj ho ísť."
+        },
+        "To begin": {
+            slovak: ["Začať"],
+            engDefinition: "To start.",
+            svkDefinition: "Začať.",
+            engSentence: "Begin the lesson.",
+            svkSentence: "Začni lekciu."
+        },
+        "To seem": {
+            slovak: ["Zdať sa"],
+            engDefinition: "To appear.",
+            svkDefinition: "Vyzerať.",
+            engSentence: "She seems tired.",
+            svkSentence: "Vyzerá unavená."
+        },
+        "To help": {
+            slovak: ["Pomôcť"],
+            engDefinition: "To assist.",
+            svkDefinition: "Pomáhať.",
+            engSentence: "Can you help me?",
+            svkSentence: "Môžeš mi pomôcť?"
+        },
+        "To turn": {
+            slovak: ["Otočiť"],
+            engDefinition: "To change direction.",
+            svkDefinition: "Zmeniť smer.",
+            engSentence: "Turn left.",
+            svkSentence: "Odbočte doľava."
+        },
+        "To start": {
+            slovak: ["Začať"],
+            engDefinition: "To begin.",
+            svkDefinition: "Začať.",
+            engSentence: "Start the car.",
+            svkSentence: "Naštartujte auto."
+        },
+        "To show": {
+            slovak: ["Ukázať"],
+            engDefinition: "To display.",
+            svkDefinition: "Zobraziť.",
+            engSentence: "Show me the picture.",
+            svkSentence: "Ukáž mi obrázok."
+        },
+        "To hear": {
+            slovak: ["Počuť"],
+            engDefinition: "To perceive sound.",
+            svkDefinition: "Vnímať zvuk.",
+            engSentence: "I can hear you.",
+            svkSentence: "Počujem ťa."
+        },
+        "To run": {
+            slovak: ["Bežať", "Behať"],
+            engDefinition: "To move quickly.",
+            svkDefinition: "Pohybovať sa rýchlo.",
+            engSentence: "Run to the store.",
+            svkSentence: "Bež do obchodu."
+        },
+        "To move": {
+            slovak: ["Hýbať sa"],
+            engDefinition: "To change position.",
+            svkDefinition: "Zmeniť polohu.",
+            engSentence: "Move the chair.",
+            svkSentence: "Posuň stoličku."
+        },
+        "To like": {
+            slovak: ["Páčiť sa"],
+            engDefinition: "To find pleasant.",
+            svkDefinition: "Nájsť príjemné.",
+            engSentence: "I like this song.",
+            svkSentence: "Páči sa mi táto pieseň."
+        },
+        "To live": {
+            slovak: ["Žiť"],
+            engDefinition: "To be alive.",
+            svkDefinition: "Byť nažive.",
+            engSentence: "I live in the city.",
+            svkSentence: "Žijem v meste."
+        },
+        "To believe": {
+            slovak: ["Veriť"],
+            engDefinition: "To accept as true.",
+            svkDefinition: "Prijať ako pravdivé.",
+            engSentence: "I believe in you.",
+            svkSentence: "Verím v teba."
+        },
+        "To hold": {
+            slovak: ["Držať"],
+            engDefinition: "To grasp.",
+            svkDefinition: "Chytiť.",
+            engSentence: "Hold my hand.",
+            svkSentence: "Drž ma za ruku."
+        },
+        "To bring": {
+            slovak: ["Priniesť"],
+            engDefinition: "To take with you.",
+            svkDefinition: "Zobrať so sebou.",
+            engSentence: "Bring the book.",
+            svkSentence: "Prines knihu."
+        },
+        "To sit": {
+            slovak: ["Sedieť"],
+            engDefinition: "To rest on a surface.",
+            svkDefinition: "Oddychovať na povrchu.",
+            engSentence: "Sit on the chair.",
+            svkSentence: "Sadni si na stoličku."
+        },
+        "To stand": {
+            slovak: ["Stáť"],
+            engDefinition: "To be upright.",
+            svkDefinition: "Byť vzpriamený.",
+            engSentence: "Stand up.",
+            svkSentence: "Postav sa."
+        },
+        "To lose (misplace)": {
+            slovak: ["Stratiť"],
+            engDefinition: "To misplace.",
+            svkDefinition: "Zahubiť.",
+            engSentence: "I lost my keys.",
+            svkSentence: "Stratil som kľúče."
+        },
+        "To pay": {
+            slovak: ["Platiť"],
+            engDefinition: "To give money for something.",
+            svkDefinition: "Dať peniaze za niečo.",
+            engSentence: "Pay the bill.",
+            svkSentence: "Zaplatiť účet."
+        },
+        "To meet": {
+            slovak: ["Stretnúť"],
+            engDefinition: "To come together.",
+            svkDefinition: "Prísť spolu.",
+            engSentence: "Let's meet tomorrow.",
+            svkSentence: "Stretnime sa zajtra."
+        },
+        "To include": {
+            slovak: ["Zahŕňať"],
+            engDefinition: "To contain.",
+            svkDefinition: "Obsahovať.",
+            engSentence: "The price includes tax.",
+            svkSentence: "Cena zahŕňa daň."
+        },
+        "To set": {
+            slovak: ["Nastaviť"],
+            engDefinition: "To place.",
+            svkDefinition: "Nastaviť.",
+            engSentence: "Set the alarm.",
+            svkSentence: "Nastav budík."
+        },
+        "To understand": {
+            slovak: ["Rozumieť"],
+            engDefinition: "To comprehend.",
+            svkDefinition: "Pochopiť.",
+            engSentence: "Do you understand this?",
+            svkSentence: "Rozumieš tomu?"
+        },
+        "To grow": {
+            slovak: ["Rásť"],
+            engDefinition: "To increase in size.",
+            svkDefinition: "Zväčšovať sa.",
+            engSentence: "Plants grow fast.",
+            svkSentence: "Rastliny rastú rýchlo."
+        },
+        "To read": {
+            slovak: ["Čítať"],
+            engDefinition: "To look at and understand written words.",
+            svkDefinition: "Pozerať sa a rozumieť písaným slovám.",
+            engSentence: "I like to read books.",
+            svkSentence: "Rád čítam knihy."
+        },
+        "To speak": {
+            slovak: ["Hovoriť"],
+            engDefinition: "To use words.",
+            svkDefinition: "Používať slová.",
+            engSentence: "She speaks three languages.",
+            svkSentence: "Hovorí tromi jazykmi."
+        },
+        "To walk": {
+            slovak: ["Chodiť"],
+            engDefinition: "To move on foot.",
+            svkDefinition: "Pohybovať sa pešo.",
+            engSentence: "We walk to school.",
+            svkSentence: "Chodíme do školy pešo."
+        },
+        "To drive": {
+            slovak: ["Šoférovať", "Riadiť"],
+            engDefinition: "To operate a vehicle.",
+            svkDefinition: "Riadiť vozidlo.",
+            engSentence: "I drive to work.",
+            svkSentence: "Jazdím do práce."
+        },
+        "To dance": {
+            slovak: ["Tancovať"],
+            engDefinition: "To move rhythmically.",
+            svkDefinition: "Pohybovať sa rytmicky.",
+            engSentence: "We love to dance.",
+            svkSentence: "Radi tancujeme."
+        },
+        "To buy": {
+            slovak: ["Kúpiť"],
+            engDefinition: "To purchase.",
+            svkDefinition: "Zakúpiť.",
+            engSentence: "I need to buy groceries.",
+            svkSentence: "Musím kúpiť potraviny."
+        },
+        "To sell": {
+            slovak: ["Predať"],
+            engDefinition: "To exchange for money.",
+            svkDefinition: "Vymeniť za peniaze.",
+            engSentence: "She sells flowers.",
+            svkSentence: "Predáva kvety."
+        },
+        "To wait": {
+            slovak: ["Čakať"],
+            engDefinition: "To stay in one place until something happens.",
+            svkDefinition: "Zostať na mieste, kým sa niečo nestane.",
+            engSentence: "I wait for the bus.",
+            svkSentence: "Čakám na autobus."
+        },
+        "To hope": {
+            slovak: ["Dúfať"],
+            engDefinition: "To desire with expectation.",
+            svkDefinition: "Túžiť s očakávaním.",
+            engSentence: "I hope it will be sunny.",
+            svkSentence: "Dúfam, že bude slnečno."
+        },
+        "To love": {
+            slovak: ["Milovať"],
+            engDefinition: "To feel deep affection.",
+            svkDefinition: "Cítiť hlbokú náklonnosť.",
+            engSentence: "I love my family.",
+            svkSentence: "Milujem svoju rodinu."
+        },
+        "To hate": {
+            slovak: ["Nenávidieť"],
+            engDefinition: "To feel intense dislike.",
+            svkDefinition: "Cítiť intenzívny odpor.",
+            engSentence: "I hate waiting in line.",
+            svkSentence: "Nenávidím čakanie v rade."
+        },
+        "To laugh": {
+            slovak: ["Smiať sa"],
+            engDefinition: "To make sounds showing amusement.",
+            svkDefinition: "Vydávať zvuky prejavujúce zábavu.",
+            engSentence: "They laugh at the joke.",
+            svkSentence: "Smiali sa na vtipe."
+        },
+        "To cry": {
+            slovak: ["Plakať"],
+            engDefinition: "To shed tears.",
+            svkDefinition: "Roniť slzy.",
+            engSentence: "The baby cries.",
+            svkSentence: "Dieťa plače."
+        },
+        "To win": {
+            slovak: ["Vyhrať"],
+            engDefinition: "To achieve victory.",
+            svkDefinition: "Dosiahnuť víťazstvo.",
+            engSentence: "We want to win the game.",
+            svkSentence: "Chceme vyhrať hru."
+        },
+        "To lose (not win)": {
+            slovak: ["Prehrať"],
+            engDefinition: "To fail to win.",
+            svkDefinition: "Neuspieť vo výhre.",
+            engSentence: "I don't want to lose.",
+            svkSentence: "Nechcem prehrať."
+        },
+        "To eat": {
+            slovak: ["Jesť"],
+            engDefinition: "To consume food.",
+            svkDefinition: "Konzumovať jedlo.",
+            engSentence: "I eat breakfast every morning.",
+            svkSentence: "Každé ráno raňajkujem."
+        },
+        "To drink": {
+            slovak: ["Piť"],
+            engDefinition: "To consume liquid.",
+            svkDefinition: "Konzumovať tekutinu.",
+            engSentence: "I drink water.",
+            svkSentence: "Pijem vodu."
+        },
+        "To sleep": {
+            slovak: ["Spať"],
+            engDefinition: "To rest in a state of reduced consciousness.",
+            svkDefinition: "Odpočívať v stave zníženej vedomosti.",
+            engSentence: "I sleep eight hours a night.",
+            svkSentence: "Spím osem hodín za noc."
+        },
+        "To wake up": {
+            slovak: ["Prebudiť sa"],
+            engDefinition: "To stop sleeping.",
+            svkDefinition: "Prestať spať.",
+            engSentence: "I wake up at 7 AM.",
+            svkSentence: "Prebúdzam sa o 7 ráno."
+        },
+        "To write": {
+            slovak: ["Písať"],
+            engDefinition: "To form letters or words.",
+            svkDefinition: "Tvoriť písmená alebo slová.",
+            engSentence: "I write a letter.",
+            svkSentence: "Píšem list."
+        },
+        "To draw": {
+            slovak: ["Kresliť"],
+            engDefinition: "To make a picture with a pen or pencil.",
+            svkDefinition: "Vytvoriť obrázok perom alebo ceruzkou.",
+            engSentence: "She likes to draw.",
+            svkSentence: "Rada kreslí."
+        },
+        "To build": {
+            slovak: ["Stavať"],
+            engDefinition: "To construct.",
+            svkDefinition: "Stavať.",
+            engSentence: "They build houses.",
+            svkSentence: "Stavajú domy."
+        },
+        "To clean": {
+            slovak: ["Čistiť"],
+            engDefinition: "To make something free of dirt.",
+            svkDefinition: "Urobiť niečo bez nečistôt.",
+            engSentence: "I clean my room.",
+            svkSentence: "Čistím svoju izbu."
+        },
+        "To cook": {
+            slovak: ["Variť"],
+            engDefinition: "To prepare food by heating.",
+            svkDefinition: "Pripravovať jedlo zahrievaním.",
+            engSentence: "I cook dinner.",
+            svkSentence: "Varením večere."
+        },
+        "To cut": {
+            slovak: ["Rezať"],
+            engDefinition: "To divide with a sharp tool.",
+            svkDefinition: "Rozdeliť ostrým nástrojom.",
+            engSentence: "Cut the paper.",
+            svkSentence: "Rezať papier."
+        },
+        "To open": {
+            slovak: ["Otvoriť"],
+            engDefinition: "To make accessible.",
+            svkDefinition: "Sprístupniť.",
+            engSentence: "Open the door.",
+            svkSentence: "Otvoriť dvere."
+        },
+        "To close": {
+            slovak: ["Zatvoriť"],
+            engDefinition: "To shut.",
+            svkDefinition: "Zatvoriť.",
+            engSentence: "Close the window.",
+            svkSentence: "Zatvoriť okno."
+        },
+        "To jump": {
+            slovak: ["Skákať"],
+            engDefinition: "To push oneself off a surface and into the air.",
+            svkDefinition: "Odskočiť od povrchu do vzduchu.",
+            engSentence: "Jump over the fence.",
+            svkSentence: "Preskočiť plot."
+        },
+        "To fly": {
+            slovak: ["Lietať"],
+            engDefinition: "To move through the air.",
+            svkDefinition: "Pohybovať sa vo vzduchu.",
+            engSentence: "Birds fly high.",
+            svkSentence: "Vtáky lietajú vysoko."
+        },
+        "To swim": {
+            slovak: ["Plávať"],
+            engDefinition: "To move through water.",
+            svkDefinition: "Pohybovať sa vo vode.",
+            engSentence: "Fish swim in the sea.",
+            svkSentence: "Ryby plávajú v mori."
+        },
+        "To climb": {
+            slovak: ["Liezť"],
+            engDefinition: "To move up or over something.",
+            svkDefinition: "Pohybovať sa hore alebo cez niečo.",
+            engSentence: "Climb the mountain.",
+            svkSentence: "Liezť na horu."
+        },
+        "To sing": {
+            slovak: ["Spievať"],
+            engDefinition: "To make musical sounds with the voice.",
+            svkDefinition: "Vydávať hudobné zvuky hlasom.",
+            engSentence: "She sings beautifully.",
+            svkSentence: "Spieva krásne."
+        },
+        "To paint": {
+            slovak: ["Maľovať"],
+            engDefinition: "To cover a surface with color.",
+            svkDefinition: "Pokryť povrch farbou.",
+            engSentence: "He paints the wall.",
+            svkSentence: "Maľuje stenu."
+        },
+        "To study": {
+            slovak: ["Študovať"],
+            engDefinition: "To learn about a subject.",
+            svkDefinition: "Učiť sa o predmete.",
+            engSentence: "I study math.",
+            svkSentence: "Študujem matematiku."
+        },
+        "To teach": {
+            slovak: ["Učiť"],
+            engDefinition: "To impart knowledge.",
+            svkDefinition: "Odovzdávať vedomosti.",
+            engSentence: "She teaches English.",
+            svkSentence: "Učí angličtinu."
+        },
+        "To learn": {
+            slovak: ["Učiť sa"],
+            engDefinition: "To gain knowledge.",
+            svkDefinition: "Získať vedomosti.",
+            engSentence: "I learn new things every day.",
+            svkSentence: "Každý deň sa učím nové veci."
+        },
+        "To call": {
+            slovak: ["Zavolať"],
+            engDefinition: "To communicate by phone.",
+            svkDefinition: "Komunikovať cez telefón.",
+            engSentence: "I will call you later.",
+            svkSentence: "Zavolám ti neskôr."
+        },
+        "To play": {
+            slovak: ["Hrať"],
+            engDefinition: "To engage in an activity for enjoyment.",
+            svkDefinition: "Zapojiť sa do činnosti pre potešenie.",
+            engSentence: "Children play in the park.",
+            svkSentence: "Deti sa hrajú v parku."
+        },
+        "To watch": {
+            slovak: ["Sledovať"],
+            engDefinition: "To look at something attentively.",
+            svkDefinition: "Pozerať sa na niečo pozorne.",
+            engSentence: "I watch TV every evening.",
+            svkSentence: "Každý večer pozerám televíziu."
+        },
+        "To listen": {
+            slovak: ["Počúvať"],
+            engDefinition: "To pay attention to sound.",
+            svkDefinition: "Venovať pozornosť zvuku.",
+            engSentence: "I listen to music.",
+            svkSentence: "Počúvam hudbu."
+        },
+        "To talk": {
+            slovak: ["Rozprávať"],
+            engDefinition: "To speak with someone.",
+            svkDefinition: "Hovoriť s niekým.",
+            engSentence: "We talk on the phone.",
+            svkSentence: "Rozprávame sa cez telefón."
+        }
     }
 };
 
@@ -3655,4 +4301,21 @@ function getChangedEntries(existingVocab, newVocabData) {
     return changes;
 }
 
+async function deleteCategory(query) {
+    try {
+        // Ensure the connection is open before performing the operation
+        await mongoose.connection.once('open', () => {
+            console.log('Connected to MongoDB');
+        });
+
+        const result = await Vocabulary.deleteMany(query);
+        console.log(`${result.deletedCount} documents were deleted.`);
+    } catch (error) {
+        console.error('Error deleting documents:', error);
+    } finally {
+        mongoose.disconnect();
+    }
+}
+
+// deleteCategory({ category: 'verbs' });
 populateVocab();

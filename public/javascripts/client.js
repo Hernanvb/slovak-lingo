@@ -33,7 +33,7 @@ $('input.topic-checkbox').on('change', function() {
 function checkboxHandler() {
     var maxValue = 0;
     var inputElements = document.getElementsByClassName('topic-checkbox');
-    var allCheckbox = document.getElementById('checkbox-26');
+    var allCheckbox = document.getElementById('checkbox-all');
     
     if (allCheckbox.checked) {
         $('#numOfQuestions').attr("max", allCheckbox.value);
