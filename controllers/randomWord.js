@@ -2,12 +2,11 @@ var Vocabulary  = require('../models/vocabModel');
 
 /* This will be used to find how many documents (word pairs) are in each category
    TODO: Should be improved so we won't have to rely on this array and make it more dynamic */
-var categoriesInDb = ["basicPhrases",     "verbs",  "greetings", "characteristics", "numbers",
-                        "adjectives",    "colors",    "periods", "timeExpressions", "carRental",
-                        "restaurant",      "food",   "shopping",    "accomodation",    "doctor",
-                            "travel",    "places",    "weather",          "family",   "animals",
-                           "clothes", "languages",  "bodyParts",       "emergency",  "pronouns",
-                        "directions",];
+var categoriesInDb = ["basicPhrases",     "verbs",  "greetings", "characteristics",    "numbers",
+                        "adjectives",    "colors",    "periods", "timeExpressions", "directions",
+                        "restaurant",      "food",   "shopping",          "travel",     "places",
+                           "weather",    "family",    "animals",         "clothes",
+                         "languages",  "bodyParts",  "emergency",       "pronouns"];
 var randomGen = {
     // Function to generate a vocabulary array with the Objects from
     // the categories selected by the user

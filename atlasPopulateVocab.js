@@ -294,26 +294,12 @@ var categories = {
             engSentence: "I need to see a doctor.",
             svkSentence: "Potrebujem navštíviť lekára."
         },
-        "Hospital": {
-            slovak: ["Nemocnica"],
-            engDefinition: "An institution providing medical and surgical treatment.",
-            svkDefinition: "Inštitúcia poskytujúca lekársku a chirurgickú liečbu.",
-            engSentence: "She was taken to the hospital.",
-            svkSentence: "Bola odvezená do nemocnice."
-        },
         "Pharmacy": {
             slovak: ["Lekáreň"],
             engDefinition: "A store where medicinal drugs are dispensed.",
             svkDefinition: "Obchod, kde sa vydávajú lieky.",
             engSentence: "I need to go to the pharmacy.",
             svkSentence: "Potrebujem ísť do lekárne."
-        },
-        "Emergency": {
-            slovak: ["Pohotovosť"],
-            engDefinition: "A serious, unexpected situation requiring immediate action.",
-            svkDefinition: "Vážna, neočakávaná situácia vyžadujúca okamžitý zásah.",
-            engSentence: "This is an emergency!",
-            svkSentence: "Toto je pohotovosť!"
         },
         "Emergency exit": {
             slovak: ["Únikový východ"],
@@ -336,9 +322,88 @@ var categories = {
             engSentence: "The exit is over there.",
             svkSentence: "Východ je tam."
         },
+        "Emergency": {
+            slovak: ["Pohotovosť"],
+            engDefinition: "A serious, unexpected situation requiring immediate action.",
+            svkDefinition: "Vážna, neočakávaná situácia vyžadujúca okamžité opatrenie.",
+            engSentence: "They went to the emergency room.",
+            svkSentence: "Išli na pohotovosť."
+        },
+        "Hospital": {
+            slovak: ["Nemocnica"],
+            engDefinition: "A place where sick or injured people are given medical treatment.",
+            svkDefinition: "Miesto, kde sa chorým alebo zraneným ľuďom poskytuje lekárska starostlivosť.",
+            engSentence: "She was admitted to the hospital.",
+            svkSentence: "Bola prijatá do nemocnice."
+        },
+        "Dentist": {
+            slovak: ["Zubár"],
+            engDefinition: "A doctor who treats teeth.",
+            svkDefinition: "Lekár, ktorý lieči zuby.",
+            engSentence: "I have an appointment with the dentist.",
+            svkSentence: "Mám stretnutie so zubárom."
+        },
+        "Pain": {
+            slovak: ["Bolesť"],
+            engDefinition: "An unpleasant feeling in the body.",
+            svkDefinition: "Nepríjemný pocit v tele.",
+            engSentence: "He is experiencing a lot of pain.",
+            svkSentence: "Zažíva veľkú bolesť."
+        },
+        "Headache": {
+            slovak: ["Bolesť hlavy"],
+            engDefinition: "Pain in the head.",
+            svkDefinition: "Bolesť v hlave.",
+            engSentence: "She has a bad headache.",
+            svkSentence: "Má silnú bolesť hlavy."
+        },
+        "Stomachache": {
+            slovak: ["Bolesť brucha"],
+            engDefinition: "Pain in the stomach.",
+            svkDefinition: "Bolesť v bruchu.",
+            engSentence: "He complained of a stomachache.",
+            svkSentence: "Sťažoval sa na bolesť brucha."
+        },
+        "Toothache": {
+            slovak: ["Bolesť zubov"],
+            engDefinition: "Pain in a tooth.",
+            svkDefinition: "Bolesť v zube.",
+            engSentence: "She went to the dentist for her toothache.",
+            svkSentence: "Išla k zubárovi kvôli bolesti zubov."
+        },
+        "Flu": {
+            slovak: ["Chrípka"],
+            engDefinition: "A common viral infection.",
+            svkDefinition: "Bežná vírusová infekcia.",
+            engSentence: "He is recovering from the flu.",
+            svkSentence: "Zotavuje sa z chrípky."
+        },
+        "Fracture": {
+            slovak: ["Zlomenina"],
+            engDefinition: "A break in a bone.",
+            svkDefinition: "Zlomenina kosti.",
+            engSentence: "She has a fracture in her arm.",
+            svkSentence: "Má zlomeninu v ruke."
+        },
+        "Injection": {
+            slovak: ["Injekcia"],
+            engDefinition: "A shot of medicine.",
+            svkDefinition: "Dávka lieku.",
+            engSentence: "He received an injection for pain relief.",
+            svkSentence: "Dostal injekciu na zmiernenie bolesti."
+        },
+        "Thermometer": {
+            slovak: ["Teplomer"],
+            engDefinition: "An instrument for measuring temperature.",
+            svkDefinition: "Nástroj na meranie teploty.",
+            engSentence: "The nurse used a thermometer to check his temperature.",
+            svkSentence: "Sestra použila teplomer na kontrolu jeho teploty."
+        },
+        "I have a toothache": ["Bolí ma zub"],
+        "Call the doctor": ["Zavolajte lekára"],
+        "Call the ambulance": ["Zavolajte sanitku"],
         "Can you help me": ["Môžete mi pomôcť"],
         "I need help": ["Potrebujem pomoc"],
-        "Call the ambulance": ["Zavolajte pohotovosť"],
         "Call the police": ["Zavolajte políciu"],
         "I have been robbed": ["Okradli ma"],
         "I am injured": ["Som zranený"]
@@ -917,82 +982,6 @@ var categories = {
         "The day after tomorrow": ["Pozajtra"],
         "This month": ["Tento mesiac"]
     },
-    carRental: {
-        "Drivers license": {
-            slovak: ["Vodičský preukaz"],
-            engDefinition: "A permit to drive a car.",
-            svkDefinition: "Povolenie na šoférovanie auta.",
-            engSentence: "You need a driver's license to rent a car.",
-            svkSentence: "Na prenájom auta potrebujete vodičský preukaz."
-        },
-        "To reserve/To book": {
-            slovak: ["Rezervovať"],
-            engDefinition: "To arrange in advance.",
-            svkDefinition: "Dohodnúť vopred.",
-            engSentence: "I want to reserve a car.",
-            svkSentence: "Chcem rezervovať auto."
-        },
-        "Door": {
-            slovak: ["Dvere"],
-            engDefinition: "A movable barrier for entering or leaving a car.",
-            svkDefinition: "Pohyblivá bariéra pre vstup alebo výstup z auta.",
-            engSentence: "Open the car door.",
-            svkSentence: "Otvorte dvere auta."
-        },
-        "Keys": {
-            slovak: ["Kľúče"],
-            engDefinition: "Metal objects used to open or start a car.",
-            svkDefinition: "Kovové predmety používané na otvorenie alebo naštartovanie auta.",
-            engSentence: "Where are the car keys?",
-            svkSentence: "Kde sú kľúče od auta?"
-        },
-        "Breakdown": {
-            slovak: ["Porucha"],
-            engDefinition: "Failure of a car to function.",
-            svkDefinition: "Zlyhanie auta.",
-            engSentence: "The car had a breakdown.",
-            svkSentence: "Auto malo poruchu."
-        },
-        "Petrol": {
-            slovak: ["Benzín"],
-            engDefinition: "A liquid fuel for cars.",
-            svkDefinition: "Kvapalné palivo pre autá.",
-            engSentence: "We need to fill up with petrol.",
-            svkSentence: "Musíme natankovať benzín."
-        },
-        "Diesel": {
-            slovak: ["Nafta"],
-            engDefinition: "A type of fuel for cars.",
-            svkDefinition: "Typ paliva pre autá.",
-            engSentence: "This car uses diesel.",
-            svkSentence: "Toto auto používa naftu."
-        },
-        "Car insurance": {
-            slovak: ["Poistenie automobilu", "Poistka automobilu"],
-            engDefinition: "Financial protection for a car.",
-            svkDefinition: "Finančná ochrana pre auto.",
-            engSentence: "Do you have car insurance?",
-            svkSentence: "Máte poistenie automobilu?"
-        },
-        "Pick up date": {
-            slovak: ["Dátum vyzdvihnutia"],
-            engDefinition: "The date to collect a rental car.",
-            svkDefinition: "Dátum na vyzdvihnutie prenajatého auta.",
-            engSentence: "What is the pick up date?",
-            svkSentence: "Aký je dátum vyzdvihnutia?"
-        },
-        "Return date": {
-            slovak: ["Dátum odovzdania"],
-            engDefinition: "The date to return a rental car.",
-            svkDefinition: "Dátum na odovzdanie prenajatého auta.",
-            engSentence: "What is the return date?",
-            svkSentence: "Aký je dátum odovzdania?"
-        },
-        "I would like to rent a car please": ["Rád by som si požičal auto"],
-        "How long would you like it?": ["Na ako dlho?"],
-        "How much it cost per day?": ["Koľko to stojí na deň?"],
-        "Rent a car": ["Požičať auto"]
-    },
     restaurant: {
         "Restaurant": {
             slovak: ["Reštaurácia"],
@@ -1568,11 +1557,11 @@ var categories = {
             engSentence: "She wore a wool sweater.",
             svkSentence: "Mala na sebe vlnený sveter."
         },
-        "Shoe Shop": {
+        "Shoe Store": {
             slovak: ["Obuv"],
             engDefinition: "A shop where shoes are sold.",
             svkDefinition: "Obchod, kde sa predávajú topánky.",
-            engSentence: "I need to go to the shoe shop for new sneakers.",
+            engSentence: "I need to go to the shoe store for new sneakers.",
             svkSentence: "Musím ísť do obuvi pre nové tenisky."
         },
         "Toys": {
@@ -1640,195 +1629,6 @@ var categories = {
         "I would like a smaller size (fem)": ["Chcela by som menšie čislo"],
         "Changing room": ["Skúšobná kabínka"],
         "How much is it?": ["Koľko to stojí?"]
-    },
-    accommodation: {
-        "Room": {
-            slovak: ["Izba"],
-            engDefinition: "A space in a building for living or working.",
-            svkDefinition: "Priestor v budove na bývanie alebo prácu.",
-            engSentence: "The hotel room is very clean.",
-            svkSentence: "Hotelová izba je veľmi čistá."
-        },
-        "Bed": {
-            slovak: ["Posteľ"],
-            engDefinition: "A piece of furniture for sleeping on.",
-            svkDefinition: "Kus nábytku na spanie.",
-            engSentence: "The bed is very comfortable.",
-            svkSentence: "Posteľ je veľmi pohodlná."
-        },
-        "Single room": {
-            slovak: ["Jednopostelová izba"],
-            engDefinition: "A room with one bed for one person.",
-            svkDefinition: "Izba s jednou posteľou pre jednu osobu.",
-            engSentence: "I booked a single room for my stay.",
-            svkSentence: "Rezervoval som si jednopostelovú izbu na môj pobyt."
-        },
-        "Double room": {
-            slovak: ["Dvojpostelová izba"],
-            engDefinition: "A room with a bed for two people.",
-            svkDefinition: "Izba s posteľou pre dve osoby.",
-            engSentence: "They stayed in a double room.",
-            svkSentence: "Oni zostali v dvojpostelovej izbe."
-        },
-        "Hotel": {
-            slovak: ["Hotel"],
-            engDefinition: "A building providing lodging and meals for travelers.",
-            svkDefinition: "Budova poskytujúca ubytovanie a stravu pre cestujúcich.",
-            engSentence: "We checked into the hotel.",
-            svkSentence: "Ubytovali sme sa v hoteli."
-        },
-        "Reception": {
-            slovak: ["Recepcia"],
-            engDefinition: "The area in a hotel where guests check in.",
-            svkDefinition: "Priestor v hoteli, kde sa hostia registrujú.",
-            engSentence: "She asked for help at the reception.",
-            svkSentence: "Požiadala o pomoc na recepcii."
-        },
-        "Breakfast": {
-            slovak: ["Raňajky"],
-            engDefinition: "The first meal of the day.",
-            svkDefinition: "Prvé jedlo dňa.",
-            engSentence: "Breakfast is served from 7 AM.",
-            svkSentence: "Raňajky sa podávajú od 7 ráno."
-        },
-        "Lunch": {
-            slovak: ["Obed"],
-            engDefinition: "The meal eaten in the middle of the day.",
-            svkDefinition: "Jedlo konzumované uprostred dňa.",
-            engSentence: "We had lunch at a nearby restaurant.",
-            svkSentence: "Obedovali sme v neďalekej reštaurácii."
-        },
-        "Dinner": {
-            slovak: ["Večera"],
-            engDefinition: "The main meal of the evening.",
-            svkDefinition: "Hlavné jedlo večera.",
-            engSentence: "They are having dinner together.",
-            svkSentence: "Večerajú spolu."
-        },
-        "Full board": {
-            slovak: ["Plná peniza"],
-            engDefinition: "Accommodation including all meals.",
-            svkDefinition: "Ubytovanie vrátane všetkých jedál.",
-            engSentence: "The hotel offers full board options.",
-            svkSentence: "Hotel ponúka možnosti plnej penzie."
-        },
-        "Half board": {
-            slovak: ["Polpenzia"],
-            engDefinition: "Accommodation including breakfast and one main meal.",
-            svkDefinition: "Ubytovanie vrátane raňajok a jedného hlavného jedla.",
-            engSentence: "We chose the half board package.",
-            svkSentence: "Vybrali sme si balíček s polpenziou."
-        },
-        "To book": {
-            slovak: ["Rezervovať"],
-            engDefinition: "To arrange in advance.",
-            svkDefinition: "Dohodnúť vopred.",
-            engSentence: "I need to book a room for tonight.",
-            svkSentence: "Potrebujem rezervovať izbu na dnešnú noc."
-        }
-    },
-    doctor: {
-        "Doctor": {
-            slovak: ["Lekár"],
-            engDefinition: "A person trained to treat sick people.",
-            svkDefinition: "Osoba vyškolená na liečbu chorých ľudí.",
-            engSentence: "The doctor examined the patient.",
-            svkSentence: "Lekár vyšetril pacienta."
-        },
-        "Ambulance": {
-            slovak: ["Sanitka"],
-            engDefinition: "A vehicle for taking sick or injured people to the hospital.",
-            svkDefinition: "Vozidlo na prepravu chorých alebo zranených ľudí do nemocnice.",
-            engSentence: "The ambulance arrived quickly.",
-            svkSentence: "Sanitka prišla rýchlo."
-        },
-        "Emergency": {
-            slovak: ["Pohotovosť"],
-            engDefinition: "A serious, unexpected situation requiring immediate action.",
-            svkDefinition: "Vážna, neočakávaná situácia vyžadujúca okamžité opatrenie.",
-            engSentence: "They went to the emergency room.",
-            svkSentence: "Išli na pohotovosť."
-        },
-        "Hospital": {
-            slovak: ["Nemocnica"],
-            engDefinition: "A place where sick or injured people are given medical treatment.",
-            svkDefinition: "Miesto, kde sa chorým alebo zraneným ľuďom poskytuje lekárska starostlivosť.",
-            engSentence: "She was admitted to the hospital.",
-            svkSentence: "Bola prijatá do nemocnice."
-        },
-        "Pharmacy": {
-            slovak: ["Lekáreň"],
-            engDefinition: "A store where medicinal drugs are dispensed and sold.",
-            svkDefinition: "Obchod, kde sa vydávajú a predávajú liečivé lieky.",
-            engSentence: "I need to go to the pharmacy.",
-            svkSentence: "Potrebujem ísť do lekárne."
-        },
-        "Dentist": {
-            slovak: ["Zubár"],
-            engDefinition: "A doctor who treats teeth.",
-            svkDefinition: "Lekár, ktorý lieči zuby.",
-            engSentence: "I have an appointment with the dentist.",
-            svkSentence: "Mám stretnutie so zubárom."
-        },
-        "Pain": {
-            slovak: ["Bolesť"],
-            engDefinition: "An unpleasant feeling in the body.",
-            svkDefinition: "Nepríjemný pocit v tele.",
-            engSentence: "He is experiencing a lot of pain.",
-            svkSentence: "Zažíva veľkú bolesť."
-        },
-        "Headache": {
-            slovak: ["Bolesť hlavy"],
-            engDefinition: "Pain in the head.",
-            svkDefinition: "Bolesť v hlave.",
-            engSentence: "She has a bad headache.",
-            svkSentence: "Má silnú bolesť hlavy."
-        },
-        "Stomachache": {
-            slovak: ["Bolesť brucha"],
-            engDefinition: "Pain in the stomach.",
-            svkDefinition: "Bolesť v bruchu.",
-            engSentence: "He complained of a stomachache.",
-            svkSentence: "Sťažoval sa na bolesť brucha."
-        },
-        "Toothache": {
-            slovak: ["Bolesť zubov"],
-            engDefinition: "Pain in a tooth.",
-            svkDefinition: "Bolesť v zube.",
-            engSentence: "She went to the dentist for her toothache.",
-            svkSentence: "Išla k zubárovi kvôli bolesti zubov."
-        },
-        "Flu": {
-            slovak: ["Chrípka"],
-            engDefinition: "A common viral infection.",
-            svkDefinition: "Bežná vírusová infekcia.",
-            engSentence: "He is recovering from the flu.",
-            svkSentence: "Zotavuje sa z chrípky."
-        },
-        "Fracture": {
-            slovak: ["Zlomenina"],
-            engDefinition: "A break in a bone.",
-            svkDefinition: "Zlomenina kosti.",
-            engSentence: "She has a fracture in her arm.",
-            svkSentence: "Má zlomeninu v ruke."
-        },
-        "Injection": {
-            slovak: ["Injekcia"],
-            engDefinition: "A shot of medicine.",
-            svkDefinition: "Dávka lieku.",
-            engSentence: "He received an injection for pain relief.",
-            svkSentence: "Dostal injekciu na zmiernenie bolesti."
-        },
-        "Thermometer": {
-            slovak: ["Teplomer"],
-            engDefinition: "An instrument for measuring temperature.",
-            svkDefinition: "Nástroj na meranie teploty.",
-            engSentence: "The nurse used a thermometer to check his temperature.",
-            svkSentence: "Sestra použila teplomer na kontrolu jeho teploty."
-        },
-        "I have a toothache": ["Bolí ma zub"],
-        "Call the doctor": ["Zavolajte lekára"],
-        "Call the ambulance": ["Zavolajte sanitku"]
     },
     travel: {
         "Airport": {
@@ -1914,7 +1714,165 @@ var categories = {
             svkDefinition: "Systém autobusov, vlakov atď., ktorý je k dispozícii na použitie verejnosťou.",
             engSentence: "Public transport is very convenient here.",
             svkSentence: "Verejná doprava je tu veľmi pohodlná."
-        }
+        },
+        "Drivers license": {
+            slovak: ["Vodičský preukaz"],
+            engDefinition: "A permit to drive a car.",
+            svkDefinition: "Povolenie na šoférovanie auta.",
+            engSentence: "You need a driver's license to rent a car.",
+            svkSentence: "Na prenájom auta potrebujete vodičský preukaz."
+        },
+        "To reserve/To book": {
+            slovak: ["Rezervovať"],
+            engDefinition: "To arrange in advance.",
+            svkDefinition: "Dohodnúť vopred.",
+            engSentence: "I want to reserve a car.",
+            svkSentence: "Chcem rezervovať auto."
+        },
+        "Door": {
+            slovak: ["Dvere"],
+            engDefinition: "A movable barrier for entering or leaving a car.",
+            svkDefinition: "Pohyblivá bariéra pre vstup alebo výstup z auta.",
+            engSentence: "Open the car door.",
+            svkSentence: "Otvorte dvere auta."
+        },
+        "Keys": {
+            slovak: ["Kľúče"],
+            engDefinition: "Metal objects used to open or start a car.",
+            svkDefinition: "Kovové predmety používané na otvorenie alebo naštartovanie auta.",
+            engSentence: "Where are the car keys?",
+            svkSentence: "Kde sú kľúče od auta?"
+        },
+        "Breakdown": {
+            slovak: ["Porucha"],
+            engDefinition: "Failure of a car to function.",
+            svkDefinition: "Zlyhanie auta.",
+            engSentence: "The car had a breakdown.",
+            svkSentence: "Auto malo poruchu."
+        },
+        "Petrol": {
+            slovak: ["Benzín"],
+            engDefinition: "A liquid fuel for cars.",
+            svkDefinition: "Kvapalné palivo pre autá.",
+            engSentence: "We need to fill up with petrol.",
+            svkSentence: "Musíme natankovať benzín."
+        },
+        "Diesel": {
+            slovak: ["Nafta"],
+            engDefinition: "A type of fuel for cars.",
+            svkDefinition: "Typ paliva pre autá.",
+            engSentence: "This car uses diesel.",
+            svkSentence: "Toto auto používa naftu."
+        },
+        "Car insurance": {
+            slovak: ["Poistenie automobilu", "Poistka automobilu"],
+            engDefinition: "Financial protection for a car.",
+            svkDefinition: "Finančná ochrana pre auto.",
+            engSentence: "Do you have car insurance?",
+            svkSentence: "Máte poistenie automobilu?"
+        },
+        "Pick up date": {
+            slovak: ["Dátum vyzdvihnutia"],
+            engDefinition: "The date to collect a rental car.",
+            svkDefinition: "Dátum na vyzdvihnutie prenajatého auta.",
+            engSentence: "What is the pick up date?",
+            svkSentence: "Aký je dátum vyzdvihnutia?"
+        },
+        "Return date": {
+            slovak: ["Dátum odovzdania"],
+            engDefinition: "The date to return a rental car.",
+            svkDefinition: "Dátum na odovzdanie prenajatého auta.",
+            engSentence: "What is the return date?",
+            svkSentence: "Aký je dátum odovzdania?"
+        },
+        "Room": {
+            slovak: ["Izba"],
+            engDefinition: "A space in a building for living or working.",
+            svkDefinition: "Priestor v budove na bývanie alebo prácu.",
+            engSentence: "The hotel room is very clean.",
+            svkSentence: "Hotelová izba je veľmi čistá."
+        },
+        "Bed": {
+            slovak: ["Posteľ"],
+            engDefinition: "A piece of furniture for sleeping on.",
+            svkDefinition: "Kus nábytku na spanie.",
+            engSentence: "The bed is very comfortable.",
+            svkSentence: "Posteľ je veľmi pohodlná."
+        },
+        "Single room": {
+            slovak: ["Jednopostelová izba"],
+            engDefinition: "A room with one bed for one person.",
+            svkDefinition: "Izba s jednou posteľou pre jednu osobu.",
+            engSentence: "I booked a single room for my stay.",
+            svkSentence: "Rezervoval som si jednopostelovú izbu na môj pobyt."
+        },
+        "Double room": {
+            slovak: ["Dvojpostelová izba"],
+            engDefinition: "A room with a bed for two people.",
+            svkDefinition: "Izba s posteľou pre dve osoby.",
+            engSentence: "They stayed in a double room.",
+            svkSentence: "Oni zostali v dvojpostelovej izbe."
+        },
+        "Hotel": {
+            slovak: ["Hotel"],
+            engDefinition: "A building providing lodging and meals for travelers.",
+            svkDefinition: "Budova poskytujúca ubytovanie a stravu pre cestujúcich.",
+            engSentence: "We checked into the hotel.",
+            svkSentence: "Ubytovali sme sa v hoteli."
+        },
+        "Reception": {
+            slovak: ["Recepcia"],
+            engDefinition: "The area in a hotel where guests check in.",
+            svkDefinition: "Priestor v hoteli, kde sa hostia registrujú.",
+            engSentence: "She asked for help at the reception.",
+            svkSentence: "Požiadala o pomoc na recepcii."
+        },
+        "Breakfast": {
+            slovak: ["Raňajky"],
+            engDefinition: "The first meal of the day.",
+            svkDefinition: "Prvé jedlo dňa.",
+            engSentence: "Breakfast is served from 7 AM.",
+            svkSentence: "Raňajky sa podávajú od 7 ráno."
+        },
+        "Lunch": {
+            slovak: ["Obed"],
+            engDefinition: "The meal eaten in the middle of the day.",
+            svkDefinition: "Jedlo konzumované uprostred dňa.",
+            engSentence: "We had lunch at a nearby restaurant.",
+            svkSentence: "Obedovali sme v neďalekej reštaurácii."
+        },
+        "Dinner": {
+            slovak: ["Večera"],
+            engDefinition: "The main meal of the evening.",
+            svkDefinition: "Hlavné jedlo večera.",
+            engSentence: "They are having dinner together.",
+            svkSentence: "Večerajú spolu."
+        },
+        "Full board": {
+            slovak: ["Plná peniza"],
+            engDefinition: "Accommodation including all meals.",
+            svkDefinition: "Ubytovanie vrátane všetkých jedál.",
+            engSentence: "The hotel offers full board options.",
+            svkSentence: "Hotel ponúka možnosti plnej penzie."
+        },
+        "Half board": {
+            slovak: ["Polpenzia"],
+            engDefinition: "Accommodation including breakfast and one main meal.",
+            svkDefinition: "Ubytovanie vrátane raňajok a jedného hlavného jedla.",
+            engSentence: "We chose the half board package.",
+            svkSentence: "Vybrali sme si balíček s polpenziou."
+        },
+        "To book": {
+            slovak: ["Rezervovať"],
+            engDefinition: "To arrange in advance.",
+            svkDefinition: "Dohodnúť vopred.",
+            engSentence: "I need to book a room for tonight.",
+            svkSentence: "Potrebujem rezervovať izbu na dnešnú noc."
+        },
+        "I would like to rent a car please": ["Rád by som si požičal auto"],
+        "How long would you like it?": ["Na ako dlho?"],
+        "How much it cost per day?": ["Koľko to stojí na deň?"],
+        "Rent a car": ["Požičať auto"]
     },
     places: {
         "School": {
@@ -2092,7 +2050,7 @@ var categories = {
             engSentence: "They grabbed lunch at the fast food restaurant.",
             svkSentence: "Zobrali si obed v reštaurácii s rýchlym občerstvením."
         },
-        "Town centre": {
+        "Town center": {
             slovak: ["Centrum mesta"],
             engDefinition: "Central area of a town.",
             svkDefinition: "Centrálna časť mesta.",
@@ -4317,5 +4275,5 @@ async function deleteCategory(query) {
     }
 }
 
-// deleteCategory({ category: 'verbs' });
+// deleteCategory({ category: 'doctor' });
 populateVocab();
