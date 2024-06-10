@@ -361,15 +361,18 @@ router.get('/:uname/dashboard/categories/:categoryKey', mw.isLoggedIn, async fun
 
         const category = await Vocabulary.find(query);
 
-        if (!category) {
+        if (!category || category.length === 0) {
             req.flash("error", "Category not found");
             return res.redirect('/users/' + req.params.uname + '/dashboard/categories');
         }
 
-        const user = await User.findOne({ username: req.params.uname }).populate('vocabAttempts.vocab');
+        const user = await User.findOne({ username: req.params.uname }).populate({
+            path: 'vocabAttempts.vocab',
+            model: 'Vocabulary'
+        });
 
         const categoryStats = category.reduce((stats, vocab) => {
-            const attempt = user.vocabAttempts.find(a => a.vocab._id.toString() === vocab._id.toString());
+            const attempt = user.vocabAttempts.find(a => a.vocab && a.vocab._id.toString() === vocab._id.toString());
             let trueCount = 0;
             let totalCount = 0;
 
