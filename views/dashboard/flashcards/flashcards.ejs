@@ -18,7 +18,7 @@
               <a href="/users/<%= currentUser.username %>/dashboard/">Dashboard</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="/flashcards/<%= currentUser.username %>">Flashcard Genetator</a>
+              <a href="/flashcards/<%= currentUser.username %>">Flashcard Generator</a>
             </li>
             <li class="breadcrumb-item active">Flashcards</li>
           </ol>
@@ -44,12 +44,17 @@
                     <div class="front bg-primary">
                       <h3 class="front-text"><%= data[0].english %></h3>
                       <div class="flash-card-icon">
-                          <i class="fas fa-fw <%= categoryIcons[categoriesKeys.indexOf(data[0].category)] %>"></i>
+                        <i class="fas fa-fw <%= categoryIcons[categoriesKeys.indexOf(data[0].category)] %>"></i>
                       </div>
                     </div>
-                    <div class="back bg-danger"><% data[0].slovak.forEach(function(svkWord) { %>
-                                                  <h3 class="back-text"><%= svkWord %></h3>
-                                              <% }) %>
+                    <div class="back bg-danger">
+                      <% data[0].slovak.forEach(function(svkWord) { %>
+                        <% if (data[0].length >= 70) { %>
+                          <h3 class="back-text-long"><%= svkWord %></h3>
+                        <% } else { %>
+                          <h3 class="back-text"><%= svkWord %></h3>
+                        <% } %>
+                      <% }) %>
                     </div>
                   </div>
                 </div>
@@ -64,8 +69,12 @@
                       </div>
                       <div class="back bg-danger">
                         <% data[i].slovak.forEach(function(svkWord) { %>
-                                                    <h3 class="back-text"><%= svkWord %></h3>
-                                                  <% }) %>
+                          <% if (data[i].length >= 70) { %>
+                            <h3 class="back-text-long"><%= svkWord %></h3>
+                          <% } else { %>
+                            <h3 class="back-text"><%= svkWord %></h3>
+                          <% } %>
+                        <% }) %>
                       </div>
                     </div>
                   </div>  

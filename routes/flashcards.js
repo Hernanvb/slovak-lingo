@@ -61,6 +61,7 @@ router.get('/:uname/start', function(req, res, next) {
       wordPair.english = randomWord.english;
       wordPair.slovak = randomWord.slovak;
       wordPair.category = randomWord.category;
+      wordPair.length = randomWord.slovak.reduce((total, str) => total + str.length, 0);
       data.push(wordPair);
     }
 
