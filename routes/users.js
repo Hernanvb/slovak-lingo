@@ -454,9 +454,10 @@ router.get('/:uname/dashboard/categories/:categoryKey/word/:wid', mw.isLoggedIn,
 router.get('/:uname/dashboard/charts', mw.isLoggedIn, async function(req, res, next) {
     try {
         // Fetch user and their vocab attempts
-        const user = await User.findOne({ username: req.params.uname }).populate('vocabAttempts.vocab').exec();
-        const vocabAttempts = user.vocabAttempts;
-        // console.log("Attempts: ", vocabAttempts);
+        const user = await User.findOne({ username: req.params.uname }).populate({
+            path: 'vocabAttempts.vocab',
+            model: 'Vocabulary'
+        });
 
         // Fetch all vocabulary
         const vocabularies = await Vocabulary.find().exec();
@@ -482,7 +483,7 @@ router.get('/:uname/dashboard/charts', mw.isLoggedIn, async function(req, res, n
             };
 
             vocabList.forEach(vocab => {
-                const attempt = vocabAttempts.find(a => a.vocab._id.toString() === vocab._id.toString());
+                const attempt = user.vocabAttempts.find(a => a.vocab && a.vocab._id.toString() === vocab._id.toString());
                 // console.log("Vocab: ", vocab)
                 if (attempt) {
                     // console.log("Found attempt: ", attempt)
