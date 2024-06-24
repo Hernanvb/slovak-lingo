@@ -76,7 +76,8 @@ router.get('/:uname/start', function(req, res, next) {
     // console.log("Data: " + JSON.stringify(data));
     res.render('dashboard/flashcards/flashcards', {
         header: "Slovak Lingo - Flashcards",
-        data: data
+        data: data,
+        voiceKey: process.env.VOICEKEY
     });
   }
   else {

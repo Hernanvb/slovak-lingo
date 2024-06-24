@@ -2,22 +2,30 @@ var firstFlip = true;
 var index = 0;
 var deckSize = $('.flash-card').toArray().length;
 
-$(document).on('click', '.flash-card', function() {
-  $card = $(this)
+$(document).on('click', '.flash-card', function(event) {
+  // Check if the click happened on the speak button or its child elements
+  if ($(event.target).closest('.voice-button').length > 0) {
+    return; // Skip the flip effect
+  }
+
+  $card = $(this);
   $card.toggleClass('flip');
   $('.controls').toggleClass('hide');
+
   if (firstFlip) {
-    $('.lead.text-center.mb-3').html("<span class='numerator'>" + (index+1) + 
-                                   "</span><span class='slash'>" + ' of ' + 
-                                   "</span><span class='denominator'>" + deckSize + "</span>");
+    $('.lead.text-center.mb-3').html("<span class='numerator'>" + (index + 1) +
+      "</span><span class='slash'>" + ' of ' +
+      "</span><span class='denominator'>" + deckSize + "</span>");
     firstFlip = false;
   }
+
   if (index === 0) {
     $('.previous').addClass('display-none');
   } else {
     $('.previous').removeClass('display-none');
   }
 });
+
 
 $('.next').on('click', function(){
   $card = $('.in-use');

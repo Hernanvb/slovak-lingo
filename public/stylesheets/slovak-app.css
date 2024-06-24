@@ -381,6 +381,10 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
   cursor: pointer;
 }
 
+.voice-button-lg {
+  font-size: 2rem;
+}
+
 .voice-button:hover {
   color: #0056b3;
 }
