@@ -247,8 +247,7 @@ router.get('/:uname/dashboard/inprogress', mw.isLoggedIn, function(req, res, nex
 });
 
 /* Resume Quiz Route */
-// TODO: change it to an UPDATE route to make it RESTful
-router.get('/:uname/dashboard/quizzes/:qid/resume', mw.isLoggedIn, function(req, res, next) {
+router.put('/:uname/dashboard/quizzes/:qid/resume', mw.isLoggedIn, function(req, res, next) {
     // check of the qid is a valid id value for mongoose
     if (req.params.qid.match(/^[0-9a-fA-F]{24}$/)) {
         Quiz.findById(req.params.qid)

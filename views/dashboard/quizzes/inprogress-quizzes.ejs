@@ -64,12 +64,14 @@
                                     <i class="fas fa-angle-right"></i>
                                   </span>
                                 </a>
-                                <a class="card-footer text-white clearfix small z-1 <%= bgGradients[inProgressCounter%4] %>" href="/users/<%=username%>/dashboard/quizzes/<%= quizzes[i]._id %>/resume">
-                                  <span class="float-left">Resume Test</span>
-                                  <span class="float-right">
-                                    <i class="fas fa-angle-right"></i>
-                                  </span>
-                                </a>
+                                <form action="/users/<%=username%>/dashboard/quizzes/<%= quizzes[i]._id %>/resume?_method=PUT" method="POST" style="margin:0">
+                                  <button type="submit" class="card-footer text-white clearfix small z-1 <%= bgGradients[inProgressCounter%4] %>" style="width:100%;border:none;cursor:pointer;text-align:left;display:block;">
+                                    <span class="float-left">Resume Test</span>
+                                    <span class="float-right">
+                                      <i class="fas fa-angle-right"></i>
+                                    </span>
+                                  </button>
+                                </form>
                               </div>
                             </div>
                             <% inProgressCounter++ %>
