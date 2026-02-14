@@ -13,6 +13,7 @@ var usersRouter           = require('./routes/users');
 var quizRouter            = require('./routes/quiz');
 var quizGeneratorRouter   = require('./routes/quizGenerator');
 var flashCardsRouter      = require('./routes/flashcards');
+var grammarRouter         = require('./routes/grammar');
 
 var setupController       = require('./controllers/setupController'); // Test API routes
 
@@ -114,6 +115,7 @@ app.use('/quiz', quizRouter);
 app.use('/users', usersRouter);
 app.use('/generate-quiz', quizGeneratorRouter);
 app.use('/flashcards', flashCardsRouter);
+app.use('/grammar', grammarRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
