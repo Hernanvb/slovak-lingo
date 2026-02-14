@@ -1,12 +1,5 @@
 var Vocabulary  = require('../models/vocabModel');
 
-/* This will be used to find how many documents (word pairs) are in each category
-   TODO: Should be improved so we won't have to rely on this array and make it more dynamic */
-var categoriesInDb = ["basicPhrases",     "verbs",  "greetings", "characteristics",    "numbers",
-                        "adjectives",    "colors",    "periods", "timeExpressions", "directions",
-                        "restaurant",      "food",   "shopping",          "travel",     "places",
-                           "weather",    "family",    "animals",         "clothes",
-                         "languages",  "bodyParts",  "emergency",       "pronouns"];
 var randomGen = {
     // Function to generate a vocabulary array with the Objects from
     // the categories selected by the user
@@ -80,23 +73,21 @@ var randomGen = {
 
     // Function to list all categories with their respective number of words
     categoryLength: function (callback) {
-        var res = {};
-        var counter = 0; // count incremented when DB response is received
-        res.total = 0;
-        categoriesInDb.forEach(function (category) {
-            // Async call to the DB, will render the page after it's done
-            Vocabulary.countDocuments({"category": category}).exec(function(err, result) {
-                if (err) throw err;
-                res[category] = result;
-                res.total += res[category];
-                // console.log(category + ": " + res[category]);
-                // console.log("in exec Total: " + res.total);
-                counter++;
-                // Render the page once all the categories have been accounted for
-                if (counter === categoriesInDb.length) {
-                    // console.log("categoryLength: " + JSON.stringify(res));
-                    callback(res);
-                }
+        Vocabulary.distinct('category', function(err, categoriesInDb) {
+            if (err) throw err;
+            var res = {};
+            var counter = 0;
+            res.total = 0;
+            categoriesInDb.forEach(function (category) {
+                Vocabulary.countDocuments({"category": category}).exec(function(err, result) {
+                    if (err) throw err;
+                    res[category] = result;
+                    res.total += res[category];
+                    counter++;
+                    if (counter === categoriesInDb.length) {
+                        callback(res);
+                    }
+                });
             });
         });
     }
