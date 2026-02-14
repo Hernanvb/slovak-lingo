@@ -48,11 +48,8 @@ var dev = false; // true to use local mongodb, false to use mLab db
 var url = process.env.DATABASEURL || 'mongodb://localhost:27017/slovak-app';
 
 // Connect to DB
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false
-}).then(() => {
+mongoose.set('strictQuery', false);
+mongoose.connect(url).then(() => {
   console.log("Connected to Atlas MongoDB");
 }).catch((err) => {
   console.error("Error connecting to Atlas MongoDB:", err);

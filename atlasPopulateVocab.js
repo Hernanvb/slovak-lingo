@@ -5,11 +5,7 @@ var Vocabulary = require('./models/vocabModel');
 var url = process.env.DATABASEURL || 'mongodb://localhost:27017/slovak-app';
 
 // Connect to MongoDB
-mongoose.connect(url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-});
+mongoose.connect(url);
 
 // Sample vocabulary data
 var categories = {
