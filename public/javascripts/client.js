@@ -1,11 +1,12 @@
-// Function that send the cursor back to the end of the
-// input word after clicking on the special character
+// Function that inserts a special character at the current cursor position
 function input(key) {
     var tbInput = document.getElementById("tbInput");
-    tbInput.value = tbInput.value + key.value;
-    var strLength = tbInput.value.length;
+    var start = tbInput.selectionStart;
+    var end = tbInput.selectionEnd;
+    tbInput.value = tbInput.value.substring(0, start) + key.value + tbInput.value.substring(end);
+    var newPos = start + key.value.length;
     tbInput.focus();
-    //tbInput[0].setSelectionRange(strLength, strLength);
+    tbInput.setSelectionRange(newPos, newPos);
 }
 
 $('#uppercaseKey').click(function(e) {
