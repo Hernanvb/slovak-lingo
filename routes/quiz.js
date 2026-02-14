@@ -359,10 +359,58 @@ router.post('/:uname', mw.isLoggedIn, function(req, res, next) {
                 console.error(err);
                 return next(err);
             }
-            res.redirect('/quiz/' + req.user.username + '/answer?' + qs.stringify({
-                correct: correct,
-                index: index
-            }));
+
+            // Auto-save quiz progress to DB
+            var categories = Array.isArray(req.session.formData.categories)
+                ? req.session.formData.categories
+                : Object.keys(req.session.formData.categories);
+            var quizData = {
+                date: Date.now(),
+                score: req.session.correctCounter,
+                progress: req.session.correctCounter + req.session.wrongCounter,
+                numberOfQuestions: req.session.totalQuestions,
+                completed: (req.session.correctCounter + req.session.wrongCounter) == req.session.totalQuestions,
+                quiz: req.session.currentQuiz,
+                questionIndex: req.session.questionIndex,
+                answers: req.session.userAnswers,
+                results: req.session.currentResults,
+                categories: categories,
+                flashcard: req.session.flashcard
+            };
+
+            if (req.session.qid) {
+                // Update existing quiz
+                Quiz.findByIdAndUpdate(req.session.qid, quizData, function(err) {
+                    if (err) console.error(err);
+                    res.redirect('/quiz/' + req.user.username + '/answer?' + qs.stringify({
+                        correct: correct,
+                        index: index
+                    }));
+                });
+            } else {
+                // Create new quiz and store qid for subsequent saves
+                Quiz.create(quizData, function(err, quiz) {
+                    if (err) {
+                        console.error(err);
+                        return res.redirect('/quiz/' + req.user.username + '/answer?' + qs.stringify({
+                            correct: correct,
+                            index: index
+                        }));
+                    }
+                    req.session.qid = quiz._id;
+                    User.findOneAndUpdate(
+                        { username: req.user.username },
+                        { $push: { quizzes: quiz._id } },
+                        function(err) {
+                            if (err) console.error(err);
+                            res.redirect('/quiz/' + req.user.username + '/answer?' + qs.stringify({
+                                correct: correct,
+                                index: index
+                            }));
+                        }
+                    );
+                });
+            }
         });
     });
 });
