@@ -56,9 +56,12 @@ router.get('/', function(req, res, next) {
 
         // translate slovak word to english
         if (req.session.svkToEng) {
-            // This needs to be fixed to use the Array of slovak words if the
-            // capability to switch from translating slovak to english is added
-            res.render('quiz/quiz', { title: req.session.svkWordArray[0] });
+            res.render('quiz/quiz', { title: req.session.svkWordArray.join(', '),
+                                     specialChars: false,
+                                     numOfQuestions: req.session.formData.numOfQuestions,
+                                     originalNumOfQuestions: req.session.totalQuestions,
+                                     counter: req.session.correctCounter + req.session.wrongCounter + 1
+            });
         }
         // translate english word to slovak
         else {
@@ -74,9 +77,13 @@ router.get('/', function(req, res, next) {
     else {
         // translate slovak word to english
         if (req.session.svkToEng) {
-            // This needs to be fixed to use the Array of slovak words if the
-            // capability to switch from translating slovak to english is added
-            res.render('quiz/quiz', { title: req.session.svkWordArray[0] });
+            res.render('quiz/quiz', {
+                title: req.session.svkWordArray.join(', '),
+                specialChars: false,
+                numOfQuestions: req.session.formData.numOfQuestions,
+                originalNumOfQuestions: req.session.totalQuestions,
+                counter: req.session.correctCounter + req.session.wrongCounter + 1
+            });
         }
         // translate english word to slovak
         else {
@@ -103,9 +110,27 @@ router.post('/', function(req, res, next) {
     req.session.wrongCounter   = req.session.wrongCounter   || 0;
 
     if (req.session.svkToEng) {
-        // TODO: This needs to be fixed to use the Array of slovak words if the
-        // capability to switch from translating slovak to english is added
-        res.render('quiz/quiz', { title: req.session.svkWordArray[0] });
+        var re = /\.| |\,|\?|\!|\(|\)/gi;
+        var trimmedAns = answer.replace(re, '');
+        var correct = false;
+
+        if (trimmedAns.toUpperCase() === req.session.engWord.replace(re, '').toUpperCase()) {
+            correct = true;
+        }
+
+        req.session.currentResults.push(correct);
+        req.session.userAnswers.push(req.body.answer);
+        if (correct)
+            req.session.correctCounter++;
+        else
+            req.session.wrongCounter++;
+
+        res.redirect('/quiz/answer?' +
+                qs.stringify({
+                    correct: correct,
+                    index: 0
+                })
+        );
     }
     // Translate english word to slovak
     else {
@@ -222,11 +247,13 @@ router.get('/:uname', mw.isLoggedIn, function(req, res, next) {
 
         // Translate slovak word to english
         if (req.session.svkToEng) {
-            // TODO: This needs to be fixed to use the Array of slovak words if the
-            // capability to switch from translating slovak to english is added
             res.render('dashboard/quiz/question', {
                 header: "Slovak Lingo - Question",
-                title: req.session.svkWordArray[0]
+                title: req.session.svkWordArray.join(', '),
+                specialChars: false,
+                numOfQuestions: req.session.formData.numOfQuestions,
+                originalNumOfQuestions: req.session.totalQuestions,
+                counter: req.session.correctCounter + req.session.wrongCounter + 1
             });
         }
         // Translate english word to slovak
@@ -245,11 +272,13 @@ router.get('/:uname', mw.isLoggedIn, function(req, res, next) {
     else {
         // Translate slovak word to english
         if (req.session.svkToEng) {
-            // This needs to be fixed to use the Array of slovak words if the
-            // capability to switch from translating slovak to english is added
             res.render('dashboard/quiz/question', {
                 header: "Slovak Lingo - Question",
-                title: req.session.svkWordArray[0]
+                title: req.session.svkWordArray.join(', '),
+                specialChars: false,
+                numOfQuestions: req.session.formData.numOfQuestions,
+                originalNumOfQuestions: req.session.totalQuestions,
+                counter: req.session.correctCounter + req.session.wrongCounter + 1
             });
         }
         // Translate english word to slovak
