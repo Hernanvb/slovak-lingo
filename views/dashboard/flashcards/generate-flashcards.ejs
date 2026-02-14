@@ -205,8 +205,24 @@
                 <button type="submit" class="qgf btn btn-info btn-lg btn-block danger-gradient" id="qgf-submit">Create Your Flashcards!</button>
               </div>
             </form>
+
+            <hr class="my-4">
+
+            <h2 class="display-4 qgf-gradient-title mb-3">Review Words You're Learning</h2>
+            <p class="lead qgf-gradient-content mb-3">Generate flashcards from words you haven't mastered yet (less than 3/3 correct attempts).</p>
+            <form autocomplete="off" method="POST" action="/flashcards/<%= currentUser.username %>/review" name="reviewGenerator">
+              <fieldset>
+                <div class="form-group">
+                  <label for="reviewNumOfQuestions" class="lead qgf-gradient-content mb-3">How many flashcards would you like?</label>
+                  <input type="number" class="form-control qgf-number-input" name="numOfQuestions" id="reviewNumOfQuestions" min="1" max="<%=categoriesLength.total%>" value="10" required>
+                </div>
+              </fieldset>
+              <div class="qgf container">
+                <button type="submit" class="qgf btn btn-info btn-lg btn-block primary-gradient">Review Flashcards</button>
+              </div>
+            </form>
           </div>
-          
+
         </div>
         <!-- /.container-fluid -->
 

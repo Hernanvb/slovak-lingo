@@ -30,6 +30,72 @@ router.post('/:uname', mw.isLoggedIn, function(req, res, next) {
     });
 });
 
+router.post('/:uname/review', mw.isLoggedIn, async function(req, res, next) {
+    try {
+        var numRequested = parseInt(req.body.numOfQuestions) || 10;
+
+        // Get user with populated vocabAttempts
+        var user = await User.findOne({ username: req.params.uname }).populate({
+            path: 'vocabAttempts.vocab',
+            model: 'Vocabulary'
+        });
+
+        // Find not-mastered words (attempted but fewer than 3 correct)
+        var notMastered = [];
+        var attemptedIds = [];
+        user.vocabAttempts.forEach(function(entry) {
+            if (!entry.vocab) return;
+            attemptedIds.push(entry.vocab._id.toString());
+            var correctCount = entry.attempts.filter(function(a) { return a; }).length;
+            if (correctCount < 3) {
+                notMastered.push(entry.vocab);
+            }
+        });
+
+        // Shuffle not-mastered words
+        for (var i = notMastered.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = notMastered[i];
+            notMastered[i] = notMastered[j];
+            notMastered[j] = temp;
+        }
+
+        var selected = notMastered.slice(0, numRequested);
+
+        // If we need more, fill with unattempted words
+        if (selected.length < numRequested) {
+            var remaining = numRequested - selected.length;
+            var unattempted = await Vocabulary.find({ _id: { $nin: attemptedIds } });
+
+            // Shuffle unattempted
+            for (var i = unattempted.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = unattempted[i];
+                unattempted[i] = unattempted[j];
+                unattempted[j] = temp;
+            }
+
+            selected = selected.concat(unattempted.slice(0, remaining));
+        }
+
+        // Group by category into arrays (format expected by randomWordGen.word)
+        var categoryMap = {};
+        selected.forEach(function(word) {
+            if (!categoryMap[word.category]) {
+                categoryMap[word.category] = [];
+            }
+            categoryMap[word.category].push(word);
+        });
+
+        req.session.flashcardData = Object.values(categoryMap);
+        req.session.numOfFlashcards = selected.length;
+
+        res.redirect('/flashcards/' + req.params.uname + '/start');
+    } catch (err) {
+        next(err);
+    }
+});
+
 router.get('/:uname/start', function(req, res, next) {
 //   console.log("Start Route");
   if (Array.isArray(req.session.flashcardData) && req.session.flashcardData.length > 0) {
