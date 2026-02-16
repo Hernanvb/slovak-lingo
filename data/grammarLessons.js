@@ -3,52 +3,55 @@ module.exports = [
         slug: "nouns",
         title: "Nouns (Substantíva)",
         icon: "fa-font",
-        explanation: "Slovak nouns have three grammatical genders: Masculine (M), Feminine (F), and Neuter (N). The gender of a noun determines its endings and how adjectives agree with it. You can usually identify the gender by looking at the noun's ending. Masculine nouns further depend on whether they end in a hard consonant (TK: d, t, n, l, h, ch, k, g, b, m, p, r, s, v, z, f) or a soft consonant (MK: \u010f, \u0165, \u0148, \u013e, c, \u010d, \u017e, dz, d\u017e, \u0161, j).",
+        explanation: "Every Slovak noun has a grammatical gender: Masculine (M), Feminine (F), or Neuter (N). Gender affects the noun's endings, how adjectives agree with it, and which case endings to use. The good news: you can usually guess the gender from the ending of the noun.",
         sections: [
             {
-                heading: "Masculine (Maskulínum) - Mužský rod",
+                heading: "How to Identify Gender",
+                note: "Look at the last letter of the noun in its basic (dictionary) form. This is the most reliable way to determine gender at the A1 level.",
                 tables: [
                     {
-                        headers: ["Type", "Ending", "Example"],
+                        headers: ["Gender", "Typical Ending", "Examples"],
                         rows: [
-                            ["Animate (living)", "-\u00d8 (no ending)", "muž"],
-                            ["Animate (living)", "-o", ""],
-                            ["Animate (living)", "-a", "koleg-a"],
-                            ["Inanimate (non-living)", "TK-\u00d8", "plán"],
-                            ["Inanimate (non-living)", "MK-\u00d8", "počítač"]
+                            ["Masculine (M)", "consonant (no ending)", "muž (man), dom (house), vlak (train), počítač (computer)"],
+                            ["Masculine (M)", "-a (some people)", "kolega (colleague), turista (tourist)"],
+                            ["Feminine (F)", "-a", "žena (woman), škola (school), voda (water), kniha (book)"],
+                            ["Feminine (F)", "soft consonant", "loď (ship), noc (night), miestnosť (room)"],
+                            ["Neuter (N)", "-o", "mesto (city), auto (car), mlieko (milk), okno (window)"],
+                            ["Neuter (N)", "-e / -ie", "more (sea), srdce (heart), poschodie (floor)"],
+                            ["Neuter (N)", "-a (child words)", "dievča (girl), mača (kitten)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Feminine (Feminínum) - Ženský rod",
+                heading: "Masculine: Animate vs. Inanimate",
+                note: "Masculine nouns are split into two groups: animate (living beings — people and animals) and inanimate (things and abstract concepts). This matters because they take different endings in some cases.",
                 tables: [
                     {
-                        headers: ["Type", "Ending", "Example"],
+                        headers: ["Type", "Examples", "Why It Matters"],
                         rows: [
-                            ["Hard consonant stem", "TK-a", "žen-a"],
-                            ["Soft consonant stem", "MK-a", "stanic-a"],
-                            ["Consonant stem", "K-\u00d8", "loď"],
-                            ["Consonant stem", "", "miestnosť"]
-                        ]
-                    }
-                ],
-                note: "Some feminine nouns ending in a consonant can look masculine. Examples: lekáreň (F, -e), miestnosť (F, -i), reštauráci-a."
-            },
-            {
-                heading: "Neuter (Neutrum) - Stredný rod",
-                tables: [
-                    {
-                        headers: ["Ending", "Example"],
-                        rows: [
-                            ["-o", "mest-o"],
-                            ["-um", ""],
-                            ["-e", "mor-e"],
-                            ["-ie", "poschodie"],
-                            ["-a", "dievča"]
+                            ["Animate (living)", "muž, otec (father), pes (dog), kolega", "Akuzatív singular changes: Vidím muž-a (I see the man)"],
+                            ["Inanimate (non-living)", "dom, vlak, plán, počítač", "Akuzatív singular stays the same: Vidím dom (I see the house)"]
                         ]
                     }
                 ]
+            },
+            {
+                heading: "Hard vs. Soft Consonants",
+                note: "Slovak consonants are divided into two groups. This affects how nouns (and adjectives) change their endings. You don't need to memorize this perfectly — with practice, it will feel natural.",
+                tables: [
+                    {
+                        headers: ["Type", "Consonants"],
+                        rows: [
+                            ["Hard (tvrdé - TK)", "d, t, n, l, h, ch, k, g, b, m, p, r, s, v, z, f"],
+                            ["Soft (mäkké - MK)", "ď, ť, ň, ľ, c, č, ž, dz, dž, š, j"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Quick Gender Test",
+                note: "Try putting 'ten' (M), 'tá' (F), or 'to' (N) before the noun — whichever sounds right to a native speaker reveals the gender. Examples: ten muž ✓, tá žena ✓, to mesto ✓."
             }
         ]
     },
@@ -56,102 +59,129 @@ module.exports = [
         slug: "noun-cases",
         title: "Noun Cases (Pády)",
         icon: "fa-exchange-alt",
-        explanation: "Slovak uses grammatical cases to show the role of a noun in a sentence. At the A1 level, you need to know four cases: Nominatív (subject), Akuzatív (direct object), Lokál (location, always with a preposition), and Inštrumentál (instrument/companion). Each case changes the noun's ending differently depending on gender and number.",
+        explanation: "In English, word order tells you who does what ('The dog chases the cat' vs. 'The cat chases the dog'). In Slovak, the endings of nouns change to show their role in a sentence — these are called cases (pády). At the A1 level, focus on four cases: Nominatív (subject), Akuzatív (direct object), Lokál (location/topic), and Inštrumentál (companion/tool).",
         sections: [
             {
-                heading: "Nominatív (Nominative) - Who/What is it?",
-                note: "The basic dictionary form. Used for the subject of a sentence. Question: Kto/Čo je to? (Who/What is it?)",
+                heading: "Overview: The Four A1 Cases",
                 tables: [
                     {
-                        subheading: "Singular",
-                        headers: ["Gender", "Adj.", "Noun endings"],
+                        headers: ["Case", "Question", "Usage", "Example"],
                         rows: [
-                            ["M (animate)", "ten pekn-ý", "muž, koleg-a, pes, plán, počítač"],
-                            ["F", "tá pekn-á", "žen-a, stanic-a, loď, miestnosť"],
-                            ["N", "to pekn-é", "mest-o, mor-e, poschodie, dievč-a"]
-                        ]
-                    },
-                    {
-                        subheading: "Plural",
-                        headers: ["Gender", "Adj.", "Noun endings"],
-                        rows: [
-                            ["M (animate)", "t-í pekn-í", "muž-i, koleg-ovia, ps-y, plán-y, počítač-e"],
-                            ["F", "t-ie pekn-é", "žen-y, stanic-e, lod-e, miestnost-i"],
-                            ["N", "", "mest-á, mor-ia, poschodia, dievč-at-á"]
+                            ["Nominatív (N)", "Kto? Čo? (Who? What?)", "Subject of the sentence", "Muž pracuje. (The man works.)"],
+                            ["Akuzatív (A)", "Koho? Čo? (Whom? What?)", "Direct object — the thing being acted on", "Vidím muža. (I see the man.)"],
+                            ["Lokál (L)", "O kom? O čom? (About whom/what?)", "Location or topic (always after a preposition)", "Hovorím o mužovi. (I talk about the man.)"],
+                            ["Inštrumentál (I)", "S kým? S čím? (With whom/what?)", "Companion or tool", "Idem s mužom. (I go with the man.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Akuzatív (Accusative) - Whom/What do you see?",
-                note: "Used for the direct object. Question: Koho/Čo (vidíš)? (Whom/What do you see?)",
+                heading: "Nominatív (Nominative) — The Basic Form",
+                note: "This is the dictionary form. Use it for the subject of the sentence — the person or thing doing the action.",
                 tables: [
                     {
-                        subheading: "Singular",
-                        headers: ["Gender", "Adj.", "Noun endings"],
+                        subheading: "Singular → Plural",
+                        headers: ["Gender", "Singular", "Plural", "Example Sentence"],
                         rows: [
-                            ["M (animate)", "t-oho pekn-ého", "muž-a, koleg-u, ps-a"],
-                            ["M (inanimate)", "ten pekn-ý", "plán, počítač"],
-                            ["F", "t-ú pekn-ú", "žen-u, stanic-u, loď, miestnosť"],
-                            ["N", "to pekn-é", "mesto, more, poschodie, dievča"]
-                        ]
-                    },
-                    {
-                        subheading: "Plural",
-                        headers: ["Gender", "Adj.", "Noun endings"],
-                        rows: [
-                            ["M (animate)", "t-ých pekn-ých", "muž-ov, koleg-ov"],
-                            ["M (inanimate)", "", "plán-y, počítač-e, ps-y"],
-                            ["F", "t-ie pekn-é", "žen-y, stanic-e, lod-e, miestnost-i"],
-                            ["N", "", "mest-á, mor-ia, poschodia, dievč-at-á"]
+                            ["M (animate)", "muž, kolega", "muži, kolegovia", "Muži pracujú. (The men work.)"],
+                            ["M (inanimate)", "dom, počítač", "domy, počítače", "Domy sú veľké. (The houses are big.)"],
+                            ["F", "žena, loď", "ženy, lode", "Ženy hovoria. (The women speak.)"],
+                            ["N", "mesto, more", "mestá, moria", "Mestá sú pekné. (The cities are nice.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Lokál (Locative) - About whom/what?",
-                note: "Always used with a preposition (o, po, pri, v, na). Question: O kom? / O čom? (About whom/what?). Important: nouns ending in -k, -g, -ch, -h change to -u before the Lokál ending.",
+                heading: "Akuzatív (Accusative) — Direct Object",
+                note: "Use after verbs like vidieť (see), mať (have), chcieť (want), poznať (know someone). Key rule: Masculine animate nouns change their ending, but inanimate, feminine, and neuter nouns often stay the same or have predictable changes.",
                 tables: [
                     {
-                        subheading: "Singular",
-                        headers: ["Gender", "Adj.", "Noun endings"],
+                        subheading: "Singular Endings",
+                        headers: ["Gender", "Nominatív →", "Akuzatív", "Example"],
                         rows: [
-                            ["M", "t-om pekn-om", "muž-ovi, koleg-ovi, ps-ovi, plán-e, vlak-u, počítač-i"],
-                            ["F", "t-ej pekn-ej", "žen-e, stanic-i, lod-i, miestnost-i"],
-                            ["N", "t-om pekn-om", "mest-e, Slovensku, mor-i, poschodí, dievč-at-i"]
+                            ["M (animate)", "muž", "muž-a", "Vidím muža. (I see the man.)"],
+                            ["M (animate)", "kolega", "koleg-u", "Poznám kolegu. (I know the colleague.)"],
+                            ["M (inanimate)", "dom", "dom (no change)", "Vidím dom. (I see the house.)"],
+                            ["F (-a ending)", "žena", "žen-u", "Vidím ženu. (I see the woman.)"],
+                            ["F (consonant)", "loď", "loď (no change)", "Vidím loď. (I see the ship.)"],
+                            ["N", "mesto", "mesto (no change)", "Vidím mesto. (I see the city.)"]
                         ]
                     },
                     {
-                        subheading: "Plural",
-                        headers: ["Gender", "Adj.", "Noun endings"],
+                        subheading: "Plural Endings",
+                        headers: ["Gender", "Nominatív →", "Akuzatív", "Example"],
                         rows: [
-                            ["M", "t-ých pekn-ých", "muž-och, koleg-och, ps-och, plán-och, počítač-och"],
-                            ["F", "", "žen-ách, stanic-iach, lod-iach, miestnost-iach"],
-                            ["N", "", "mest-ách, mor-iach, poschodiach, dievč-at-ách"]
+                            ["M (animate)", "muži", "muž-ov", "Vidím mužov. (I see the men.)"],
+                            ["M (inanimate)", "domy", "domy (= Nom.)", "Vidím domy. (I see the houses.)"],
+                            ["F", "ženy", "ženy (= Nom.)", "Vidím ženy. (I see the women.)"],
+                            ["N", "mestá", "mestá (= Nom.)", "Vidím mestá. (I see the cities.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Inštrumentál (Instrumental) - With whom/what?",
-                note: "Used to express the instrument or companion. Question: (S) kým? / (S) čím? (With whom/what?). Used with prepositions: s, nad, pod, pred, za, medzi.",
+                heading: "Lokál (Locative) — About / At / In",
+                note: "Always used with a preposition: o (about), v/vo (in), na (on/at), po (after/around), pri (near/at). You never see Lokál without a preposition.",
                 tables: [
                     {
-                        subheading: "Singular",
-                        headers: ["Gender", "Adj.", "Noun endings"],
+                        subheading: "Singular Endings",
+                        headers: ["Gender", "Nominatív →", "Lokál", "Example"],
                         rows: [
-                            ["M", "t-ým pekn-ým", "muž-om, koleg-om, ps-om, plán-om, počítač-om"],
-                            ["F", "t-ou pekn-ou", "žen-ou, stanic-ou, loďou, miestnosťou"],
-                            ["N", "t-ým pekn-ým", "mest-om, mor-om, poschodím, dievč-aťom"]
+                            ["M (animate)", "muž", "o muž-ovi", "Hovorím o mužovi. (I talk about the man.)"],
+                            ["M (inanimate)", "dom", "v dom-e", "Bývam v dome. (I live in the house.)"],
+                            ["M (-k, -g, -ch, -h)", "vlak", "vo vlak-u", "Sedím vo vlaku. (I sit in the train.)"],
+                            ["F (-a ending)", "žena", "o žen-e", "Hovorím o žene. (I talk about the woman.)"],
+                            ["F (soft stem)", "stanica", "na stanic-i", "Som na stanici. (I am at the station.)"],
+                            ["N", "mesto", "v mest-e", "Bývam v meste. (I live in the city.)"]
                         ]
                     },
                     {
-                        subheading: "Plural",
-                        headers: ["Gender", "Adj.", "Noun endings"],
+                        subheading: "Plural Endings",
+                        headers: ["Gender", "Lokál Plural", "Example"],
                         rows: [
-                            ["M", "t-ými pekn-ými", "muž-mi, koleg-ami, ps-ami, plán-mi, počítač-mi"],
-                            ["F", "", "žen-ami, stanic-ami, loď-ami, miestnosť-ami"],
-                            ["N", "", "mest-ami, mor-ami, poschodiami, dievč-at-ami"]
+                            ["M", "-och (mužoch, domoch)", "v domoch (in the houses)"],
+                            ["F", "-ách / -iach (ženách, staniciach)", "v staniciach (at the stations)"],
+                            ["N", "-ách / -iach (mestách, moriach)", "v mestách (in the cities)"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Inštrumentál (Instrumental) — With / By",
+                note: "Used with prepositions: s/so (with), nad (above), pod (under), pred (in front of), za (behind), medzi (between). Also used without a preposition to express the tool or means: Píšem perom. (I write with a pen.)",
+                tables: [
+                    {
+                        subheading: "Singular Endings",
+                        headers: ["Gender", "Nominatív →", "Inštrumentál", "Example"],
+                        rows: [
+                            ["M", "muž / dom", "s muž-om / s dom-om", "Idem s mužom. (I go with the man.)"],
+                            ["F (-a ending)", "žena", "so žen-ou", "Idem so ženou. (I go with the woman.)"],
+                            ["F (consonant)", "loď", "s loď-ou", "Cestujem loďou. (I travel by ship.)"],
+                            ["N", "mesto / auto", "s mest-om / s aut-om", "Cestujem autom. (I travel by car.)"]
+                        ]
+                    },
+                    {
+                        subheading: "Plural Endings",
+                        headers: ["Gender", "Inštrumentál Plural", "Example"],
+                        rows: [
+                            ["M", "-mi / -ami (mužmi, domami)", "s mužmi (with the men)"],
+                            ["F", "-ami (ženami, loďami)", "so ženami (with the women)"],
+                            ["N", "-ami (mestami, autami)", "s autami (with the cars)"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Quick Reference: Adjective Endings by Case",
+                note: "Adjectives change endings to match the case. Here is the pattern using 'pekný' (nice) as an example.",
+                tables: [
+                    {
+                        headers: ["Case", "Masculine", "Feminine", "Neuter"],
+                        rows: [
+                            ["Nominatív", "pekn-ý", "pekn-á", "pekn-é"],
+                            ["Akuzatív (anim./inanim.)", "pekn-ého / pekn-ý", "pekn-ú", "pekn-é"],
+                            ["Lokál", "pekn-om", "pekn-ej", "pekn-om"],
+                            ["Inštrumentál", "pekn-ým", "pekn-ou", "pekn-ým"]
                         ]
                     }
                 ]
@@ -160,88 +190,105 @@ module.exports = [
     },
     {
         slug: "pronouns",
-        title: "Pronouns (Pronominá)",
+        title: "Pronouns (Zámená)",
         icon: "fa-user",
-        explanation: "Slovak personal pronouns change form depending on the grammatical case, just like nouns. The 3rd person pronoun also changes by gender (on = he, ona = she, ono = it). When a preposition is used, pronouns often get an added 'ň' prefix (e.g., 'ho' becomes 'neho' after a preposition). Possessive pronouns agree with the gender of the thing being possessed, not the possessor.",
+        explanation: "Just like nouns, Slovak pronouns change form depending on the grammatical case. At the A1 level, the key things to learn are: (1) personal pronouns in each case, (2) when to use short vs. long forms, and (3) possessive pronouns that agree with the gender of the thing owned. A simple rule: after a preposition, always use the long form of the pronoun.",
         sections: [
             {
-                heading: "Personal Pronouns (Personálne pronominá)",
+                heading: "Personal Pronouns — Basic Forms",
+                note: "These are the Nominatív (subject) forms. You use these when the pronoun is the subject of the sentence.",
                 tables: [
                     {
-                        headers: ["Singular", "Plural"],
+                        headers: ["Person", "Singular", "Plural"],
                         rows: [
-                            ["ja (I)", "my (we)"],
-                            ["ty (you)", "vy (you, plural/formal)"],
-                            ["on, ona, ono (he, she, it)", "oni, ony (they)"]
+                            ["1st person", "ja (I)", "my (we)"],
+                            ["2nd person", "ty (you, informal)", "vy (you, plural or formal)"],
+                            ["3rd person", "on (he), ona (she), ono (it)", "oni (they, M animate), ony (they, other)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Akuzatív - Pronouns",
-                note: "(*) With prepositions (pre, nad, pod, pred, za, medzi, na), use the forms in parentheses.",
+                heading: "Akuzatív — Who Do You See?",
+                note: "Short forms are used in normal speech. Long forms (in bold) are used after prepositions (pre, na, za, o...) and for emphasis. Example: Vidím ťa. (I see you.) vs. Pre teba to robím. (I do it for you.)",
                 tables: [
                     {
-                        headers: ["", "JA", "TY", "ON", "ONA", "ONO", "MY", "VY", "ONI/ONY"],
+                        headers: ["Person", "Short Form", "Long Form (after prepositions)"],
                         rows: [
-                            ["Basic", "ma", "ťa", "ho", "ju", "ho", "nás", "vás", "ich"],
-                            ["+ Prep.", "(*) mňa", "(*) teba", "(*) neho / ňho / ň", "(*) ňu", "(*)-ň", "(*) nás", "(*) vás", "(*) nich / ne"]
+                            ["ja", "ma", "mňa — Pre mňa? (For me?)"],
+                            ["ty", "ťa", "teba — Pre teba. (For you.)"],
+                            ["on", "ho", "neho — Pre neho. (For him.)"],
+                            ["ona", "ju", "ňu — Pre ňu. (For her.)"],
+                            ["my", "nás", "nás (same)"],
+                            ["vy", "vás", "vás (same)"],
+                            ["oni/ony", "ich", "nich — Pre nich. (For them.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Lokál - Pronouns",
-                note: "Always with a preposition: o, po, pri, v, na. Special form: 'vo mne'.",
+                heading: "Lokál — About Whom?",
+                note: "Always used with a preposition (o, po, pri, v, na). There are no short forms in Lokál — always use the full form.",
                 tables: [
                     {
-                        headers: ["JA", "TY", "ON", "ONA", "ONO", "MY", "VY", "ONI/ONY"],
+                        headers: ["Person", "Lokál Form", "Example"],
                         rows: [
-                            ["(*) mne", "(*) tebe", "(*) ňom", "(*) nej", "(*) ňom", "(*) nás", "(*) vás", "(*) nich"]
+                            ["ja", "mne", "O mne hovoria. (They talk about me.)"],
+                            ["ty", "tebe", "O tebe viem. (I know about you.)"],
+                            ["on / ono", "ňom", "O ňom čítam. (I read about him.)"],
+                            ["ona", "nej", "O nej píšem. (I write about her.)"],
+                            ["my", "nás", "O nás hovoria. (They talk about us.)"],
+                            ["vy", "vás", "O vás viem. (I know about you.)"],
+                            ["oni / ony", "nich", "O nich čítam. (I read about them.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Inštrumentál - Pronouns",
-                note: "With prepositions: s, nad, pod, pred, za, medzi. Special form: 'so mnou, nado mnou, podo mnou, predo mnou'.",
+                heading: "Inštrumentál — With Whom?",
+                note: "Used with prepositions: s/so (with), nad (above), pod (under), pred (in front of), za (behind). Note the special forms: so mnou (not 's mnou').",
                 tables: [
                     {
-                        headers: ["JA", "TY", "ON", "ONA", "ONO", "MY", "VY", "ONI/ONY"],
+                        headers: ["Person", "Inštrumentál", "Example"],
                         rows: [
-                            ["(*) mnou", "(*) tebou", "(*) ním", "(*) ňou", "(*) ním", "(*) nami", "(*) vami", "(*) nimi"]
+                            ["ja", "mnou", "So mnou ide. (He/She goes with me.)"],
+                            ["ty", "tebou", "S tebou hovorím. (I speak with you.)"],
+                            ["on / ono", "ním", "S ním pracujem. (I work with him.)"],
+                            ["ona", "ňou", "S ňou cestujem. (I travel with her.)"],
+                            ["my", "nami", "S nami býva. (He/She lives with us.)"],
+                            ["vy", "vami", "S vami súhlasím. (I agree with you.)"],
+                            ["oni / ony", "nimi", "S nimi sa stretnem. (I'll meet with them.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Possessive Pronouns (Posesívne pronominá)",
-                note: "The possessive pronoun agrees with the gender of the noun it modifies, not the possessor. Add -a for feminine, -e for neuter: môj kamarát (M), moja izba (F), moje auto (N).",
+                heading: "Possessive Pronouns — Whose Is It?",
+                note: "The possessive pronoun agrees with the gender of the noun it describes (the thing owned), NOT the owner. Example: His room = jeho izba (izba is F, but we use 'jeho' because the owner is 'on'). My room = moja izba (F), My car = moje auto (N), My friend = môj kamarát (M).",
                 tables: [
                     {
-                        headers: ["Person", "čí? (M)", "čia? (F)", "čie? (N)"],
+                        headers: ["Owner", "čí? (M noun)", "čia? (F noun)", "čie? (N noun)", "Example"],
                         rows: [
-                            ["JA", "môj", "moj-a", "moj-e"],
-                            ["TY", "tvoj", "tvoj-a", "tvoj-e"],
-                            ["MY", "náš", "naš-a", "naš-e"],
-                            ["VY", "váš", "vaš-a", "vaš-e"],
-                            ["ON", "jeho", "jeho", "jeho"],
-                            ["ONA", "jej", "jej", "jej"],
-                            ["ONO", "jeho", "jeho", "jeho"],
-                            ["ONI/ONY", "ich", "ich", "ich"]
+                            ["ja (I)", "môj", "moja", "moje", "môj dom, moja izba, moje auto"],
+                            ["ty (you)", "tvoj", "tvoja", "tvoje", "tvoj dom, tvoja izba, tvoje auto"],
+                            ["on (he)", "jeho", "jeho", "jeho", "jeho dom, jeho izba, jeho auto"],
+                            ["ona (she)", "jej", "jej", "jej", "jej dom, jej izba, jej auto"],
+                            ["my (we)", "náš", "naša", "naše", "náš dom, naša izba, naše auto"],
+                            ["vy (you pl.)", "váš", "vaša", "vaše", "váš dom, vaša izba, vaše auto"],
+                            ["oni (they)", "ich", "ich", "ich", "ich dom, ich izba, ich auto"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Possessive Adjectives (Posesívne adjektíva)",
-                note: "Formed from proper names. Masculine: -ov/-in, Feminine: -ova/-ina, Neuter: -ovo/-ino. Example: Róbert → Róbertov kamarát, Róbertova izba, Róbertovo auto. Zuzana → Zuzanin kamarát, Zuzanina izba, Zuzanino auto.",
+                heading: "Possessive Adjectives from Names",
+                note: "When saying something belongs to a specific person, Slovak creates a possessive adjective from their name. Male names add -ov, female names ending in -a add -in.",
                 tables: [
                     {
-                        headers: ["", "čí? (M)", "čia? (F)", "čie? (N)"],
+                        headers: ["Name", "M noun (čí?)", "F noun (čia?)", "N noun (čie?)"],
                         rows: [
-                            ["Róbert", "-ov", "-ova", "-ovo"],
-                            ["Zuzana", "-in", "-ina", "-ino"]
+                            ["Peter", "Petrov dom", "Petrova izba", "Petrovo auto"],
+                            ["Zuzana", "Zuzanin dom", "Zuzanina izba", "Zuzanino auto"]
                         ]
                     }
                 ]
@@ -250,195 +297,178 @@ module.exports = [
     },
     {
         slug: "verbs-present",
-        title: "Verbs - Present Tense (Verbá)",
+        title: "Verbs — Present Tense (Prítomný čas)",
         icon: "fa-running",
-        explanation: "Slovak verbs in the present tense are conjugated according to the subject (1st, 2nd, 3rd person in singular and plural). There are several conjugation patterns. The key is to learn the infinitive and identify which pattern it follows. Negation is formed by adding the prefix 'ne-' to the verb (e.g., študujem → neštudujem).",
+        explanation: "Slovak verbs change their endings based on the subject (who is doing the action). This is called conjugation. The infinitive (dictionary form) ends in -ť. To conjugate, you remove the ending and add new endings based on the conjugation pattern. There are several patterns — the most common are shown below. Negation is simple: add 'ne-' before the conjugated verb.",
         sections: [
             {
-                heading: "Conjugation Patterns",
+                heading: "How Conjugation Works",
+                note: "1. Start with the infinitive: hovoriť (to speak). 2. Find the stem: hovori-. 3. Add the ending for each person: hovorí-m, hovorí-š, hovorí... The endings follow predictable patterns. Learn the pattern, and you can conjugate hundreds of verbs."
+            },
+            {
+                heading: "Pattern 1: -ÁM type (volať → volám)",
+                note: "Verbs with infinitive in -ať where the stem vowel is long. Endings: -ám, -áš, -á, -áme, -áte, -ajú. Common verbs: volať (call), čítať (read), hľadať (search), počúvať (listen), bývať (live/reside).",
                 tables: [
                     {
-                        subheading: "VOLAŤ SA (to be called)",
-                        headers: ["", "Singular", "Plural"],
+                        subheading: "VOLAŤ SA (to be called) / ČÍTAŤ (to read)",
+                        headers: ["Person", "volať sa", "čítať"],
                         rows: [
-                            ["1st", "volám sa", "voláme sa"],
-                            ["2nd", "voláš sa", "voláte sa"],
-                            ["3rd", "volá sa", "volajú sa"]
-                        ]
-                    },
-                    {
-                        subheading: "HOVORIŤ (to speak)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "hovorím", "hovoríme"],
-                            ["2nd", "hovoríš", "hovoríte"],
-                            ["3rd", "hovorí", "hovoria"]
-                        ]
-                    },
-                    {
-                        subheading: "ŽIŤ (to live)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "žijem", "žijeme"],
-                            ["2nd", "žiješ", "žijete"],
-                            ["3rd", "žije", "žijú"]
-                        ]
-                    },
-                    {
-                        subheading: "NIESŤ (to carry)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "nesiem", "nesieme"],
-                            ["2nd", "nesieš", "nesiete"],
-                            ["3rd", "nesie", "nesú"]
-                        ]
-                    },
-                    {
-                        subheading: "ŠTUDOVAŤ (to study)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "študujem", "študujeme"],
-                            ["2nd", "študuješ", "študujete"],
-                            ["3rd", "študuje", "študujú"]
-                        ]
-                    },
-                    {
-                        subheading: "SPAŤ (to sleep)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "spím", "spíme"],
-                            ["2nd", "spíš", "spíte"],
-                            ["3rd", "spí", "spia"]
-                        ]
-                    },
-                    {
-                        subheading: "ROZUMIEŤ (to understand)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "rozumiem", "rozumieme"],
-                            ["2nd", "rozumieš", "rozumiete"],
-                            ["3rd", "rozumie", "rozumejú"]
-                        ]
-                    },
-                    {
-                        subheading: "STRETNÚŤ (to meet)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "stretnem", "stretneme"],
-                            ["2nd", "stretneš", "stretnete"],
-                            ["3rd", "stretne", "stretnú"]
-                        ]
-                    },
-                    {
-                        subheading: "POZVAŤ (to invite)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "pozvem", "pozveme"],
-                            ["2nd", "pozveš", "pozvete"],
-                            ["3rd", "pozve", "pozvú"]
-                        ]
-                    },
-                    {
-                        subheading: "VIDIEŤ (to see)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "vidím", "vidíme"],
-                            ["2nd", "vidíš", "vidíte"],
-                            ["3rd", "vidí", "vidia"]
+                            ["ja", "volám sa", "čítam"],
+                            ["ty", "voláš sa", "čítaš"],
+                            ["on/ona", "volá sa", "číta"],
+                            ["my", "voláme sa", "čítame"],
+                            ["vy", "voláte sa", "čítate"],
+                            ["oni", "volajú sa", "čítajú"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Negation (Negácia)",
-                note: "Add the prefix 'ne-' to any conjugated verb form. Example: NEŠTUDOVAŤ: neštuduj-em, neštuduj-eš, neštuduj-e, neštuduj-eme, neštuduj-ete, neštuduj-ú."
+                heading: "Pattern 2: -ÍM type (hovoriť → hovorím)",
+                note: "Verbs with infinitive in -iť. Endings: -ím, -íš, -í, -íme, -íte, -ia. Common verbs: hovoriť (speak), robiť (do/make), učiť sa (learn), variť (cook), platiť (pay).",
+                tables: [
+                    {
+                        subheading: "HOVORIŤ (to speak) / ROBIŤ (to do)",
+                        headers: ["Person", "hovoriť", "robiť"],
+                        rows: [
+                            ["ja", "hovorím", "robím"],
+                            ["ty", "hovoríš", "robíš"],
+                            ["on/ona", "hovorí", "robí"],
+                            ["my", "hovoríme", "robíme"],
+                            ["vy", "hovoríte", "robíte"],
+                            ["oni", "hovoria", "robia"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Pattern 3: -EM type (žiť → žijem)",
+                note: "Various verbs with -iť, -ovať, -ieť, -úť stems. Endings: -em, -eš, -e, -eme, -ete, -ú/-ejú. Common verbs: žiť (live), študovať (study), pracovať (work), rozumieť (understand), kupovať (buy).",
+                tables: [
+                    {
+                        subheading: "ŽIŤ (to live) / ŠTUDOVAŤ (to study) / ROZUMIEŤ (to understand)",
+                        headers: ["Person", "žiť", "študovať", "rozumieť"],
+                        rows: [
+                            ["ja", "žijem", "študujem", "rozumiem"],
+                            ["ty", "žiješ", "študuješ", "rozumieš"],
+                            ["on/ona", "žije", "študuje", "rozumie"],
+                            ["my", "žijeme", "študujeme", "rozumieme"],
+                            ["vy", "žijete", "študujete", "rozumiete"],
+                            ["oni", "žijú", "študujú", "rozumejú"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Pattern 4: -ÍM type (vidieť → vidím / spať → spím)",
+                note: "Some -ieť and -ať verbs conjugate like -ím. Endings: -ím, -íš, -í, -íme, -íte, -ia. Common verbs: vidieť (see), spať (sleep), stáť (stand/cost), letieť (fly).",
+                tables: [
+                    {
+                        subheading: "VIDIEŤ (to see) / SPAŤ (to sleep)",
+                        headers: ["Person", "vidieť", "spať"],
+                        rows: [
+                            ["ja", "vidím", "spím"],
+                            ["ty", "vidíš", "spíš"],
+                            ["on/ona", "vidí", "spí"],
+                            ["my", "vidíme", "spíme"],
+                            ["vy", "vidíte", "spíte"],
+                            ["oni", "vidia", "spia"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Pattern 5: -EM type (niesť → nesiem)",
+                note: "Verbs ending in a consonant + ť. Endings: -iem, -ieš, -ie, -ieme, -iete, -ú. Common verbs: niesť (carry), viesť (lead), stretnúť (meet), pozvať (invite).",
+                tables: [
+                    {
+                        subheading: "NIESŤ (to carry) / STRETNÚŤ (to meet)",
+                        headers: ["Person", "niesť", "stretnúť"],
+                        rows: [
+                            ["ja", "nesiem", "stretnem"],
+                            ["ty", "nesieš", "stretneš"],
+                            ["on/ona", "nesie", "stretne"],
+                            ["my", "nesieme", "stretneme"],
+                            ["vy", "nesiete", "stretnete"],
+                            ["oni", "nesú", "stretnú"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Negation (Zápor)",
+                note: "Simply add 'ne-' before the conjugated verb. This works for every verb in every tense. Examples: Rozumiem. → Nerozumiem. (I don't understand.) Hovorím po slovensky. → Nehovorím po slovensky. (I don't speak Slovak.) Študuješ? → Neštuduješ? (Don't you study?)"
             }
         ]
     },
     {
         slug: "irregular-verbs",
-        title: "Irregular Verbs (Nepravidelné verbá)",
+        title: "Irregular Verbs (Nepravidelné slovesá)",
         icon: "fa-random",
-        explanation: "These common verbs don't follow regular conjugation patterns and must be memorized. The most important irregular verb is 'byť' (to be), which is used both on its own and as a helper verb to form the past tense. Its negative form 'nebyť' simply adds 'nie' before each form.",
+        explanation: "Some of the most common Slovak verbs are irregular — their conjugations don't follow the standard patterns. The most important one is 'byť' (to be), which is also used as a helper verb for the past tense. These verbs are used so frequently that you'll memorize them naturally through practice.",
         sections: [
             {
-                heading: "BYŤ (to be) / NEBYŤ (not to be)",
+                heading: "BYŤ (to be) — The Most Important Verb",
+                note: "Used on its own ('Som učiteľ' = I am a teacher) and as a helper verb for past tense ('Hovoril som' = I spoke). Unlike English, the subject pronoun is usually dropped: 'Som študent' (not 'Ja som študent'), unless you want to emphasize it.",
                 tables: [
                     {
-                        subheading: "BYŤ",
-                        headers: ["", "Singular", "Plural"],
+                        subheading: "Present Tense",
+                        headers: ["Person", "Affirmative", "Negative", "Example"],
                         rows: [
-                            ["1st", "(ja) som", "(my) sme"],
-                            ["2nd", "(ty) si", "(vy) ste"],
-                            ["3rd", "(on/ona/ono) je", "(oni/ony) sú"]
-                        ]
-                    },
-                    {
-                        subheading: "NEBYŤ",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "nie som", "nie sme"],
-                            ["2nd", "nie si", "nie ste"],
-                            ["3rd", "nie je", "nie sú"]
+                            ["ja", "som", "nie som", "Som z Bratislavy. (I am from Bratislava.)"],
+                            ["ty", "si", "nie si", "Si študent? (Are you a student?)"],
+                            ["on/ona/ono", "je", "nie je", "Je doma. (He/She is at home.)"],
+                            ["my", "sme", "nie sme", "Sme kamaráti. (We are friends.)"],
+                            ["vy", "ste", "nie ste", "Ste z Ameriky? (Are you from America?)"],
+                            ["oni/ony", "sú", "nie sú", "Sú tu. (They are here.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Motion & Position Verbs",
+                heading: "ÍSŤ (to go) / PRÍSŤ (to come) / ODÍSŤ (to leave)",
+                note: "These motion verbs all share a similar stem pattern. 'Ísť' is one of the most used verbs in daily conversation.",
                 tables: [
                     {
-                        subheading: "STÁŤ (to stand)",
-                        headers: ["", "Singular", "Plural"],
+                        headers: ["Person", "ísť (to go)", "prísť (to come)", "odísť (to leave)"],
                         rows: [
-                            ["1st", "stojím", "stojíme"],
-                            ["2nd", "stojíš", "stojíte"],
-                            ["3rd", "stojí", "stoja"]
+                            ["ja", "idem", "prídem", "odídem"],
+                            ["ty", "ideš", "prídeš", "odídeš"],
+                            ["on/ona", "ide", "príde", "odíde"],
+                            ["my", "ideme", "prídeme", "odídeme"],
+                            ["vy", "idete", "prídete", "odídete"],
+                            ["oni", "idú", "prídu", "odídu"]
                         ]
-                    },
+                    }
+                ]
+            },
+            {
+                heading: "JESŤ (to eat) / STÁŤ (to stand / to cost)",
+                note: "Warning: 'je' (he/she eats) looks exactly like 'je' (he/she is). Context makes it clear. 'Stáť' has two meanings: 'to stand' and 'to cost' — Koľko to stojí? (How much does it cost?)",
+                tables: [
                     {
-                        subheading: "ODÍSŤ (to leave)",
-                        headers: ["", "Singular", "Plural"],
+                        headers: ["Person", "jesť (to eat)", "stáť (to stand/cost)"],
                         rows: [
-                            ["1st", "odídem", "odídeme"],
-                            ["2nd", "odídeš", "odídete"],
-                            ["3rd", "odíde", "odídu"]
+                            ["ja", "jem", "stojím"],
+                            ["ty", "ješ", "stojíš"],
+                            ["on/ona", "je", "stojí"],
+                            ["my", "jeme", "stojíme"],
+                            ["vy", "jete", "stojíte"],
+                            ["oni", "jedia", "stoja"]
                         ]
-                    },
+                    }
+                ]
+            },
+            {
+                heading: "STAŤ SA (to happen / to become)",
+                note: "Used as: Čo sa stalo? (What happened?) Chcem sa stať učiteľom. (I want to become a teacher.)",
+                tables: [
                     {
-                        subheading: "ÍSŤ (to go)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "idem", "ideme"],
-                            ["2nd", "ideš", "idete"],
-                            ["3rd", "ide", "idú"]
-                        ]
-                    },
-                    {
-                        subheading: "PRÍSŤ (to come)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "prídem", "prídeme"],
-                            ["2nd", "prídeš", "prídete"],
-                            ["3rd", "príde", "prídu"]
-                        ]
-                    },
-                    {
-                        subheading: "STAŤ SA (to happen/become)",
-                        headers: ["", "Singular", "Plural"],
+                        headers: ["Person", "Singular", "Plural"],
                         rows: [
                             ["1st", "stanem sa", "staneme sa"],
                             ["2nd", "staneš sa", "stanete sa"],
                             ["3rd", "stane sa", "stanú sa"]
-                        ]
-                    },
-                    {
-                        subheading: "JESŤ (to eat)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "jem", "jeme"],
-                            ["2nd", "ješ", "jete"],
-                            ["3rd", "je", "jedia"]
                         ]
                     }
                 ]
@@ -449,203 +479,188 @@ module.exports = [
         slug: "modal-verbs-past-tense",
         title: "Modal Verbs & Past Tense",
         icon: "fa-history",
-        explanation: "Modal verbs express ability, obligation, permission, or desire. They are typically followed by an infinitive (e.g., 'Chcem ísť' = I want to go). The past tense (préteritum) in Slovak is formed using the L-form of the verb + the present tense of 'byť' (to be). The L-form changes based on gender: -l (M), -la (F), -lo (N), -li (plural).",
+        explanation: "Modal verbs express what you want, can, must, or are allowed to do. They are always followed by an infinitive: 'Chcem ísť' (I want to go), 'Musím pracovať' (I must work). The past tense is formed by combining the L-form of the verb with the present tense of 'byť' (to be). The L-form changes based on the speaker's gender — this is one of the few places in Slovak where gender affects verb forms.",
         sections: [
             {
-                heading: "Modal Verbs - Present Tense",
+                heading: "Modal Verbs — Present Tense",
+                note: "Modal verb + infinitive = complete sentence. Example: Môžem hovoriť po slovensky. (I can speak Slovak.)",
                 tables: [
                     {
-                        subheading: "CHCIEŤ (to want)",
-                        headers: ["", "Singular", "Plural"],
+                        subheading: "CHCIEŤ (to want) / MUSIEŤ (must, have to)",
+                        headers: ["Person", "chcieť", "musieť", "Example"],
                         rows: [
-                            ["1st", "chcem", "chceme"],
-                            ["2nd", "chceš", "chcete"],
-                            ["3rd", "chce", "chcú"]
+                            ["ja", "chcem", "musím", "Chcem jesť. (I want to eat.)"],
+                            ["ty", "chceš", "musíš", "Musíš ísť. (You must go.)"],
+                            ["on/ona", "chce", "musí", "Chce spať. (He/She wants to sleep.)"],
+                            ["my", "chceme", "musíme", "Musíme pracovať. (We must work.)"],
+                            ["vy", "chcete", "musíte", "Chcete kávu? (Do you want coffee?)"],
+                            ["oni", "chcú", "musia", "Musia študovať. (They must study.)"]
                         ]
                     },
                     {
-                        subheading: "VEDIEŤ (to know)",
-                        headers: ["", "Singular", "Plural"],
+                        subheading: "MÔCŤ (can) / SMIEŤ (may, be allowed to)",
+                        headers: ["Person", "môcť", "smieť", "Example"],
                         rows: [
-                            ["1st", "viem", "vieme"],
-                            ["2nd", "vieš", "viete"],
-                            ["3rd", "vie", "vedia"]
+                            ["ja", "môžem", "smiem", "Môžem ti pomôcť? (Can I help you?)"],
+                            ["ty", "môžeš", "smieš", "Smieš ísť. (You may go.)"],
+                            ["on/ona", "môže", "smie", "Môže prísť. (He/She can come.)"],
+                            ["my", "môžeme", "smieme", "Môžeme začať? (Can we start?)"],
+                            ["vy", "môžete", "smiete", "Môžete si sadnúť. (You may sit down.)"],
+                            ["oni", "môžu", "smú", "Nemôžu prísť. (They can't come.)"]
                         ]
                     },
                     {
-                        subheading: "MUSIEŤ (must/have to)",
-                        headers: ["", "Singular", "Plural"],
+                        subheading: "VEDIEŤ (to know) / MAŤ (to have)",
+                        headers: ["Person", "vedieť", "mať", "Example"],
                         rows: [
-                            ["1st", "musím", "musíme"],
-                            ["2nd", "musíš", "musíte"],
-                            ["3rd", "musí", "musia"]
-                        ]
-                    },
-                    {
-                        subheading: "SMIEŤ (may/be allowed to)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "smiem", "smieme"],
-                            ["2nd", "smieš", "smiete"],
-                            ["3rd", "smie", "smú"]
-                        ]
-                    },
-                    {
-                        subheading: "MÔCŤ (can/be able to)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "môžem", "môžeme"],
-                            ["2nd", "môžeš", "môžete"],
-                            ["3rd", "môže", "môžu"]
-                        ]
-                    },
-                    {
-                        subheading: "MAŤ (to have)",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "mám", "máme"],
-                            ["2nd", "máš", "máte"],
-                            ["3rd", "má", "majú"]
+                            ["ja", "viem", "mám", "Neviem. (I don't know.) Mám čas. (I have time.)"],
+                            ["ty", "vieš", "máš", "Vieš čo? (You know what?) Máš deti? (Do you have kids?)"],
+                            ["on/ona", "vie", "má", "Vie všetko. (He/She knows everything.)"],
+                            ["my", "vieme", "máme", "Máme problém. (We have a problem.)"],
+                            ["vy", "viete", "máte", "Viete, kde to je? (Do you know where it is?)"],
+                            ["oni", "vedia", "majú", "Majú veľký dom. (They have a big house.)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Past Tense (Préteritum)",
-                note: "Formed with: L-form of verb + present tense of 'byť'. The L-form ending depends on gender: hovori-l (M sg.), hovori-la (F sg.), hovori-lo (N sg.), hovori-li (plural). Example: Hovoril som (I spoke, male), Hovorila som (I spoke, female).",
+                heading: "Past Tense (Minulý čas) — How It Works",
+                note: "Formula: L-form of verb + present tense of 'byť'. The L-form depends on the speaker's gender: male speakers use -l, female speakers use -la, neuter uses -lo, and plural is always -li. Important: in the 3rd person (he/she/they), you do NOT add 'byť' — just the L-form alone.",
                 tables: [
                     {
-                        subheading: "HOVORIŤ - Past Tense",
-                        headers: ["", "Singular", "Plural"],
+                        subheading: "The Pattern",
+                        headers: ["Person", "Male Speaker", "Female Speaker", "Plural"],
                         rows: [
-                            ["1st", "hovori-l/la som", "hovori-li sme"],
-                            ["2nd", "hovori-l/la si", "hovori-li ste"],
-                            ["3rd", "hovori-l/la/lo", "hovori-li"]
-                        ]
-                    },
-                    {
-                        subheading: "BYŤ - Past Tense",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "bol/bola som", "boli sme"],
-                            ["2nd", "bol/bola si", "boli ste"],
-                            ["3rd", "bol/bola/bolo", "boli"]
-                        ]
-                    },
-                    {
-                        subheading: "ÍSŤ - Past Tense",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "išiel/išla som", "išli sme"],
-                            ["2nd", "išiel/išla si", "išli ste"],
-                            ["3rd", "išiel/išla/išlo", "išli"]
-                        ]
-                    },
-                    {
-                        subheading: "JESŤ - Past Tense",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "jedol/jedla som", "jedli sme"],
-                            ["2nd", "jedol/jedla si", "jedli ste"],
-                            ["3rd", "jedol/jedla/jedlo", "jedli"]
+                            ["ja", "hovoril som", "hovorila som", "—"],
+                            ["ty", "hovoril si", "hovorila si", "—"],
+                            ["on", "hovoril (no byť!)", "—", "—"],
+                            ["ona", "—", "hovorila (no byť!)", "—"],
+                            ["my", "—", "—", "hovorili sme"],
+                            ["vy", "—", "—", "hovorili ste"],
+                            ["oni/ony", "—", "—", "hovorili (no byť!)"]
                         ]
                     }
                 ]
             },
             {
-                heading: "Modal Verbs - Past Tense (Préteritum)",
-                note: "Modal verbs in the past tense follow the same L-forma + byť pattern. Some have alternate gender forms.",
+                heading: "Past Tense — Common Verbs",
+                note: "Here are the L-forms for the most common verbs. Remember: add 'som/si/sme/ste' for 1st and 2nd person, but NOT for 3rd person.",
                 tables: [
                     {
-                        subheading: "CHCIEŤ - Past",
-                        headers: ["", "Singular", "Plural"],
+                        subheading: "Regular & Key Irregular Past Forms",
+                        headers: ["Infinitive", "L-form (M)", "L-form (F)", "L-form (Pl.)", "Example (ja, male)"],
                         rows: [
-                            ["1st", "chcel/chcela som", "chceli sme"],
-                            ["2nd", "chcel/chcela si", "chceli ste"],
-                            ["3rd", "chcel/chcela/chcelo", "chceli"]
-                        ]
-                    },
-                    {
-                        subheading: "VEDIEŤ - Past",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "vedel/vedela som", "vedeli sme"],
-                            ["2nd", "vedel/vedela si", "vedeli ste"],
-                            ["3rd", "vedel/vedela/vedelo", "vedeli"]
-                        ]
-                    },
-                    {
-                        subheading: "MUSIEŤ - Past",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "musel/musela som", "museli sme"],
-                            ["2nd", "musel/musela si", "museli ste"],
-                            ["3rd", "musel/musela/muselo", "museli"]
-                        ]
-                    },
-                    {
-                        subheading: "MÔCŤ - Past",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "mohol/mohla som", "mohli sme"],
-                            ["2nd", "mohol/mohla si", "mohli ste"],
-                            ["3rd", "mohol/mohla/mohlo", "mohli"]
-                        ]
-                    },
-                    {
-                        subheading: "MAŤ - Past",
-                        headers: ["", "Singular", "Plural"],
-                        rows: [
-                            ["1st", "mal/mala som", "mali sme"],
-                            ["2nd", "mal/mala si", "mali ste"],
-                            ["3rd", "mal/mala/malo", "mali"]
+                            ["byť (to be)", "bol", "bola", "boli", "Bol som doma. (I was at home.)"],
+                            ["hovoriť (to speak)", "hovoril", "hovorila", "hovorili", "Hovoril som po slovensky. (I spoke Slovak.)"],
+                            ["ísť (to go)", "išiel", "išla", "išli", "Išiel som do práce. (I went to work.)"],
+                            ["jesť (to eat)", "jedol", "jedla", "jedli", "Jedol som obed. (I ate lunch.)"],
+                            ["chcieť (to want)", "chcel", "chcela", "chceli", "Chcel som ísť. (I wanted to go.)"],
+                            ["môcť (can)", "mohol", "mohla", "mohli", "Nemohol som prísť. (I couldn't come.)"],
+                            ["musieť (must)", "musel", "musela", "museli", "Musel som pracovať. (I had to work.)"],
+                            ["mať (to have)", "mal", "mala", "mali", "Mal som čas. (I had time.)"],
+                            ["vedieť (to know)", "vedel", "vedela", "vedeli", "Nevedel som. (I didn't know.)"],
+                            ["vidieť (to see)", "videl", "videla", "videli", "Videl som ho. (I saw him.)"]
                         ]
                     }
                 ]
+            },
+            {
+                heading: "Past Tense — Negation",
+                note: "Just add 'ne-' before the L-form: Nehovoril som. (I didn't speak.) Nebol som tam. (I wasn't there.) Nešla domov. (She didn't go home.)"
             }
         ]
     },
     {
         slug: "numbers",
-        title: "Numbers (Numeráliá)",
+        title: "Numbers (Číslovky)",
         icon: "fa-sort-numeric-up",
-        explanation: "Slovak has both cardinal (základné) and ordinal (radové) numbers. The numbers 1-4 change form based on the gender of the noun they describe. For masculine animate nouns use: dvaja, traja, štyria. For masculine inanimate and neuter/feminine nouns use: dva/dve, tri, štyri. Currencies also follow gender rules: dolár → dolárov (M), koruna → korún (F), euro → eur (N).",
+        explanation: "Slovak numbers have a few quirks compared to English. The numbers 1-4 change form based on the gender of the noun they describe. From 5 onwards, the number stays the same regardless of gender. Ordinal numbers (first, second, third...) work like adjectives and change by gender too.",
         sections: [
             {
-                heading: "Cardinal & Ordinal Numbers",
+                heading: "Cardinal Numbers (Základné číslovky)",
                 tables: [
                     {
-                        headers: ["Cardinal", "Ordinal", "Cardinal", "Ordinal"],
+                        subheading: "0-20",
+                        headers: ["Number", "Slovak", "Number", "Slovak"],
                         rows: [
-                            ["0 nula", "nultý", "20 dvadsať", "dvadsiaty"],
-                            ["1 jeden/jedna/jedno", "prvý", "21 dvadsaťjeden", "dvadsiaty prvý"],
-                            ["2 dva/dve", "druhý", "30 tridsať", "tridsiaty"],
-                            ["3 tri", "tretí", "40 štyridsať", "štyridsiaty"],
-                            ["4 štyri", "štvrtý", "50 päťdesiat", "päťdesiaty"],
-                            ["5 päť", "piaty", "60 šesťdesiat", "šesťdesiaty"],
-                            ["6 šesť", "šiesty", "70 sedemdesiat", "sedemdesiaty"],
-                            ["7 sedem", "siedmy", "80 osemdesiat", "osemdesiaty"],
-                            ["8 osem", "ôsmy", "90 deväťdesiat", "deväťdesiaty"],
-                            ["9 deväť", "deviaty", "100 sto", "stý"],
-                            ["10 desať", "desiaty", "200 dvesto", "dvestý"],
-                            ["11 jedenásť", "jedenásty", "300 tristo", "tristý"],
-                            ["12 dvanásť", "dvanásty", "1 000 tisíc", "tisíci"],
-                            ["13 trinásť", "trinásty", "2 000 dvetisíc", "dvetisíci"],
-                            ["14 štrnásť", "štrnásty", "1 000 000 milión", "miliónty"]
+                            ["0", "nula", "11", "jedenásť"],
+                            ["1", "jeden / jedna / jedno", "12", "dvanásť"],
+                            ["2", "dva / dve", "13", "trinásť"],
+                            ["3", "tri", "14", "štrnásť"],
+                            ["4", "štyri", "15", "pätnásť"],
+                            ["5", "päť", "16", "šestnásť"],
+                            ["6", "šesť", "17", "sedemnásť"],
+                            ["7", "sedem", "18", "osemnásť"],
+                            ["8", "osem", "19", "devätnásť"],
+                            ["9", "deväť", "20", "dvadsať"],
+                            ["10", "desať", "", ""]
+                        ]
+                    },
+                    {
+                        subheading: "Tens, Hundreds, and Beyond",
+                        headers: ["Number", "Slovak", "Number", "Slovak"],
+                        rows: [
+                            ["20", "dvadsať", "200", "dvesto"],
+                            ["30", "tridsať", "300", "tristo"],
+                            ["40", "štyridsať", "400", "štyristo"],
+                            ["50", "päťdesiat", "500", "päťsto"],
+                            ["60", "šesťdesiat", "1 000", "tisíc"],
+                            ["70", "sedemdesiat", "2 000", "dvetisíc"],
+                            ["80", "osemdesiat", "10 000", "desaťtisíc"],
+                            ["90", "deväťdesiat", "1 000 000", "milión"],
+                            ["100", "sto", "", ""]
                         ]
                     }
                 ]
             },
             {
-                heading: "Gender-based Counting",
-                note: "Numbers 1-4 agree with the gender of the noun. From 5 onwards, the number stays the same regardless of gender.",
+                heading: "Gender Agreement (1-4)",
+                note: "The numbers 1-4 change form based on the gender of the noun. From 5 onwards, the number stays the same. This is one of the trickier aspects for English speakers, but it becomes natural with practice.",
                 tables: [
                     {
-                        headers: ["M (animate)", "M (inanimate/animals)", "F + N"],
+                        headers: ["Number", "M (animate)", "M (inanimate) / F / N", "Example"],
                         rows: [
-                            ["dvaja muži", "dva domy, psy", "dve kamarátky, kiná"],
-                            ["traja kamaráti", "tri počítače, kolegyne, autá", ""],
-                            ["štyria kolegovia", "štyri kostoly, ženy, námestia", ""]
+                            ["1", "jeden", "jedna (F), jedno (N)", "jeden muž, jedna žena, jedno dieťa"],
+                            ["2", "dvaja", "dva (M inanim.), dve (F/N)", "dvaja muži, dva domy, dve ženy, dve autá"],
+                            ["3", "traja", "tri", "traja chlapci, tri domy, tri ženy, tri mestá"],
+                            ["4", "štyria", "štyri", "štyria študenti, štyri stoly, štyri knihy"],
+                            ["5+", "päť (same for all)", "", "päť mužov, päť žien, päť detí"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Ordinal Numbers (Radové číslovky)",
+                note: "Ordinal numbers work like adjectives — they change by gender. Listed here in masculine form; add -á for feminine, -é for neuter. Example: prvý muž (first man), prvá žena (first woman), prvé dieťa (first child).",
+                tables: [
+                    {
+                        headers: ["Number", "Ordinal (M)", "Number", "Ordinal (M)"],
+                        rows: [
+                            ["1st", "prvý", "7th", "siedmy"],
+                            ["2nd", "druhý", "8th", "ôsmy"],
+                            ["3rd", "tretí", "9th", "deviaty"],
+                            ["4th", "štvrtý", "10th", "desiaty"],
+                            ["5th", "piaty", "20th", "dvadsiaty"],
+                            ["6th", "šiesty", "100th", "stý"]
+                        ]
+                    }
+                ]
+            },
+            {
+                heading: "Useful Phrases with Numbers",
+                tables: [
+                    {
+                        headers: ["Slovak", "English"],
+                        rows: [
+                            ["Koľko to stojí?", "How much does it cost?"],
+                            ["Stojí to päť eur.", "It costs five euros."],
+                            ["Koľko máš rokov?", "How old are you?"],
+                            ["Mám dvadsaťpäť rokov.", "I am 25 years old."],
+                            ["Koľko je hodín?", "What time is it?"],
+                            ["Je jedna hodina.", "It is one o'clock."],
+                            ["Sú dve hodiny.", "It is two o'clock."],
+                            ["Prvé poschodie.", "First floor."],
+                            ["Telefónne číslo je...", "The phone number is..."]
                         ]
                     }
                 ]
